@@ -2,7 +2,7 @@ spring:
   datasource:
     username: root
     password: mysql
-    mapper-locations: classpath:/mapper/*.xml
+    mapper-locations: classpath:/mapper/**/*.xml
     jdbc-url: jdbc:mysql://localhost:3306/goohae?&serverTimezone=UTC&autoReconnect=true&allowMultiQueries=true&characterEncoding=UTF-8
     driver: com.mysql.cj.jdbc.Driver
 
