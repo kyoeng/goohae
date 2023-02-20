@@ -3,6 +3,6 @@
 
 <mapper namespace="com.kdt.goohae.mapper.TestMapper">
     <select id="test" resultType="TestVO">
-        select * from manager
+        select * from manager where id = #{id}
     </select>
 </mapper>

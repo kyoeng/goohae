@@ -4,7 +4,6 @@ import com.kdt.goohae.mapper.TestMapper;
 import com.kdt.goohae.domain.TestVO;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 
 
 @Service
@@ -17,7 +16,7 @@ public class TestServiceImpl implements TestService {
     }
 
     @Override
-    public List<TestVO> test() {
+    public TestVO test() {
         return mapper.test();
     }
 }
