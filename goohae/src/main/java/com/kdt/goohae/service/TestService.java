@@ -1,6 +1,6 @@
 package com.kdt.goohae.service;
 
-import com.kdt.goohae.vo.TestVO;
+import com.kdt.goohae.domain.TestVO;
 
 import java.util.List;
 

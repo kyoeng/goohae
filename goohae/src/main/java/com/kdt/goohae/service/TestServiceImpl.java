@@ -1,8 +1,7 @@
 package com.kdt.goohae.service;
 
 import com.kdt.goohae.mapper.TestMapper;
-import com.kdt.goohae.vo.TestVO;
-import lombok.RequiredArgsConstructor;
+import com.kdt.goohae.domain.TestVO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

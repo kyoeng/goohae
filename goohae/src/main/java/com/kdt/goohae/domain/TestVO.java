@@ -1,4 +1,4 @@
-package com.kdt.goohae.vo;
+package com.kdt.goohae.domain;
 
 
 import lombok.Data;
