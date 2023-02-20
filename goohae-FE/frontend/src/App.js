@@ -28,7 +28,7 @@ function App() {
           <Route path='etc' element={<AdminEtc />} />
         </Route>
 
-        <Route path='adminLogin' element={<AdminLogin />} />
+        <Route path='/adminLogin' element={<AdminLogin />} />
 
 
 
