@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Axios } from 'axios';
+import axios from 'axios';
 import { Navigate } from 'react-router-dom';
 
 import './css/adminLogin.css';
@@ -14,7 +14,7 @@ export default function AdminLogin() {
 
     function adminLogin() {
         if (adminId !== '' && adminPw !== '') {
-            Axios.post('/admin/login', {
+            axios.post('/test', {
                 id: adminId,
                 password: adminPw,
             })
@@ -26,7 +26,7 @@ export default function AdminLogin() {
                         setAdminPw();
                     } else {
                         if (response.status === 200) {
-                            Axios.defaults.header.common[
+                            axios.defaults.header.common[
                                 "Authorization"
                             ] = `Bearer ${aceessToken}`;
                             return <Navigate to="/adminmain" replace={true} />
@@ -35,7 +35,8 @@ export default function AdminLogin() {
                         }
                     }
                 })
-                .catch(() => {
+                .catch((err) => {
+                    console.log(err);
                     setMessage('로그인실패');
                     setAdminId();
                     setAdminPw();
@@ -51,13 +52,13 @@ export default function AdminLogin() {
                 <div className="adminInputContainer" >
                     <input
                         type="text"
-                        value={adminId}
+                        value={adminId || ""}
                         onChange={changeId}
                         placeholder='아이디' />
 
                     <input
                         type="text"
-                        value={adminPw}
+                        value={adminPw || ""}
                         onChange={changePw}
                         placeholder='비밀번호' />
                 </div>
