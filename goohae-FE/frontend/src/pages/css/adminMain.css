@@ -1,0 +1,9 @@
+.adminMain {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+}
+
+@import url(../../templetes/adminSide.css);
+@import url(../../templetes/adminUser.css);
