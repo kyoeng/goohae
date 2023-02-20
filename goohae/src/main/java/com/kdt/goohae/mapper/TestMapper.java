@@ -1,7 +1,7 @@
 package com.kdt.goohae.mapper;
 
 
-import com.kdt.goohae.vo.TestVO;
+import com.kdt.goohae.domain.TestVO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
