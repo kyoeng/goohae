@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 //메인페이지
 import MainPage from './pages/mainPage';
+
 //admin페이지
 import AdminMain from './pages/adminMain';
 import AdminUser from './templetes/admin/adminUser';
@@ -10,6 +11,8 @@ import AdminEtc from './templetes/admin/adminEtc';
 import AdminLogin from './pages/adminLogin';
 
 import './App.css';
+import Login from './common/login/login';
+import SignUp from './common/signUp/signUp';
 
 function App() {
 
@@ -19,6 +22,8 @@ function App() {
 
         {/* 메인페이지 */}
         <Route path='/' element={<MainPage />} />
+        <Route path='login' element={<Login />} />
+        <Route path='signUP' element={<SignUp/> } />
 
         {/* admin 페이지 */}
         <Route path='adminmain/*' element={<AdminMain />} >
