@@ -5,6 +5,6 @@ import com.kdt.goohae.domain.TestVO;
 
 public interface TestService {
 
-    TestVO test();
+    TestVO test(TestVO vo);
 
 }

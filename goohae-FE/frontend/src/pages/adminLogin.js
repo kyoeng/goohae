@@ -19,14 +19,15 @@ export default function AdminLogin() {
                 password: adminPw,
             })
                 .then((response) => {
-                    const { aceessToken } = response.data;
+                    const aceessToken = response.data;
+
                     if (!aceessToken) {
                         setMessage('로그인실패');
                         setAdminId();
                         setAdminPw();
                     } else {
                         if (response.status === 200) {
-                            axios.defaults.header.common[
+                            axios.defaults.headers.common[
                                 "Authorization"
                             ] = `Bearer ${aceessToken}`;
                             return <Navigate to="/adminmain" replace={true} />

@@ -16,7 +16,7 @@ public class TestServiceImpl implements TestService {
     }
 
     @Override
-    public TestVO test() {
-        return mapper.test();
+    public TestVO test(TestVO vo) {
+        return mapper.test(vo);
     }
 }
