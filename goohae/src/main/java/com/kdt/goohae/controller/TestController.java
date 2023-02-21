@@ -1,6 +1,5 @@
 package com.kdt.goohae.controller;
 
-
 import com.kdt.goohae.jwt.JwtService;
 import com.kdt.goohae.service.TestService;
 import com.kdt.goohae.domain.TestVO;
@@ -22,12 +21,12 @@ public class TestController {
     private final JwtService jwtService;
     private final PasswordEncoder passwordEncoder;
 
-    public TestController(@Qualifier("testServiceImpl") TestService testService, JwtService jwtService, PasswordEncoder passwordEncoder) {
+    public TestController(@Qualifier("testServiceImpl") TestService testService, JwtService jwtService,
+            PasswordEncoder passwordEncoder) {
         this.testService = testService;
         this.jwtService = jwtService;
         this.passwordEncoder = passwordEncoder;
     }
-
 
     @PostMapping("/test")
     public String test(@RequestBody TestVO vo) {
@@ -42,7 +41,7 @@ public class TestController {
             } else {
                 return "error";
             }
-        } else{
+        } else {
             return "error";
         }
 

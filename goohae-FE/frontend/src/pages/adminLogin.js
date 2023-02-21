@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import axios from 'axios';
-import { Navigate } from 'react-router-dom';
 
 import './css/adminLogin.css';
 
@@ -8,6 +9,7 @@ export default function AdminLogin() {
     const [adminId, setAdminId] = useState()
     const [adminPw, setAdminPw] = useState();
     const [message, setMessage] = useState('');
+    const navigate = useNavigate();
 
     function changeId(e) { setAdminId(e.target.value) };
     function changePw(e) { setAdminPw(e.target.value) };
@@ -19,9 +21,8 @@ export default function AdminLogin() {
                 password: adminPw,
             })
                 .then((response) => {
-                    const aceessToken = response.data;
-
-                    if (!aceessToken) {
+                    const accessToken = response.data;
+                    if (response.data === 'error') {
                         setMessage('로그인실패');
                         setAdminId();
                         setAdminPw();
@@ -29,8 +30,8 @@ export default function AdminLogin() {
                         if (response.status === 200) {
                             axios.defaults.headers.common[
                                 "Authorization"
-                            ] = `Bearer ${aceessToken}`;
-                            return <Navigate to="/adminmain" replace={true} />
+                            ] = `Bearer ${accessToken}`;
+                            navigate('/adminmain');
                         } else {
                             return;
                         }
@@ -58,7 +59,7 @@ export default function AdminLogin() {
                         placeholder='아이디' />
 
                     <input
-                        type="text"
+                        type="password"
                         value={adminPw || ""}
                         onChange={changePw}
                         placeholder='비밀번호' />

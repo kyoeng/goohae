@@ -3,6 +3,7 @@
     height: 100vh;
 
     display: flex;
+    gap: 1px;
 }
 
 @import url(../../templetes/adminSide.css);

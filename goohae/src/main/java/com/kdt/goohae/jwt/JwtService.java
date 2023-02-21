@@ -1,6 +1,5 @@
 package com.kdt.goohae.jwt;
 
-
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.extern.slf4j.Slf4j;
@@ -17,11 +16,11 @@ public class JwtService {
 
     private static final String SECRET_KEY = "VlwEyVBsYt9V7zq57TejMnVUyzblYcfPQye08f7MGVA9XkHaasdasfaefqwefasfadgvqeqwfasfqegqsfdadfqegwvsdvasefqwefvsadv";
 
-
     /**
      * 토큰 발급에 관한 메서드
+     * 
      * @param subject = 로그인 아이디
-     * @param role = 권한
+     * @param role    = 권한
      * @param expTime = 토큰 만료시간
      * @return JWT Token
      */
@@ -43,9 +42,9 @@ public class JwtService {
                 .compact();
     }
 
-
     /**
      * 토큰 유효시간 검증에 대한 메서드
+     * 
      * @param token = JWT Token
      * @return true, false
      */
