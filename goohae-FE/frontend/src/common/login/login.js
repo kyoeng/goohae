@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 import axios from "axios";
 import "./login.css"
 import { Link } from "react-router-dom";
-import { loginUser } from "../../instanceData/userData";
+import  loginUser  from "../../instanceData/userData";
 
 
 
