@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useOutletContext } from "react-router-dom";
 
-import AddModal from "../../components/addModal";
+import AddModal from './../../../components/presentational/addModal';
 
 
 export default function AdminProduct() {

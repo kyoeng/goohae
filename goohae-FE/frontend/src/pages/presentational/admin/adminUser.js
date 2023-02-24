@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useAsyncError, useOutletContext } from "react-router-dom";
 import axios from 'axios';
 
-import TableBody from "../../components/tableBody";
-import TableModal from "../../components/tableModal";
+import TableBody from './../../../components/presentational/tableBody';
+import TableModal from './../../../components/presentational/tableModal';
 
 export default function AdminUser() {
 

@@ -1,21 +1,20 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 //메인페이지
-import MainPage from './pages/mainPage';
+import MainPage from './pages/presentational/mainPage/mainPage';
 
 //admin페이지
-import AdminMain from './pages/adminMain';
-import AdminUser from './templetes/admin/adminUser';
-import AdminProduct from './templetes/admin/adminProduct';
-import AdminStaff from './templetes/admin/adminStaff';
-import AdminEtc from './templetes/admin/adminEtc';
-import AdminLogin from './pages/adminLogin';
+import AdminMain from './pages/presentational/admin/adminMain';
+import AdminUser from './pages/presentational/admin/adminUser';
+import AdminProduct from './pages/presentational/admin/adminProduct';
+import AdminStaff from './pages/presentational/admin/adminStaff';
+import AdminEtc from './pages/presentational/admin/adminEtc';
+import AdminLogin from './pages/presentational/admin/adminLogin';
 
-//ref
-import RefPage from './instanceData/productRef';
+
+import Login from './pages/presentational/login/login';
+import SignUp from './pages/presentational/signUp/signUp';
 
 import './App.css';
-import Login from './common/login/login';
-import SignUp from './common/signUp/signUp';
 
 function App() {
 
@@ -37,11 +36,6 @@ function App() {
         </Route>
 
         <Route path='/adminlogin' element={<AdminLogin />} />
-
-        {/* RefPage */}
-        <Route path='/ref' element={<RefPage />} />
-
-
 
       </Routes>
     </Router>
