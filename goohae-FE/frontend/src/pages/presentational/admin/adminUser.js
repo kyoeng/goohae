@@ -8,7 +8,9 @@ import TableModal from "../../components/tableModal";
 export default function AdminUser() {
 
     //최상단에서 받아온 전체 데이터
-    const userData = useOutletContext();
+    const userData = useOutletContext().userData;
+    const reqDelUser = useOutletContext().reqDelUser;
+
     //모달창 트리거
     const [trigger, setTrigger] = useState(false);
     //클릭한놈 인덱스 번호
@@ -23,14 +25,6 @@ export default function AdminUser() {
             setIdxData({ ...userData[tableIndex] });
         }
         setTrigger(pre => !pre);
-    }
-
-    function reqDelete() {
-        if (window.confirm('삭제하시겠습니까')) {
-            axios.delete('/test', {
-
-            })
-        }
     }
 
     return (
@@ -59,7 +53,8 @@ export default function AdminUser() {
             {trigger ? <TableModal
                 userData={userData}
                 modalTrigger={modalTrigger}
-                arrIdx={tableIndex} /> : null}
+                arrIdx={tableIndex}
+                reqDelUser={reqDelUser} /> : null}
         </div>
     );
 }

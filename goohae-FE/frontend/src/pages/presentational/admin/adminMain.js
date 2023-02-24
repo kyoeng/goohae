@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 
 import axios from 'axios';
 
-import UserData from "../instanceData/userData";
+import UserData from "../dummyData/userData";
 import './css/adminMain.css';
 
 export default function AdminMain() {
@@ -32,13 +32,44 @@ export default function AdminMain() {
     //         })
     // }, [])
 
-    const userData = UserData;
+    function reqDelUser() {
+        if (window.confirm('삭제하시겠습니까?')) {
+            axios.delete('/test', {
+                userSeq: "?",
+                id: "?",
+                name: "?"
+            })
+                .then((response) => {
+                    console.log(response.data)
+                })
+                .catch((err) => {
+                    console.log(err)
+                })
+        }
+    }
+
+    function reqAddProd(addData) {
+        axios.post('/test', addData)
+            .then((response) => {
+                console.log(response.data)
+            })
+            .catch((error) => {
+                console.log(error);
+
+            })
+    }
+
+    const outletProps = {
+        userData: UserData,
+        reqDelUser: reqDelUser,
+        reqAddProd: reqAddProd
+    };
 
     return (
         <div className="adminMain">
             <AdminSide />
 
-            <Outlet context={userData} />
+            <Outlet context={outletProps} />
         </div>
     );
 };

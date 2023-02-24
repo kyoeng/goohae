@@ -1,5 +1,5 @@
 import { useState } from 'react';
-export default function TableModal({ userData, modalTrigger, arrIdx, reqDelete }) {
+export default function TableModal({ userData, modalTrigger, arrIdx, reqDelUser }) {
     let totalData = userData;
     const [modalData, setModalData] = useState({ ...totalData[arrIdx] });
 
@@ -13,7 +13,7 @@ export default function TableModal({ userData, modalTrigger, arrIdx, reqDelete }
                 <div>{modalData.name}</div>
                 <button
                     id="reqUserDelete"
-                    onClick={reqDelete}>회원삭제</button>
+                    onClick={reqDelUser}>회원삭제</button>
             </div>
         </>
     );

@@ -8,6 +8,7 @@ export default function MainPage() {
             <Link to="/adminLogin"><button>adminlogin</button></Link>
             <Link to="/Login"><button>login</button></Link>
             <Link to="/SignUp"><button>signUp</button></Link>
+            <Link to="/ref"><button>ref</button></Link>
         </>
     );
 }

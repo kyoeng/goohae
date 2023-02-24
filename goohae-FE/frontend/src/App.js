@@ -10,6 +10,9 @@ import AdminStaff from './templetes/admin/adminStaff';
 import AdminEtc from './templetes/admin/adminEtc';
 import AdminLogin from './pages/adminLogin';
 
+//ref
+import RefPage from './instanceData/productRef';
+
 import './App.css';
 import Login from './common/login/login';
 import SignUp from './common/signUp/signUp';
@@ -23,7 +26,7 @@ function App() {
         {/* 메인페이지 */}
         <Route path='/' element={<MainPage />} />
         <Route path='login' element={<Login />} />
-        <Route path='signUP' element={<SignUp/> } />
+        <Route path='signUP' element={<SignUp />} />
 
         {/* admin 페이지 */}
         <Route path='adminmain/*' element={<AdminMain />} >
@@ -34,6 +37,9 @@ function App() {
         </Route>
 
         <Route path='/adminlogin' element={<AdminLogin />} />
+
+        {/* RefPage */}
+        <Route path='/ref' element={<RefPage />} />
 
 
 
