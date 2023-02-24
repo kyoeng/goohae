@@ -1,10 +1,8 @@
 import React, { useState } from "react"
 // import { Navigate } from "react-router-dom";
 import axios from 'axios';
-import './signUp.css';
-import logo from '../../stores/images/icon/logo.png';
-
-
+import '../../css/signup/signUp.css';
+import logo from "../../../stores/images/icon/logo.png";
 
 
 // const [usingServicePermitionContent, personalInfoPermitionContent] = infoForm.querySelectorAll('.emailGetRadio a'),
@@ -237,10 +235,11 @@ export default function SignUp() {
     const [signUpPassword, setSignUpPassword] = useState('')
     const [signUpPasswordConfirm, setSignUpPasswordConfirm] = useState()
     const [signUpName, setSignUpName] = useState("")
-    const [phone, setPhone] = React.useState("");
+    const [signUpPhone, setSignUpPhone] = React.useState("");
 
     //오류메시지 상태저장
-    const [signUpMassage, setSignUpMassage] = useState('')
+    const [signUpIdErrorMassage, setSignUpIdErrorMassage] = useState('')
+    const [signUpIdMassage, setSignUpIdMassage] = useState('')
     const [signUpEmailMassage, setSignUpEmailMassage] = useState('')
     const [signUpPwMassage, setSignUpPwMassage] = useState('')
     const [signUpPwConfirmMessage, setSignUpPwConfirmMessage] = useState('')
@@ -248,35 +247,98 @@ export default function SignUp() {
     const [signUpPhoneMassage, setSignUpPhoneMassage] = useState('')
 
     // 유효성 검사
-    const [isSignUpId, setIsSignUpId] = useState(false);
+    const [isSignUpId, setIsSignUpId] = useState(false); 
     const [isSignUpEmail, setIsSignUpEmail] = useState(false);
     const [isSignUpPassword, setIsSignUpPassword] = useState(false);
     const [isSignUpPasswordConfirm, setIsSignUpPasswordConfirm] = useState(false);
     const [isSignUpName, setIsSignUpName] = useState(false);
-    const [iSignUpsPhone, setIsSignUpPhone] = useState(false);
+    const [isSignUpsPhone, setIsSignUpPhone] = useState(false);
+
+    const signUpObject={
+        id: signUpId,
+        email: signUpEmail,
+        password: signUpPassword,
+        name: signUpName,
+        phone: signUpPhone
+
+    }
+    //axios
+    function signUp() {
+        if (signUpConformId && isSignUpEmail && isSignUpPassword
+            && isSignUpPasswordConfirm && isSignUpName && isSignUpsPhone) {
+            axios.post('/test', {signUpObject})
+                .then((result) => {
+                    console.log(result);
+                    console.log("singupDB!");
+                    window.alert('회원가입이 되었습니다! 로그인 해주세요.');
+                    // history.replace('/login');
+                })
+                .catch((error) => {
+                    window.alert('회원가입이 정상적으로 되지 않았습니다.');
+                    console.log(error);
+                })
+        };
+    }
 
 
+    //아이디 유효성 검사 
     const onChangeSignUpId = (e) => {
+        // setSignUpId(e.target.value.replace( /[^a-z,^0-9]+/g, ""));
+        // console.log('value'+e.target.value);
+        // console.log( 'signUpId'+signUpId);
+        // if (setSignUpId.length > 0) {
+        //     setSignUpIdErrorMassage("아이디 중복확인을 해주세요");
+        //     setIsSignUpId(true);
+        // } else {
+        //     setSignUpIdErrorMassage("아이디는 5~19자 영어 소문자, 숫자를 사용하세요.");
+        //     setIsSignUpId(false);
+        // }
         const currentId = e.target.value;
         setSignUpId(currentId);
-        console.log(setSignUpId);
-        const idRegExp = /^[a-zA-z0-9]{5,19}$/;
-
+        const idRegExp = /^[a-z0-9]{5,19}$/;
         if (!idRegExp.test(currentId)) {
-            setSignUpMassage("5-19사이 대소문자 또는 숫자만 입력해 주세요!");
+            setSignUpIdErrorMassage("아이디는 5~19자 영어 소문자, 숫자를 사용하세요.");
             setIsSignUpId(false);
         } else {
-            setSignUpMassage("사용가능한 아이디 입니다.");
+            setSignUpIdErrorMassage("아이디 중복확인을 해주세요");
             setIsSignUpId(true);
         }
     };
 
+    //아이디 중복확인 
+    const [signUpConformId, setSignUpConformId] = useState("");
+    const signUpIdDuplicateConform = () => {
+        if (isSignUpId) {
+            axios
+                .get(`/user/id?id=${setSignUpId}`,
+                    {id:signUpId} )
+                .then((response) => {
+                    if (response ===false) {
+                        setSignUpIdErrorMassage("사용 가능한 아이디입니다.");
+                        setSignUpConformId(true);
+                    } else {
+                        setSignUpIdErrorMassage("이미 사용중인 아이디입니다.");
+                        setSignUpConformId(false);
+                        console.log(response.status)
+                    }
+                    console.log('중복체크');
+                })
+                .catch((error)=> {
+
+                    console.log("에러 발생 : ", error);
+            
+                    });
+            
+                    console.log("바로 실행 로그");
+        }
+    }
+
+    //이메일 유효성 검사
     const onChangeSignUpEmail = (e) => {
         const currentEmail = e.target.value;
         setSignUpEmail(currentEmail);
         const emailRegExp =
             /^[A-Za-z0-9_]+[A-Za-z0-9]*[@]{1}[A-Za-z0-9]+[A-Za-z0-9]*[.]{1}[A-Za-z]{1,3}$/;
-
         if (!emailRegExp.test(currentEmail)) {
             setSignUpEmailMassage("이메일의 형식이 올바르지 않습니다!");
             setIsSignUpEmail(false);
@@ -286,6 +348,7 @@ export default function SignUp() {
         }
     };
 
+    // 비밀번호 유효검사
     const onChangeSignUpPassword = (e) => {
         const currentPassword = e.target.value;
         setSignUpPassword(currentPassword);
@@ -301,6 +364,8 @@ export default function SignUp() {
             setIsSignUpPassword(true);
         }
     };
+
+    //비밀번호 확인 유효성 검사
     const onChangeSignUpPasswordConfirm = (e) => {
         const currentPasswordConfirm = e.target.value;
         setSignUpPasswordConfirm(currentPasswordConfirm);
@@ -312,39 +377,48 @@ export default function SignUp() {
             setIsSignUpPasswordConfirm(true);
         }
     };
-
+    //이름 유효성검시
     const onChangeSignUpName = (e) => {
         const currentName = e.target.value;
         setSignUpName(currentName);
-
         if (currentName.length < 2 || currentName.length > 5) {
-            setSignUpNameMassage("닉네임은 2글자 이상 5글자 이하로 입력해주세요!");
+            setSignUpNameMassage("이음을 입력해주세요");
             setIsSignUpName(false);
         } else {
-            setSignUpNameMassage("사용가능한 닉네임 입니다.");
+            setSignUpNameMassage("올바르게 입력했습니다 ");
             setIsSignUpName(true);
         }
     };
+    //휴대폰 유효성검사 
+    const onChangeSignUpPhone = (e) => {
+        const currentPhone = e.target.value
+        setSignUpPhone(currentPhone);
+        const phoneRegExp = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
 
-    
-    // const onChangeSignUpPhone = (getNumber) => {
-    //     const currentPhone = getNumber;
-    //     setPhone(currentPhone);
-    //     const phoneRegExp = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
+        if (!phoneRegExp.test(currentPhone)) {
+            setSignUpPhoneMassage("올바른 형식이 아닙니다!");
+            setIsSignUpPhone(false);
+        } else {
 
-    //     if (!phoneRegExp.test(currentPhone)) {
-    //         setPhoneMessage("올바른 형식이 아닙니다!");
-    //         setIsPhone(false);
-    //     } else {
-    //         setPhoneMessage("사용 가능한 번호입니다:-)");
-    //         setIsPhone(true);
-    //     }
-    // };
 
+            setSignUpPhoneMassage("사용 가능한 번호입니다:-)");
+            setIsSignUpPhone(true);
+        }
+    };
+
+    //서비스 약관 동의 
+    // const [isSignUpAcceptedSvc, setIsSignUpAcceptedSvc] = useState(false);
+
+    // const handleCheckServiceAccept = useCallback(() => {
+    //     setIsAccpted(true);
+    // }, []);
+    //버튼 활성화
+    const activeSinupbtn = isSignUpId && isSignUpEmail && isSignUpPassword
+        && isSignUpPasswordConfirm && isSignUpName && isSignUpsPhone
+    // &&?&&?
 
     return (
-
-        <main>
+        <div className="signUpContainer">
             <section id="MemberInfoWrap">
                 <div className="logoImage">
                     <a href="http://192.168.0.86:3000"><img src={logo} alt="img" /></a>
@@ -353,8 +427,10 @@ export default function SignUp() {
                     <form className="InfoForm" action="server.html" name="memberJoin">
                         <div className="idInputWrap">
                             <p>아이디</p>
-                            <input type="text" name="id" className="signUpId" value={signUpId} placeholder="영문 대소문자와 숫자 5-19자 조합" onChange={onChangeSignUpId}/>
-                            <p className="signUpIdMassage"></p>
+                            <input type="text" name="id" className="signUpId" minLength={5} maxLength={16} value={signUpId} placeholder="영문 대소문자와 숫자 5-19자 조합" onChange={onChangeSignUpId} />
+                            <p className="signUpErrorMassage">{signUpIdErrorMassage}</p>
+                            <p className="signUpErrorMassage">{signUpIdMassage}</p>
+                            <button className="signUpIdDuplicateConform signUpBtn" onChange={signUpIdDuplicateConform} disabled={!isSignUpId}>아이디 중복확인</button>
                         </div>
                         <div className="emailInputWrap">
                             <p>이메일</p>
@@ -369,38 +445,32 @@ export default function SignUp() {
                                     <option value="nate.com">nate.com</option>
                                 </select>
                             </div>
-                            <p className="signUpEmailMassage"></p>
-                            <button className="emailCertification" disabled>이메일 인증하기</button>
+                            <p className="signUpErrorMassage">{signUpEmailMassage}</p>
+                            <button className="emailCertification signUpBtn" disabled={!isSignUpEmail}>이메일 인증하기</button>
                         </div>
                         <div className="pwInputWrap">
                             <p>비밀번호</p>
                             <input className="pwInput" type="password" name="psw" value={signUpPassword}
-                            // minLength={8} maxLength={16} 
-                            placeholder=" 8 ~ 16자 영문, 숫자, 특수문자를 최소 한가지씩 조합" onChange={onChangeSignUpPassword} />
-                            <p className="signUpPwMassage"></p>
+                                // minLength={8} maxLength={16} 
+                                placeholder=" 8 ~ 16자 영문, 숫자, 특수문자를 최소 한가지씩 조합" onChange={onChangeSignUpPassword} />
+                            <p className="signUpErrorMassage">{signUpPwMassage}</p>
                         </div>
                         <div className="pwConfirmInputWrap">
                             <p>비밀번호 확인</p>
                             <input className="pwConfirmInput" type="password" name="psw" minLength={8} maxLength={16} value={signUpPasswordConfirm} onChange={onChangeSignUpPasswordConfirm} />
-                            <p className="signUpPwMassage2"></p>
+                            <p className="signUpErrorMassage">{signUpPwConfirmMessage}</p>
                         </div>
                         <div className="nameInputWrap">
                             <p>이름</p>
                             <input className="signUpName" type="text" name="Name" value={signUpName} onChange={onChangeSignUpName}
                             // onChange={sinUpChangeName} 
                             />
-                            <p className="signUpNameMassage"></p>
+                            <p className="signUpErrorMassage">{signUpNameMassage}</p>
                         </div>
                         <div className="tellInputWrap">
                             <p>휴대전화</p>
-                            <div className="tellInputWrap">
-                                <input className="firstPhoneNum" type="text" name="firstPhoneNum" /*defaultValue={010}*/ disabled />
-                                <span>-</span>
-                                <input className="midPhoneNum" type="text" maxLength={4} onkeyup="this.value=this.value.replace(/[^0-9]/g,'');" name="midPhoneNum" />
-                                <span>-</span>
-                                <input className="lastPhoneNum" type="text" maxLength={4} onkeyup="this.value=this.value.replace(/[^0-9]/g,'');" name="lastPhoneNum" />
-                            </div>
-                            <p className="signUpPhoneMassage"></p>
+                            <input className="signUpPhone" type="text" name="signUpPhone" value={signUpPhone} placeholder="'-'없이 입력해주세요" onChange={onChangeSignUpPhone} />
+                            <p className="signUpErrorMassage">{signUpPhoneMassage}</p>
                         </div>
                         <div className="emailGetRadio">
                             <div>
@@ -409,7 +479,7 @@ export default function SignUp() {
                                     <label htmlFor="emailGet"><span className="radioImg">라디오버튼</span></label>
                                     <label htmlFor="emailGet">서비스 이용약관 동의</label>
                                 </div>
-                                <a href>자세히 보기</a>
+                                <a href="#">자세히 보기</a>
                                 <div className="usingServisePermition">
                                     <p>서비스 이용약관 동의</p>
                                     <div className="usingServicePermitionContent">
@@ -552,7 +622,7 @@ export default function SignUp() {
                                     <label htmlFor="emailNoGet"><span className="radioImg">라디오버튼</span></label>
                                     <label htmlFor="emailNoGet">개인정보 처리 및 약관 동의</label>
                                 </div>
-                                <a href>자세히 보기</a>
+                                <a href="#">자세히 보기</a>
                                 <div className="personalInfoPermition">
                                     <p>개인정보 처리 및 약관 동의</p>
                                     <div className="personalInfoPermitionContent">
@@ -688,11 +758,12 @@ export default function SignUp() {
                                     </div>
                                     <button>닫기</button>
                                 </div>
+                            {/* <p className="signUpErrorMassage">{signUpMeCheckMessage}</p> */}
                             </div>
                         </div>
                         <div className="ButtonWrap">
-                            <button className="signUpSubmitBtn" type="submit"
-                            // disabled={disabled}
+                            <button className="signUpSubmitBtn signUpBtn" type="submit" onChange={signUp} 
+                                disabled={!activeSinupbtn}
                             >
                                 <a href="../myPage/myPage.html">회원가입 완료</a>
                             </button>
@@ -700,7 +771,7 @@ export default function SignUp() {
                     </form>
                 </article>
             </section>
-        </main>
+        </div>
     );
 }
 

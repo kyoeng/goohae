@@ -57,7 +57,7 @@ main > * {
     width: 200px;
     margin: 0px 60px 34px;
     text-indent: -9999em;
-    background: url(../../stores/images/icon/logo.png) center/cover;
+    background: url(../../../stores/images/icon/logo.png) center/cover;
 }
 
 .loginHead>ul {
