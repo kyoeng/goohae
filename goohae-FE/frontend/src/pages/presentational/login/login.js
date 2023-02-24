@@ -1,9 +1,9 @@
 import React, { useState } from "react"
 import { Navigate } from "react-router-dom";
 import axios from "axios";
-import "./login.css"
+import "../../css/login/login.css"
 import { Link } from "react-router-dom";
-import UserData from "../../instanceData/userData";
+import UserData from "../../../dummyData/userData";
 
 
 
