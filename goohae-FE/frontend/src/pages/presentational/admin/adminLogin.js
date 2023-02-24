@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 
 import axios from 'axios';
 
-import '../../CSS/admin/AdminLogin.css';
 
 export default function AdminLogin() {
     const [adminId, setAdminId] = useState()
