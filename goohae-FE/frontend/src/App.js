@@ -15,6 +15,12 @@ import Login from './pages/presentational/login/login';
 import SignUp from './pages/presentational/signUp/signUp';
 
 import './App.css';
+import MyPage from './pages/presentational/myPage/myPage/myPage';
+import WishList from './pages/presentational/myPage/wishList/wishList';
+import MyAddress from './pages/presentational/myPage/myAddress/myAddress';
+import AddAddress from './pages/presentational/myPage/myAddress/addAddress';
+import MemberInfo from './pages/presentational/myPage/memberInfo/memberInfo';
+import MyOrder from './pages/presentational/myPage/myOrder/myOrder';
 
 function App() {
 
@@ -36,6 +42,13 @@ function App() {
         </Route>
 
         <Route path='/adminlogin' element={<AdminLogin />} />
+        마이페이지
+        <Route path='/myPage' element={<MyPage/>}/>
+        <Route path='/wishList' element={<WishList/>}/>
+        <Route path='/myAddress' element={<MyAddress/>}/>
+        <Route path='/addAddress' element={<AddAddress/>}/>
+        <Route path='/memberInfo' element={<MemberInfo/>}/>
+        <Route path='/myOrder' element={<MyOrder/>}/>
 
       </Routes>
     </Router>

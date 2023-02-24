@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 import axios from "axios";
 import "../../css/login/login.css"
 import { Link } from "react-router-dom";
-import UserData from "../../../dummyData/userData";
+import loginUser from "../../../dummyData/userData";
 
 
 export default function Login() {
