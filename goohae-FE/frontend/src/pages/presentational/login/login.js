@@ -6,45 +6,46 @@ import { Link } from "react-router-dom";
 import UserData from "../../../dummyData/userData";
 
 
-
 export default function Login() {
     const [loginId, setLoginId] = useState()
     const [loginPw, setLoginPw] = useState();
     const [loginMessage, setLoginMessage] = useState('');
-    const loginData = { UserData }
+    const loginData = { loginUser }
     console.log(loginData);
     function changeLoginId(e) { setLoginId(e.target.value) };
     function changeLoginPw(e) { setLoginPw(e.target.value) };
-    if (loginId !== '' && loginPw !== '') {
-        axios.post('/test', {
-            id: loginId,
-            password: loginPw,
-        })
-            .then((response) => {
-                const { aceessToken } = response.data;
-                if (!aceessToken) {
+
+    function login() {
+        if (loginId !== '' && loginPw !== '') {
+            axios.post('/test', {
+                id: loginId,
+                password: loginPw,
+            })
+                .then((response) => {
+                    const { aceessToken } = response.data;
+                    if (!aceessToken) {
+                        setLoginMessage('로그인실패');
+                        setLoginId();
+                        setLoginPw();
+                    } else {
+                        if (response.status === 200) {
+                            axios.defaults.headers.common[
+                                "Authorization"
+                            ] = `Bearer ${aceessToken}`;
+                            return <Navigate to="/adminmain" replace={true} />
+                        } else {
+                            return;
+                        }
+                    }
+                })
+                .catch((err) => {
+                    console.log(err);
                     setLoginMessage('로그인실패');
                     setLoginId();
                     setLoginPw();
-                } else {
-                    if (response.status === 200) {
-                        axios.defaults.headers.common[
-                            "Authorization"
-                        ] = `Bearer ${aceessToken}`;
-                        return <Navigate to="/adminmain" replace={true} />
-                    } else {
-                        return;
-                    }
-                }
-            })
-            .catch((err) => {
-                console.log(err);
-                setLoginMessage('로그인실패');
-                setLoginId();
-                setLoginPw();
-            })
+                })
+        }
     }
-
 
 
 
@@ -99,9 +100,9 @@ export default function Login() {
                             <button
                                 type="submit"
                                 className={'loginButton  ${active ? "loginButtonActive" : "loginButtonUnActive"}'}
-                            // disabled={adminValue === '' || loginPwValue === '' ? true : false}
-                            // disabled={loading}
-                            // onClick={loginValueChecked}
+                                // disabled={adminValue === '' || loginPwValue === '' ? true : false}
+                                // disabled={loading}
+                                onClick={login}
                             >로그인</button>
                             <ul className="foot">
                                 <li><a href="../signUp/pj_signup.html">회원가입</a></li>
