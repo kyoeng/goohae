@@ -40,15 +40,15 @@ function App() {
           <Route path='staff' element={<AdminStaff />} />
           <Route path='etc' element={<AdminEtc />} />
         </Route>
-
         <Route path='/adminlogin' element={<AdminLogin />} />
-        마이페이지
-        <Route path='/myPage' element={<MyPage/>}/>
-        <Route path='/wishList' element={<WishList/>}/>
-        <Route path='/myAddress' element={<MyAddress/>}/>
-        <Route path='/addAddress' element={<AddAddress/>}/>
-        <Route path='/memberInfo' element={<MemberInfo/>}/>
-        <Route path='/myOrder' element={<MyOrder/>}/>
+
+        {/* 마이페이지 */}
+        <Route path='/myPage' element={<MyPage />} />
+        <Route path='/wishList' element={<WishList />} />
+        <Route path='/myAddress' element={<MyAddress />} />
+        <Route path='/addAddress' element={<AddAddress />} />
+        <Route path='/memberInfo' element={<MemberInfo />} />
+        <Route path='/myOrder' element={<MyOrder />} />
 
       </Routes>
     </Router>

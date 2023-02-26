@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 
 import axios from 'axios';
 
+import '../../css/admin/adminLogin.css';
+
 
 export default function AdminLogin() {
     const [adminId, setAdminId] = useState()
@@ -50,6 +52,7 @@ export default function AdminLogin() {
             <div className="adminLoginContainer">
                 <div className='adminLogo'></div>
 
+                <h2>관리자 로그인</h2>
                 <div className="adminInputContainer" >
                     <input
                         type="text"
