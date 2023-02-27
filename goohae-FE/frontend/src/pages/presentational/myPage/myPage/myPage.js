@@ -83,48 +83,37 @@ export default function MyPage() {
                         <Link to="/myOrder">
                             <span className="myPageMenuTitle">주문 내역</span>
                         </Link>
-                        <a href="./myOrder/myOrder.html">
-                            <Link to="/myOrder">
-                                <p className="myPageMenuContent">
-                                    고객님께서 주문하신 상품의 주문내역을 확인하실 수 있습니다.
-                                </p>
-                            </Link>
-                        </a>
+                        <p className="myPageMenuContent">
+                            고객님께서 주문하신 상품의 주문내역을 확인하실 수 있습니다.
+                        </p>
                         <Link to="/myOrder" className="myPageOrderMenuMore">더보기&gt;</Link>
                     </div>
                     <div className="myPageMenu">
                         <Link to="/memberInfo">
                             <span className="myPageMenuTitle">내정보</span>
                         </Link>
-                        <Link to="/memberInfo">
-                            <p className="myPageMenuContent">
-                                회원이신 고객님의 개인정보를 관리하는 공간입니다.
-                            </p>
-                            <br />
-                        </Link>
+                        <p className="myPageMenuContent">
+                            회원이신 고객님의 개인정보를 관리하는 공간입니다.
+                        </p>
                         <Link to="/memberInfo" className="myPageOrderMenuMore"> 더보기&gt;</Link>
                     </div>
                     <div className="myPageMenu">
-                        <a href="../shoppingcart/shoppingCart.html">
-                            <span className="myPageMenuTitle">장바구니</span>
-                        </a>
-                        <a href="../shoppingcart/shoppingCart.html">
+                            <Link to="/shoppingCart"className="myPageMenuTitle">장바구니</Link>
+                            <Link to="/shoppingCart">
                             <p className="myPageMenuContent">
                                 회원님의 장바구니를 관리하는 곳입니다.
                             </p>
                             <p className="myPageMenuContent">
                                 한번에 구매를 하실 수 있고, 삭제하실 수 있습니다.
                             </p>
-                        </a>
-                        <a href="../shoppingcart/shoppingCart.html"><span className="myPageOrderMenuMore">더보기</span> &gt;</a>
+                        </Link>
+                        <Link to="/shoppingCart"><span className="myPageOrderMenuMore">더보기</span> &gt;</Link>
                     </div>
                     <div className="myPageMenu">
                         <Link to="/wishList" className="myPageMenuTitle" >위시리스트</Link>
-                        <Link to="/wishList" >
-                            <p className="myPageMenuContent">
-                                관심상품으로 등록하신 상품의 목록을 보여드립니다.
-                            </p>
-                        </Link>
+                        <p className="myPageMenuContent">
+                            관심상품으로 등록하신 상품의 목록을 보여드립니다.
+                        </p>
                         <Link to="/wishList" className="myPageOrderMenuMore">더보기 &gt;</Link>
                     </div>
                     {/* <div>
@@ -138,32 +127,26 @@ export default function MyPage() {
               </a></p>
           </div> */}
                     <div className="myPageMenu">
-                        <a href="./myCoupon/myCoupon.html">
-                            <span className="myPageMenuTitle">쿠폰</span>
-                        </a>
+                        <Link to='/myCoupon'>쿠폰</Link>
                         <p className="myPageMenuContent">
                             보유하고 계신 쿠폰내역을 보여드립니다
                         </p>
-                        <a href="./myCoupon/myCoupon.html"><span className="myPageOrderMenuMore">더보기</span> &gt;</a>
+                        <Link to='/myCoupon' className="myPageOrderMenuMore">더보기 &gt;</Link>
                     </div>
                     <div className="myPageMenu">
-                        <a href="./myPost/myPost.html">
-                            <span className="myPageMenuTitle">내 리뷰</span>
-                        </a>
+                        <Link to="/myPost">내 리뷰</Link>
                         <p className="myPageMenuContent">
                             고객님께서 작성하신 게시물을 관리하는 공간입니다.
                         </p>
-                        <a href="./myPost/myPost.html"><span className="myPageOrderMenuMore">더보기</span> &gt;</a>
+                        <Link to="/myPost" className="myPageOrderMenuMore">더보기 &gt;</Link>
                     </div>
                     <div className="myPageMenu">
                         <Link to="/myAddress">
                             <span className="myPageMenuTitle">내 주소록</span>
                         </Link>
-                        <Link to="/myAddress">
-                            <p className="myPageMenuContent">
-                                배송지를 등록하고 관리하실 수 있습니다.
-                            </p>
-                        </Link>
+                        <p className="myPageMenuContent">
+                            배송지를 등록하고 관리하실 수 있습니다.
+                        </p>
                         <Link to="/myAddress" className="myPageOrderMenuMore">더보기 &gt;</Link>
                     </div>
                 </div>

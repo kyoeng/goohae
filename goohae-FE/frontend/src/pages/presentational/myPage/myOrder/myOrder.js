@@ -1,7 +1,7 @@
-import '../../../css/myPage/myOrder/myOrder.css';
 import { Link } from 'react-router-dom';
+import '../../../css/myPage/myOrder/myOrder.css';
 
-export default function myOrder(){
+export default function MyOrder(){
 
 
     //   const myOrderWrap = document.querySelector(".MyOrderWrap"),

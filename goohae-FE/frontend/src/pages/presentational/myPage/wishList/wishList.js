@@ -1,6 +1,6 @@
 import React from 'react';
-import '../../../css/myPage/wishList/wishList.css';
 import { Link } from 'react-router-dom';
+import '../../../css/myPage/wishList/wishList.css';
 
 export default function wishList() {
     // let wishChkAll = document.getElementsByName('wishChkAll'),
