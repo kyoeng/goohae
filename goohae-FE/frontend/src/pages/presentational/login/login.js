@@ -5,17 +5,22 @@ import "../../css/login/login.css"
 import { Link } from "react-router-dom";
 import loginUser from "../../../dummyData/userData";
 
+import InputBox  from '../../../common/singlePage/inputBox';
+import SingleButton  from '../../../common/singlePage/singleButton';
 
 export default function Login() {
     const [loginId, setLoginId] = useState()
     const [loginPw, setLoginPw] = useState();
     const [loginMessage, setLoginMessage] = useState('');
     const loginData = { loginUser }
-    console.log(loginData);
     function changeLoginId(e) { setLoginId(e.target.value) };
     function changeLoginPw(e) { setLoginPw(e.target.value) };
 
+
     function login() {
+        console.log(loginId);
+        console.log(loginPw);
+        
         if (loginId !== '' && loginPw !== '') {
             axios.post('/test', {
                 id: loginId,
@@ -45,6 +50,8 @@ export default function Login() {
                     setLoginPw();
                 })
         }
+        
+
     }
 
 
@@ -68,9 +75,10 @@ export default function Login() {
                         </ul>
                     </div>
                     <div className="loginBody">
-                        <div className='loginIdPwForm'>
-                            <div className="loginBodyInput">
-                                <input
+                        <div className='loginIdPwForm'
+                        >
+                            <div className="loginInputContainer">
+                                <InputBox
                                     type="text"
                                     id="loginId"
                                     // name="id"
@@ -80,8 +88,7 @@ export default function Login() {
                                     value={loginId}
                                     // onKeyUp={ActiveIsPassedLogin}
                                     onChange={changeLoginId} />
-
-                                <input
+                                <InputBox
                                     type="password"
                                     id="loginPw"
                                     name="password" autoFocus
@@ -89,36 +96,24 @@ export default function Login() {
                                     placeholder="비밀번호"
                                     value={loginPw}
                                     // onKeyUp={ActiveIsPassedLogin}
-                                    onChange={changeLoginPw} />
+                                    onChange={changeLoginPw}
+                                />
                             </div>
-
                             <div className="idCheck">
                                 <input type="idCheckbox" className="idCheckInput" name="loginCheck" />
                                 <p>아이디저장</p>
                             </div>
-
                             <p className="loginError">{loginMessage}</p>
-                            <button
+                            <SingleButton
                                 type="submit"
                                 className={'loginButton  ${active ? "loginButtonActive" : "loginButtonUnActive"}'}
                                 // disabled={adminValue === '' || loginPwValue === '' ? true : false}
                                 // disabled={loading}
-                                onClick={login} >
-                                로그인
-                            </button>
-
+                                onClick={login}
+                            >로그인</SingleButton>
                             <ul className="foot">
-                                <li>
-                                    <a href="../signUp/pj_signup.html">회원가입</a>
-                                </li>
-
-                                <li>
-                                    <Link to="/findId">아이디 찾기</Link>
-                                </li>
-
-                                <li>
-                                    <Link to="/findPw">비밀번호 찾기</Link>
-                                </li>
+                                <li><Link to="/signUp" >회원가입</Link></li>
+                                <li><Link to="/findId">아이디 비밀번호 찾기</Link></li>
                             </ul>
                         </div>
                     </div>

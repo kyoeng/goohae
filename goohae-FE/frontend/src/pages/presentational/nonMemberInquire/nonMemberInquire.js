@@ -24,7 +24,7 @@ export default function nonMemberInquire() {
                         </ul>
                     </div>
                     <div className="nonMemBody">
-                        <form action method="post" className="nonMemberForm">
+                        <div className="nonMemberForm">
                             <label htmlFor="nonMem_id" className="nonMemberLabel">이름</label>
                             <input type="text" id="nonMemberName" name="nonMemberName" required placeholder="국문으로 입력해 주세요" onkeyup="this.value=this.value.replace(/[^-ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g,'');" />
                             <p className="nonMemberWarning hidden">이름을 입력해주세요</p>
@@ -43,7 +43,7 @@ export default function nonMemberInquire() {
                             <button className="nonMemberBtn" onclick="location.href='../myPage/myOrder/myOrder.html';" disabled>
                                 주문조회하기
                             </button>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>

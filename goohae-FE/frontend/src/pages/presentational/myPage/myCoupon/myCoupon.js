@@ -9,7 +9,7 @@ export default function myCoupon() {
             <div className="myCouponListCategory">
                 <Link to="/" className="myPageLink">홈&nbsp;&nbsp;&gt;</Link>
                 <Link to="/MyPage" className="myPageLink">&nbsp;&nbsp;마이쇼핑&nbsp;&nbsp;&gt;</Link>
-                <Link to="/MyPost" className="myPageLink" id="myOrderLink">&nbsp;&nbsp;쿠폰내역&nbsp;&nbsp;</Link>
+                <Link to="/MyCoupon" className="myPageLink" id="myPageSubLink">&nbsp;&nbsp;쿠폰내역&nbsp;&nbsp;</Link>
             </div>
             <div id="MyCouponListWrap">
                 <p className="myCouponListTitle">쿠폰</p>

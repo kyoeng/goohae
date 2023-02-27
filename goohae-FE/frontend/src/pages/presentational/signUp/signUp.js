@@ -765,7 +765,7 @@ export default function SignUp() {
                             <button className="signUpSubmitBtn signUpBtn" type="submit" onChange={signUp} 
                                 disabled={!activeSinupbtn}
                             >
-                                <a href="../myPage/myPage.html">회원가입 완료</a>
+                                회원가입 하기
                             </button>
                         </div>
                     </form>

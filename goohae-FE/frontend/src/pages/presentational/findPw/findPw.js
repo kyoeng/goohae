@@ -40,10 +40,10 @@ export default function FindPw() {
                             {/* <input type="email" name="fdEmail" id="fdEmail" required placeholder="이메일"> */}
                             <span className="hidden">휴대전화를 <span className="nonDisplay">정확하게</span> 입력해주세요</span>
                             <label htmlFor="findPw_email" className="findPwLabel">이메일</label>
-                            <div className="findPwPhoneEmail">
-                                <input type="email" className="findPwEmail findPwInput" name="fpFw" minLength={5} autofocus required />
+                            <div className="findPwEmail">
+                                <input type="email" className="findPwInput" id="findPwEmail" name="fpFw" minLength={5} autofocus required />
                                 @
-                                <select className="findPwInput findPwEmailSel">
+                                <select className="findPwEmailSel">
                                     <option value="gmail.com">gmail.com</option>
                                     <option value="naver.com">naver.com</option>
                                     <option value="daum.net">daum.net</option>

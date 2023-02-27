@@ -64,6 +64,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/findId' element={<FindId />} />
           <Route path='/findPw' element={<FindPw />} />
+          <Route path='/nonMemberInquire' element={<NonMemberInquire />} />
 
 
 
