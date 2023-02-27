@@ -6,11 +6,7 @@ import { Outlet } from "react-router-dom";
 import axios from 'axios';
 
 import UserData from "../../../dummyData/userData";
-<<<<<<< HEAD
-import '../../CSS/admin/adminMain.css';
-=======
 import '../../css/admin/adminMain.css';
->>>>>>> fd2be2f82c51b9f48e795921da4ddb7f5e32b41f
 
 export default function AdminMain() {
     // useEffect(() => {

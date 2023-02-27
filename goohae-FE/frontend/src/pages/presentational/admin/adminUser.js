@@ -1,7 +1,7 @@
 import UserData from '../../container/admin/adminUser';
 import MemberList from '../../../components/presentational/admin/memberList';
 
-import '../../CSS/admin/adminUser.css';
+import '../../css/admin/adminUser.css';
 
 export default function AdminUser() {
 
