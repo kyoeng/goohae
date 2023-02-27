@@ -1,0 +1,44 @@
+
+
+[
+    {
+        "img" : "./images/main/bed.png",
+        "product_name":"빈티지 월넛 일체형 침대",
+        "user_id":"dbdb1114",
+        "title":"제목",
+        "point":"★★★★★",
+        "content":"리뷰 내용 좋아여"
+    },
+    {
+        "img" : "./images/main/sofa.jpg",
+        "product_name":"패브릭 다크 그레이 소파",
+        "user_id":"dbdb1114",
+        "title":"제목",
+        "point":"★★★★★",
+        "content":"리뷰 내용 좋아여"
+    },
+    {
+        "img" : "./images/main/bed.png",
+        "product_name":"빈티지 월넛 일체형 침대",
+        "user_id":"dbdb1114",
+        "title":"제목",
+        "point":"★★★★★",
+        "content":"리뷰 내용 좋아여"
+    },
+    {
+        "img" : "./images/main/sofa.jpg",
+        "product_name":"패브릭 다크 그레이 소파",
+        "user_id":"dbdb1114",
+        "title":"제목",
+        "point":"★★★★★",
+        "content":"리뷰 내용 좋아여"
+    },
+    {
+        "img" : "./images/main/bed.png",
+        "product_name":"빈티지 월넛 일체형 침대",
+        "user_id":"dbdb1114",
+        "title":"제목",
+        "point":"★★★★★",
+        "content":"리뷰 내용 좋아여"
+    }
+]

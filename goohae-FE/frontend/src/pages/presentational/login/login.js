@@ -68,8 +68,7 @@ export default function Login() {
                         </ul>
                     </div>
                     <div className="loginBody">
-                        <div className='loginIdPwForm'
-                        >
+                        <div className='loginIdPwForm'>
                             <div className="loginBodyInput">
                                 <input
                                     type="text"
@@ -81,6 +80,7 @@ export default function Login() {
                                     value={loginId}
                                     // onKeyUp={ActiveIsPassedLogin}
                                     onChange={changeLoginId} />
+
                                 <input
                                     type="password"
                                     id="loginPw"
@@ -89,24 +89,36 @@ export default function Login() {
                                     placeholder="비밀번호"
                                     value={loginPw}
                                     // onKeyUp={ActiveIsPassedLogin}
-                                    onChange={changeLoginPw}
-                                />
+                                    onChange={changeLoginPw} />
                             </div>
+
                             <div className="idCheck">
                                 <input type="idCheckbox" className="idCheckInput" name="loginCheck" />
                                 <p>아이디저장</p>
                             </div>
+
                             <p className="loginError">{loginMessage}</p>
                             <button
                                 type="submit"
                                 className={'loginButton  ${active ? "loginButtonActive" : "loginButtonUnActive"}'}
                                 // disabled={adminValue === '' || loginPwValue === '' ? true : false}
                                 // disabled={loading}
-                                onClick={login}
-                            >로그인</button>
+                                onClick={login} >
+                                로그인
+                            </button>
+
                             <ul className="foot">
-                                <li><a href="../signUp/pj_signup.html">회원가입</a></li>
-                                <li><a href="../findId/findId.html">아이디 비밀번호 찾기</a></li>
+                                <li>
+                                    <a href="../signUp/pj_signup.html">회원가입</a>
+                                </li>
+
+                                <li>
+                                    <Link to="/findId">아이디 찾기</Link>
+                                </li>
+
+                                <li>
+                                    <Link to="/findPw">비밀번호 찾기</Link>
+                                </li>
                             </ul>
                         </div>
                     </div>
