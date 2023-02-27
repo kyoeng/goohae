@@ -5,8 +5,8 @@ import "../../css/login/login.css"
 import { Link } from "react-router-dom";
 import loginUser from "../../../dummyData/userData";
 
-import InputBox  from '../../../common/singlePage/inputBox';
-import SingleButton  from '../../../common/singlePage/singleButton';
+import InputBox from '../../../common/singlePage/inputBox';
+import SingleButton from '../../../common/singlePage/singleButton';
 
 export default function Login() {
     const [loginId, setLoginId] = useState()
@@ -20,7 +20,7 @@ export default function Login() {
     function login() {
         console.log(loginId);
         console.log(loginPw);
-        
+
         if (loginId !== '' && loginPw !== '') {
             axios.post('/test', {
                 id: loginId,
@@ -37,7 +37,7 @@ export default function Login() {
                             axios.defaults.headers.common[
                                 "Authorization"
                             ] = `Bearer ${aceessToken}`;
-                            return <Navigate to="/adminmain" replace={true} />
+                            return <Navigate to="/" replace={true} />
                         } else {
                             return;
                         }
@@ -50,8 +50,6 @@ export default function Login() {
                     setLoginPw();
                 })
         }
-        
-
     }
 
 
@@ -103,7 +101,9 @@ export default function Login() {
                                 <input type="idCheckbox" className="idCheckInput" name="loginCheck" />
                                 <p>아이디저장</p>
                             </div>
-                            <p className="loginError">{loginMessage}</p>
+                            <div className="loginErrorBox">
+                                <p className="loginError">{loginMessage}</p>
+                            </div>
                             <SingleButton
                                 type="submit"
                                 className={'loginButton  ${active ? "loginButtonActive" : "loginButtonUnActive"}'}

@@ -99,6 +99,7 @@ input {
 }
 
 .nonMemberForm >.nonMemberLabel{   
+    display: block;
     padding:10px 0 7px;
     outline-style: none;
     font-weight: 700;

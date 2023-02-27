@@ -4,7 +4,10 @@ import "../../css/nonMemberInquire/nonMemberInquire.css"
 
 export default function nonMemberInquire() {
     
+    function nonMember(){
+        
     
+    }
     
     return (
         <div className="nonMemberMain">
@@ -30,7 +33,7 @@ export default function nonMemberInquire() {
                             <p className="nonMemberWarning hidden">이름을 입력해주세요</p>
                             <label htmlFor="nonMem_phone" className="nonMemberLabel">휴대전화</label>
                             <div className="nonMemberPhoneBox">
-                                <input type="text" name="mobile1" className="nonMemberPhone" required readOnly  />
+                                <input type="text" name="mobile1" className="nonMemberPhone" required   />
                                 -
                                 <input type="text" name="mobile2" className="nonMemberPhone" minLength={4} maxLength={4} required onkeyup="this.value=this.value.replace(/[^-0-9]/g,'');" />
                                 -
@@ -40,7 +43,7 @@ export default function nonMemberInquire() {
                             <label htmlFor="nonMem_OrderNumber" className="nonMemberLabel">주문번호</label>
                             <input type="text" id="nonMemberEmail" name="nonMemberEmail" required placeholder="메일, 문자로 발송된 번호를 입력해 주세요" />
                             <p className="nonMemberWarning hidden">주문번호를 입력해주세요</p>
-                            <button className="nonMemberBtn" onclick="location.href='../myPage/myOrder/myOrder.html';" disabled>
+                            <button className="nonMemberBtn"type="summit" onclick={nonMember} disabled>
                                 주문조회하기
                             </button>
                         </div>

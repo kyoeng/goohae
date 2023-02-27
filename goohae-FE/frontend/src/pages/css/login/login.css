@@ -1,7 +1,8 @@
-*{
+* {
     color: #1A1B23;
     font-family: 'NanumGothic';
 }
+
 body {
     background-color: #F5F5F5;
     ;
@@ -30,6 +31,7 @@ input {
     align-items: center;
     font-size: 10px;
 }
+
 /* .loginMain > * {
     font-size:1.4rem;
     font-family:'Nanum Gothic' ;
@@ -46,8 +48,9 @@ input {
     border-radius: 5px;
 
 }
-.loginInnerContainer{
-    padding:54px 40px 0;
+
+.loginInnerContainer {
+    padding: 54px 40px 0;
     width: 400px;
 }
 
@@ -77,7 +80,7 @@ input {
 .loginHead>ul li a {
     display: block;
     height: 100%;
-    margin:auto ;
+    margin: auto;
     padding: .7rem 0px;
     font-size: 14px;
 
@@ -85,8 +88,9 @@ input {
 
 .loginHead>ul li:first-of-type a {
     width: 60px;
-    border-bottom:#505DD0 solid 2px ;
-    color:  #505DD0;;
+    border-bottom: #505DD0 solid 2px;
+    color: #505DD0;
+    ;
     cursor: pointer;
     font-weight: 700;
     line-height: 14px;
@@ -104,40 +108,47 @@ input {
     text-align: center;
     padding-top: 41px;
 }
+
 .loginBodyInput input {
     height: 36px;
     margin-bottom: 8px;
     text-indent: 1.4rem;
-    outline-style: none; 
+    outline-style: none;
 }
-.idCheck{
+
+.idCheck {
     text-align: start;
 }
 
-.idCheck> * {
+.idCheck>* {
     color: #1A1B23;
     display: inline-block;
     font-size: 12px;
 }
 
 .idCheck .idCheckInput {
-    margin-right: 10px; 
+    margin-right: 10px;
     width: 14px;
     font-family: 'Nanum Gothic';
-} 
-
-.loginIdPwForm .loginError{
-    text-align: left;
-    margin-top: 15px;
-    color: #FF655B;
-    font-size: 1.2rem;
+}
+.loginIdPwForm .loginErrorBox{
+    height: 30px;
 }
 
-.redInputBox{
+
+.loginIdPwForm .loginError {
+    text-align: left;
+    padding-top: 15px;
+    color: #FF655B;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+}
+
+.redInputBox {
     border: 1px solid #FF655B;
 }
 
-.hidden{
+.hidden {
     visibility: hidden;
 }
 
@@ -151,20 +162,22 @@ input {
     color: whitesmoke; */
 }
 
-.foot li{
-    margin:15px auto;
+.foot li {
+    margin: 15px auto;
 }
-.foot li a{
+
+.foot li a {
     color: #9497AB;
     font-size: 12px;
     text-decoration: underline;
 }
 
-.loginButtonUnActive{
-    background-color:#9497AB;
+.loginButtonUnActive {
+    background-color: #9497AB;
     color: whitesmoke;
 }
-.loginButtonActive{
+
+.loginButtonActive {
     background-color: #1A1B23;
-    color: whitesmoke;  
+    color: whitesmoke;
 }
