@@ -7,4 +7,8 @@
 }
 
 @import url(../../../components/CSS/admin/adminSide.css);
+<<<<<<< HEAD
 @import url(./adminUser.css);
+=======
+@import url(../../css/admin/adminUser.css);
+>>>>>>> fd2be2f82c51b9f48e795921da4ddb7f5e32b41f

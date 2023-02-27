@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 @import url(../../../components/CSS/admin/adminSide.css);
 
+=======
+>>>>>>> fd2be2f82c51b9f48e795921da4ddb7f5e32b41f
 .adminUserContainer {
-    width: 85%;
+    width: 75%;
 
     display: flex;
     flex-direction: column;

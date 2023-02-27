@@ -1,0 +1,159 @@
+/* @import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css); */
+
+
+
+
+/* * {
+    margin: 0;
+    padding: 0;
+    color: gray;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+} */
+
+body {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* ======================================================================================= */
+
+/* =================================main============================ */
+
+main {
+    width: 70%;
+    font-size: 1.4rem;
+    padding-bottom: 100px;
+    min-width: 700px;
+}
+
+main,
+.myAddressWrap {
+    margin: 0 auto;
+}
+
+/* .myAddressWrap {
+    margin-bottom: 150px;
+} */
+
+.myAddressTitle {
+    line-height: 2.5rem;
+    font-weight: 800;
+    font-size: 2rem;
+    font-family:'Nanum Myeongjo';
+    text-align: center;
+    color: #1A1B23;
+    padding: 100px 0px 38px;
+}
+
+/* ========================주소록 테이블====================== */
+/* ========================주소록 테이블====================== */
+/* ========================주소록 테이블====================== */
+
+.whishListCategory {
+    margin: 14px 0 12px;
+    margin-top: 170px;
+}
+
+.whishListCategory a {
+    font-size: 1.2rem;
+}
+
+.whishListCategory a:last-of-type {
+    color: #505DD0;
+    font-weight: bold;
+}
+
+.addressTableWrap {
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.addressTable {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+.addressTable> #myAddressTableHead,
+.addressTable #myAddressTableBody {
+    border-bottom: 2px solid #1A1B23;
+}
+
+.addressTable #myAddressTableHead .myAddressTableHeadLine {
+    height: 40px;
+    text-align: center;
+}
+.addressTable .myAddressTableBodyLine{
+    height: 70px;
+}
+
+.addressTable .myAddressTableRow {
+    border-bottom: 1px solid #1A1B23;
+    text-align: center;
+}
+
+.addressTable .myAddressTableRow .myAddressCorrection {
+    /* display: inline-block; */
+    background-color: white;
+    border: none;
+    width: 30px;
+    height: 15px;
+    line-height: 15px;
+}
+.cursor{
+    cursor: pointer;
+}
+
+/* ======================버튼================== */
+/* ======================버튼================== */
+/* ======================버튼================== */
+
+.addressControlButtonWrap {
+    margin: 0 auto;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 22px 5px;
+    margin-bottom: 50px;
+}
+.myAddressButton{
+    text-align: center;
+    width: 160px;
+    height: 36px;
+    line-height: 36px;
+}
+.addressControlButtonWrap>#myAddressDeleteButton {
+    border: 1px solid #1A1B23;
+}
+
+.addressControlButtonWrap>#myAddressInputButton {
+    /* text-align: center;
+    width: 160px;
+    height: 36px;
+    line-height: 36px; */
+    background-color: #1A1B23;
+    color: white;
+
+}
+
+.addressCaution {
+    margin: 32px auto 270px;
+    box-sizing: border-box;
+    height: 130px;
+    border: solid 1px rgba(148, 151, 171, 0.2);
+    padding: 20px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    font-size: 1.2rem;
+}
+.addressCaution>.myAddressNoticeTitle >.myAddressNoticeTitleStrong {
+    color: #505DD0;
+}
+.addressCaution .myAddressNotics .myAddressNoticeListStrong,
+.addressCaution .myAddressNotics .myAddressNoticeList{
+    color: #9497AB;
+}

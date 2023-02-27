@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 import axios from "axios";
 import "../../css/login/login.css"
 import { Link } from "react-router-dom";
-import UserData from "../../../dummyData/userData";
+import loginUser from "../../../dummyData/userData";
 
 
 export default function Login() {
@@ -51,19 +51,19 @@ export default function Login() {
 
     return (
 
-        <main>
+        <div className="loginMain">
             <div className="loginContainer">
                 <div className="loginInnerContainer">
                     <div className="loginHead">
-                        <div className="loginHeadLinkMain">
+                        <div className="loginHeadLogo">
                             <Link to="http://192.168.0.86:3000"> logo</Link>
                         </div>
                         <ul>
                             <li>
-                                <a href="#">로그인</a>
+                                <Link to="/Login">로그인</Link>
                             </li>
                             <li>
-                                <Link to="../nonMemberInquire/nonlMemberInquire.js">비회원 배송조회</Link>
+                                <Link to="/nonMemberInquire">비회원 배송조회</Link>
                             </li>
                         </ul>
                     </div>
@@ -112,6 +112,6 @@ export default function Login() {
                     </div>
                 </div>
             </div>
-        </main>
+        </div>
     );
 }
