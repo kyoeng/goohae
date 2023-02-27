@@ -5,6 +5,8 @@ import axios from 'axios';
 import TableBody from './../../../components/presentational/tableBody';
 import TableModal from './../../../components/presentational/tableModal';
 
+import '../../CSS/admin/adminUser.css';
+
 export default function AdminUser() {
 
     //최상단에서 받아온 전체 데이터
