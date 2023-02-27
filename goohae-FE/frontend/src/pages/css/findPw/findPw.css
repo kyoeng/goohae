@@ -111,7 +111,7 @@ input {
 }
 
 
-.findIdMain .findPwForm .findPwPhone, 
+/* .findIdMain .findPwForm .findPwPhone, 
 .findIdMain .findPwForm .findPwPhoneEmail {
     align-self: flex-start;
     width: 318px;
@@ -119,11 +119,11 @@ input {
     display: flex;
     justify-content: space-between;
     line-height: 36px;
-}
+} */
 
-.findIdMain .findPwForm .findPwPhone>.findPwInput {
+/* .findIdMain .findPwForm .findPwPhone>.findPwInput {
     width: 82px;
-}
+} */
 
 .findIdMain .findPwForm .findPwLabel{
     margin-bottom: 7px;

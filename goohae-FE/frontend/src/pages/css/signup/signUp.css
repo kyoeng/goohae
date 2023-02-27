@@ -123,13 +123,6 @@ input[type="checkbox"] + label + label:hover{
 
 }
 
-.signUpContainer>section>.FormWrap>.InfoForm>div>p:first-of-type {
-    color: var(--DarkGray);
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-}
-
 .signUpContainer>section>.FormWrap>.InfoForm .InfoFormTitle {
     display: block;
     margin-top: 40px;
@@ -138,15 +131,15 @@ input[type="checkbox"] + label + label:hover{
     font-weight: bold;
 }
 
-.signUpContainer>section>.FormWrap>.InfoForm div input:not([type="checkbox"]) {
+/* .signUpContainer>section>.FormWrap>.InfoForm div input:not([type="checkbox"]) {
     display: inline-block;
     height: 40px;
     border: 1px solid var(--DarkGray);
-}
-
+} */
+/* 
 .signUpContainer>section>.FormWrap>.InfoForm>.idInputWrap input {
     width: 32rem;
-}
+} */
 
 .signUpContainer>section>.FormWrap>.InfoForm>.emailInputWrap>span{
     font-size: 1.4rem;
@@ -177,9 +170,9 @@ input[type="checkbox"] + label + label:hover{
     cursor: pointer;
 }
 
-.signUpContainer>section>.FormWrap>.InfoForm>.pwInputWrap input,
+/* .signUpContainer>section>.FormWrap>.InfoForm>.pwInputWrap input,
 .signUpContainer>section>.FormWrap>.InfoForm>.pwConfirmInputWrap input,
-.signUpContainer>section>.FormWrap>.InfoForm>.nameInputWrap input,
+.signUpContainer>section>.FormWrap>.InfoForm>.nameInputWrap input, */
 .signUpContainer>section>.FormWrap>.InfoForm>.tellInputWrap>.signUpPhone {
     width: 32rem;
 }
@@ -204,13 +197,13 @@ input[type="checkbox"] + label + label:hover{
     tmackground-color: var(--LightGray);
 } */
 
-.signUpContainer>section>.FormWrap>.InfoForm>.idInputWrap input,
+/* .signUpContainer>section>.FormWrap>.InfoForm>.idInputWrap input,
 .signUpContainer>section>.FormWrap>.InfoForm>.emailInputWrap input,
 .signUpContainer>section>.FormWrap>.InfoForm>.pwInputWrap input,
 .signUpContainer>section>.FormWrap>.InfoForm>.pwConfirmInputWrap input,
 .signUpContainer>section>.FormWrap>.InfoForm>.nameInputWrap input {
     padding-left: 5px;
-}
+} */
 
 .signUpContainer>section>.FormWrap>.InfoForm .emailGetRadio>div>div>label {
     color: var(--DarkGray);
@@ -253,7 +246,6 @@ input[type="checkbox"] + label + label:hover{
 }
 
 .signUpBtn{
-/* .ButtonWrap>.signUpBtn { */
     background-color: var(--CoolGray);
     border: none;
     width: 100%;

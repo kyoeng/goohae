@@ -62,6 +62,7 @@ function App() {
             ( 로그인, 회원가입, id, pw 찾기 등 )
           */}
           <Route path='/login' element={<Login />} />
+          <Route path='/signUp' element={<SignUp />} />
           <Route path='/findId' element={<FindId />} />
           <Route path='/findPw' element={<FindPw />} />
           <Route path='/nonMemberInquire' element={<NonMemberInquire />} />

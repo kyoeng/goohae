@@ -9,8 +9,10 @@ const InputWrapper = styled.div`
 `;
 
 const Label = styled.div`
-    font-size: 1rem;
-    margin-bottom: 0.25rem;
+color: #1A1B23;
+font-size: 1.4rem;
+font-weight: 700;
+margin-bottom: 8px;
 `;
 
 const Input = styled.input`

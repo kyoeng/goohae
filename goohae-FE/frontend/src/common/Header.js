@@ -31,10 +31,10 @@ export default function Header() {
                             </li>
 
                             <li className="joinInner">
-                                <a href="/">
+                                <Link to="/signUp">
                                     <img src={join} alt="join" />
                                     <span>JOIN</span>
-                                </a>
+                                </Link>
                             </li>
 
                             <li className="cartInner">
