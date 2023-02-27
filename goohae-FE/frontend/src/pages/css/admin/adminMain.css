@@ -6,5 +6,5 @@
     gap: 1px;
 }
 
-@import url(../../templetes/adminSide.css);
-@import url(../../templetes/adminUser.css);
+@import url(../../../components/CSS/admin/adminSide.css);
+@import url(../../css/admin/adminUser.css);

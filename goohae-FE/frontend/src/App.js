@@ -54,8 +54,8 @@ function App() {
           <Route path='staff' element={<AdminStaff />} />
           <Route path='etc' element={<AdminEtc />} />
         </Route>
-
         <Route path='/adminlogin' element={<AdminLogin />} />
+<<<<<<< HEAD
         {/* 마이페이지 */}
         <Route path='/myPage' element={<MyPage/>}/>
         <Route path='/wishList' element={<WishList/>}/>
@@ -69,6 +69,16 @@ function App() {
         마이페이지
         {/* 결제페이지 */}
         <Route path='/memberPayMent' element={<MemberPayMent/>}/>
+=======
+
+        {/* 마이페이지 */}
+        <Route path='/myPage' element={<MyPage />} />
+        <Route path='/wishList' element={<WishList />} />
+        <Route path='/myAddress' element={<MyAddress />} />
+        <Route path='/addAddress' element={<AddAddress />} />
+        <Route path='/memberInfo' element={<MemberInfo />} />
+        <Route path='/myOrder' element={<MyOrder />} />
+>>>>>>> ece2e44e8ae768933ea4c683dbd1cf69929e3e8e
 
       </Routes>
     </Router>
