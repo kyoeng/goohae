@@ -146,19 +146,6 @@ button{
     align-self: flex-start;
 }
 
-.findIdMain .findIdForm div> .findIdInput {
-    width: 82px;
-    /* margin: 0 10px; */
-}
-
-/* .findIdMain .findIdForm div> .findIdInput:first-of-type {
-    margin: 0;
-    margin-right: 10px;
-}
-
-.findIdMain .findIdForm div> .findIdInput:last-of-type {
-    margin-right: 0;
-} */
 .findIdMain .findIdPhoneWrap,
 .findIdMain .findIEemailWrap{
     width: 320px;

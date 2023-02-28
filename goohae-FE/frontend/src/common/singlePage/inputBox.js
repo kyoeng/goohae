@@ -8,9 +8,11 @@ const InputWrapper = styled.div`
     }
 `;
 
-const Label = styled.div`
-    font-size: 1rem;
-    margin-bottom: 0.25rem;
+const Label = styled.label`
+    color: #1A1B23;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 8px;
 `;
 
 const Input = styled.input`
@@ -25,7 +27,8 @@ const Input = styled.input`
     outline-style: none; 
 `;
 
-// rest 쪽에는 onChange, type, name, value, placeholder 등의 input 에서 사용 하는 값들을 넣어줄수 있다.
+// input만 이용시 label을 사용하지 않을 시 값을 'label=""' 를 입력하지 않아도 됩니다 
+// 사용 : <InputBox label="라벨에 들어갈 내용" />
 const InputBox = ({ label, ...rest }) => (
     <InputWrapper>
         <Label>{label}</Label>

@@ -20,52 +20,23 @@ body {
 
 /* ======================================================================================= */
 
-/* =================================main============================ */
+/* =================================.myAddressMain============================ */
 
-main {
+.myAddressMain {
     width: 70%;
     font-size: 1.4rem;
     padding-bottom: 100px;
     min-width: 700px;
 }
 
-main,
+.myAddressMain,
 .myAddressWrap {
     margin: 0 auto;
 }
 
-/* .myAddressWrap {
-    margin-bottom: 150px;
-} */
-
-.myAddressTitle {
-    line-height: 2.5rem;
-    font-weight: 800;
-    font-size: 2rem;
-    font-family:'Nanum Myeongjo';
-    text-align: center;
-    color: #1A1B23;
-    padding: 100px 0px 38px;
-}
-
 /* ========================주소록 테이블====================== */
 /* ========================주소록 테이블====================== */
 /* ========================주소록 테이블====================== */
-
-.whishListCategory {
-    margin: 14px 0 12px;
-    margin-top: 170px;
-}
-
-.whishListCategory a {
-    font-size: 1.2rem;
-}
-
-.whishListCategory a:last-of-type {
-    color: #505DD0;
-    font-weight: bold;
-}
-
 .addressTableWrap {
     margin: 0 auto;
     margin-top: 50px;

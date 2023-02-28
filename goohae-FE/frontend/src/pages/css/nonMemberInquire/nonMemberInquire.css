@@ -88,80 +88,24 @@ input {
     border-bottom:#505DD0 solid 2px ;
     color:  #505DD0;;
     cursor: pointer;
-    line-height: 14px;
     font-weight: 700;
 }
 
 /* ------------------------ */
-.nonMemberBody{
+.nonMemberForm{
     padding-top: 20px;
     font-weight: 700;
-}
-
-.nonMemberForm >.nonMemberLabel{   
-    display: block;
-    padding:10px 0 7px;
-    outline-style: none;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 14px;
-}
-
-input {
-    display: block;
-    height:36px;
-    width:100%;
-    margin-bottom: 2px;
-    /* text-indent: 0.7px; */
-    text-indent: 14px;
-    outline: none;
-    font-size: 14px;
 }
 
 .redInputBox{
     border: 1px solid #FF655B;
 }
-.nonMemberPhoneBox{
-    display: flex;
-    justify-content: space-between;
-    width: 320px;
-    height: 36px;
-    line-height: 36px;
-    margin-bottom: 2px;
-}
-.nonMemberPhone{
-    width: 82px;
-}
 
-.nonMemForm .nonMemberWarning{
+.nonMemberWarning{
     color: #FF655B;
     font-size: 1.2rem;
     line-height: 1.2rem;
-}
-
-.hidden{
-    visibility: hidden;
-}
-
-.nonDisplay{
-    display: none;
-}
-
-
-.nonMemberBtn{
-    display: block;
-    height:36px;
-}
-
-.nonMemberBtn {
-    display: block;
-    background-color:#9497AB;
-    border: 0;
-    color: whitesmoke;
-    width: 320px;
-    height: 36px;
-    margin: 30px auto 0px;
-    outline: none;
+    margin: 2px 0;
 }
 
 .buttonLogin{

@@ -60,7 +60,7 @@ body {
 
 .MyPoint {
   width: 100%;
-  border: 1px solid  #9497AB;
+  border: 1px solid #9497AB;
   text-align: center;
   margin-bottom: 1.5rem;
 }
@@ -92,7 +92,7 @@ body {
 .myPageMain>.myPageWrap>.MyPoint>.myMileageCoupon>div>p:first-of-type {
   font-size: 1.2rem;
   text-align: center;
-  color:  #9497AB;
+  color: #9497AB;
   margin-bottom: 5px;
 }
 
@@ -122,7 +122,7 @@ myPageMain>.myPageWrap>.MyPoint>.myMileageCoupon>.myCouponWrap strong {
 
 .myPageMyOrder {
   text-align: center;
-  border: 1px solid  #9497AB;
+  border: 1px solid #9497AB;
 }
 
 .myPageMyOrder>.myPageOrederTitle {
@@ -138,7 +138,7 @@ myPageMain>.myPageWrap>.MyPoint>.myMileageCoupon>.myCouponWrap strong {
 
 .myPageMyOrder>.myPageOrederTitle>p.myPageOrderTitleContent:last-of-type {
   font-size: 1.3rem;
-  color:  #9497AB;
+  color: #9497AB;
   margin-top: 6px;
 }
 
@@ -156,12 +156,12 @@ myPageMain>.myPageWrap>.MyPoint>.myMileageCoupon>.myCouponWrap strong {
 }
 
 .myPageMyOrder>.myPageOrderProcess>.myPageOrderProcessInnerContainer:last-of-type {
-  border-left: 1px solid  #9497AB;
+  border-left: 1px solid #9497AB;
   width: 15%;
   height: 80px;
 }
 
-.myPageMyOrder>.myPageOrderProcess>.myPageOrderProcessInnerContainer:not(:last-of-type)>.myPageOrderCaseTitle{
+.myPageMyOrder>.myPageOrderProcess>.myPageOrderProcessInnerContainer:not(:last-of-type)>.myPageOrderCaseTitle {
   font-size: 1.4rem;
   margin-bottom: 20px;
   font-weight: bold;
@@ -187,6 +187,7 @@ myPageMain>.myPageWrap>.MyPoint>.myMileageCoupon>.myCouponWrap strong {
   font-weight: bold;
   color: #505DD0;
 }
+
 /* 
 .myPageMyOrder>.myPageOrderProcess>img {
   display: inline-block;
@@ -216,35 +217,3 @@ myPageMain>.myPageWrap>.MyPoint>.myMileageCoupon>.myCouponWrap strong {
   margin-bottom: 100px;
 }
 
-.myPageMenuContainer>.myPageMenu {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  text-align: center;
-  padding: 0 25px;
-  padding-top: 34px;
-  border: 1px solid;
-}
-
-.myPageMenuContainer>.myPageMenu .myPageMenuTitle {
-  font-size: 2rem;
-  font-family: NanumMyeongjo;
-  color: #1A1B23;
-  font-weight: 700;
-}
-
-.myPageMenuContainer>.myPageMenu .myPageMenuContent {
-  font-size: 1.4rem;
-  color: #9497AB;
-  /* display: block; */
-}
-
-.myPageMenuContainer>.myPageMenu span {
-  font-size: 1.5rem;
-}
-
-.myPageMenuContainer>.myPageMenu>.myPageOrderMenuMore{
-  font-size: 1.4rem;
-  font-weight: bold;
-}

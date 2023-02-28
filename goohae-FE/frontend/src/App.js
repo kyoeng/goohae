@@ -25,6 +25,7 @@ import MyOrder from './pages/presentational/myPage/myOrder/myOrder';
 import MyPost from './pages/presentational/myPage/myPost/myPost';
 import MyCoupon from './pages/presentational/myPage/myCoupon/myCoupon';
 import ShoppingCart from './pages/presentational/myPage/shoppingCart/shoppingCart';
+import SubPage from './pages/presentational/subPage/SubPage';
 
 // 결제페이지
 import MemberPayMent from './pages/presentational/memberPayment/memberPayMent';
@@ -42,7 +43,7 @@ function App() {
 
           {/* 메인페이지 */}
           <Route path='/' element={<MainPage />} />
-
+          <Route path='/subpage' element={<SubPage/>}/>
 
           {/* 마이페이지 */}
           <Route path='/myPage' element={<MyPage />} />
@@ -50,9 +51,10 @@ function App() {
           <Route path='/myAddress' element={<MyAddress />} />
           <Route path='/addAddress' element={<AddAddress />} />
           <Route path='/memberInfo' element={<MemberInfo />} />
+          <Route path='/myCoupon' element={<MyCoupon />} />
           <Route path='/myOrder' element={<MyOrder />} />
           <Route path='/myPost' element={<MyPost />} />
-          <Route path='/ShoppingCart' element={<ShoppingCart />} />
+          <Route path='/shopppingCart' element={<ShoppingCart />} />
 
 
           {/* 
@@ -60,6 +62,7 @@ function App() {
             ( 로그인, 회원가입, id, pw 찾기 등 )
           */}
           <Route path='/login' element={<Login />} />
+          <Route path='/signUp' element={<SignUp />} />
           <Route path='/findId' element={<FindId />} />
           <Route path='/findPw' element={<FindPw />} />
           <Route path='/nonMemberInquire' element={<NonMemberInquire />} />

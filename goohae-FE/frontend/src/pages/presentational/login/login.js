@@ -13,6 +13,8 @@ export default function Login() {
     const [loginPw, setLoginPw] = useState();
     const [loginMessage, setLoginMessage] = useState('');
     const loginData = { loginUser }
+
+    //비밀번호 아이지 value 관리
     function changeLoginId(e) { setLoginId(e.target.value) };
     function changeLoginPw(e) { setLoginPw(e.target.value) };
 
@@ -20,8 +22,8 @@ export default function Login() {
     function login() {
         console.log(loginId);
         console.log(loginPw);
-
-        if (loginId !== '' && loginPw !== '') {
+        
+        if (loginId != '' && loginPw != '') {
             axios.post('/test', {
                 id: loginId,
                 password: loginPw,
@@ -46,9 +48,11 @@ export default function Login() {
                 .catch((err) => {
                     console.log(err);
                     setLoginMessage('로그인실패');
-                    setLoginId();
-                    setLoginPw();
                 })
+        }else if(loginId ===''&& loginPw !== ''){
+            setLoginMessage('아이디를 입력해주세요');
+        }else{
+            setLoginMessage('비밀번호를 입력해주세요');
         }
     }
 
@@ -63,12 +67,12 @@ export default function Login() {
                         <div className="loginHeadLogo">
                             <Link to="http://192.168.0.86:3000"> logo</Link>
                         </div>
-                        <ul>
-                            <li>
-                                <Link to="/Login">로그인</Link>
+                        <ul className="loginHeaderListWrap">
+                            <li className="loginHeaderList">
+                                <Link to="/Login" className="loginHeaderListLink">로그인</Link>
                             </li>
-                            <li>
-                                <Link to="/nonMemberInquire">비회원 배송조회</Link>
+                            <li className="loginHeaderList">
+                                <Link to="/nonMemberInquire" className="loginHeaderListLink">비회원 배송조회</Link>
                             </li>
                         </ul>
                     </div>
@@ -110,7 +114,7 @@ export default function Login() {
                                 // disabled={adminValue === '' || loginPwValue === '' ? true : false}
                                 // disabled={loading}
                                 onClick={login}
-                            >로그인</SingleButton>
+                            children="로그인"></SingleButton>
                             <ul className="foot">
                                 <li><Link to="/signUp" >회원가입</Link></li>
                                 <li><Link to="/findId">아이디 비밀번호 찾기</Link></li>
