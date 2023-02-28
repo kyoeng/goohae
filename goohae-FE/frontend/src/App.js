@@ -27,6 +27,7 @@ import MyOrder from './pages/presentational/myPage/myOrder/myOrder';
 import MyPost from './pages/presentational/myPage/myPost/myPost';
 import MyCoupon from './pages/presentational/myPage/myCoupon/myCoupon';
 import ShoppingCart from './pages/presentational/myPage/shoppingCart/shoppingCart';
+import SubPage from './pages/presentational/subPage/SubPage';
 
 // 결제페이지
 import MemberPayMent from './pages/presentational/memberPayment/memberPayMent';
@@ -44,7 +45,7 @@ function App() {
 
           {/* 메인페이지 */}
           <Route path='/' element={<MainPage />} />
-
+          <Route path='/subpage' element={<SubPage/>}/>
 
           {/* 마이페이지 */}
           <Route path='/myPage' element={<MyPage />} />
