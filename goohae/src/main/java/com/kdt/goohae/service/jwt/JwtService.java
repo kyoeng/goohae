@@ -1,5 +1,6 @@
-package com.kdt.goohae.jwt;
+package com.kdt.goohae.service.jwt;
 
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.extern.slf4j.Slf4j;
@@ -9,6 +10,8 @@ import javax.crypto.spec.SecretKeySpec;
 import javax.xml.bind.DatatypeConverter;
 import java.security.Key;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 @Service
 @Slf4j
@@ -62,6 +65,25 @@ public class JwtService {
         }
 
         return false;
+    }
+
+    /**
+     * 토큰 발급자 ID 추출을 위한 메서드
+     * @param token = JWT Token
+     * @return 발급자 ID, 발급자 권한
+     */
+    public Map<String, String> getTokenInfo(String token) {
+        Claims claims = Jwts.parserBuilder()
+                .setSigningKey(DatatypeConverter.parseBase64Binary(SECRET_KEY))
+                .build()
+                .parseClaimsJws(token)
+                .getBody();
+
+        Map<String, String> map = new HashMap<>();
+        map.put("id", claims.getSubject());
+        map.put("auth", claims.getAudience());
+
+        return map;
     }
 
 }

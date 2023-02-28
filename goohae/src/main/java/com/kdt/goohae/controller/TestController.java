@@ -1,8 +1,8 @@
 package com.kdt.goohae.controller;
 
-import com.kdt.goohae.jwt.JwtService;
 import com.kdt.goohae.service.TestService;
 import com.kdt.goohae.domain.TestVO;
+import com.kdt.goohae.service.jwt.JwtService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.crypto.password.PasswordEncoder;
