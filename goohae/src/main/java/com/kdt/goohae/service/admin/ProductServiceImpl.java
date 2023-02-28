@@ -1,6 +1,7 @@
 package com.kdt.goohae.service.admin;
 
 
+import com.kdt.goohae.domain.admin.GetProductDTO;
 import com.kdt.goohae.domain.admin.ProductImgVO;
 import com.kdt.goohae.domain.admin.ProductVO;
 import com.kdt.goohae.mapper.admin.ProductMapper;
@@ -10,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -30,7 +32,8 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public int regProduct(ProductVO vo) {
         return productMapper.regProduct(vo);
-    }
+    } // regProduct
+
 
     /**
      * 상품 이미지 저장 및 상품 이미지 테이블 업로드 메서드
@@ -79,5 +82,25 @@ public class ProductServiceImpl implements ProductService {
         vo.setImagePath(saveFileNameToDB + realSaveFileName);
 
         return productMapper.regProductImg(vo);
+    } // regProductImg
+
+    /**
+     * 카테고리별 상품 데이터를 위한 메서드 ( 페이지에 보일 상품을 위한 데이터 )
+     * @param dto = 상품과 상품이미지를 전송하기 위한 DTO
+     * @return GetProductDTO로 이루어진 List
+     */
+    @Override
+    public List<GetProductDTO> getProduct(GetProductDTO dto) {
+        return productMapper.getProduct(dto);
+    } // getProduct
+
+
+    /**
+     * 카테고리별 상품 테이블의 전체 데이터 갯수 조회
+     * @return
+     */
+    @Override
+    public int getTotalData(GetProductDTO dto) {
+        return productMapper.getTotalData(dto);
     }
 }

@@ -17,4 +17,20 @@
         insert into product_image(product_code, product_option, image_path)
         values(#{productCode}, #{productOption}, #{imagePath})
     </insert>
+
+    <!-- 카테고리별 상품 데이터를 위한 join query문 -->
+    <select id="getProduct" resultType="GetProductDTO">
+        select product.product_code, product.product_name, product.price, product.discount, product_image.image_path
+        from product, product_image
+        where product.category_code = #{categoryCode}
+        and product.product_code = product_image.product_code
+        and product_image.image_path like '%-1%'
+        order by product.upload_date desc
+        limit #{startNum}, #{rowsPerPage}
+    </select>
+    
+    <!-- 카테고리별 상품 전체 데이터 갯수 조회 -->
+    <select id="getTotalData" resultType="int">
+        select count(*) from product where category_code = #{categoryCode}
+    </select>
 </mapper>

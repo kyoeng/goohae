@@ -1,23 +1,24 @@
 package com.kdt.goohae.controller.admin;
 
 
+import com.kdt.goohae.domain.admin.GetProductDTO;
 import com.kdt.goohae.domain.admin.ProductImgVO;
 import com.kdt.goohae.domain.admin.ProductVO;
+import com.kdt.goohae.domain.forPaging.Criteria;
+import com.kdt.goohae.domain.forPaging.PageMaker;
 import com.kdt.goohae.service.admin.ProductService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @RestController
-@RequestMapping("/api/admin/certi/")
 public class ProductController {
 
     // 필드
@@ -38,7 +39,7 @@ public class ProductController {
      * @return String ( 결과 정보 )
      * @throws IOException
      */
-    @PostMapping("/reg-pro")
+    @PostMapping("/api/admin/certi/reg-pro")
     public String regProduct(@ModelAttribute ProductVO vo, ProductImgVO img_vo, HttpServletRequest request) throws IOException {
         String manager = (String) request.getAttribute("id");
         String auth = (String)request.getAttribute("auth");
@@ -75,5 +76,34 @@ public class ProductController {
             }
         }
     } // regProduct
+
+
+    /**
+     * 카테고리별 상품 데이터 전송을 위한 컨트롤러 ( 페이지에 보여질 상품 )
+     * @param dto = 상품 데이터 전송을 위한 DTO
+     * @param pageMaker = 페이징을 위한 객체
+     * @param currentPage = 현재 페이지 번호
+     * @return GetProductDTO로 이루어진 List, PageMaker 객체
+     */
+    @GetMapping("/api/product/get")
+    public Map<String, Object> getProduct(GetProductDTO dto, PageMaker pageMaker,
+                                          @RequestParam(value = "currentPage", required = false) Integer currentPage) {
+        Criteria criteria = new Criteria();
+
+        if (currentPage != null) criteria.setCurrentPage(currentPage);
+        criteria.setStartnum();
+
+        dto.setStartNum(criteria.getStartnum());
+        dto.setRowsPerPage(criteria.getRowsPerPage());
+
+        Map<String, Object> map = new LinkedHashMap<>();
+        map.put("product", productService.getProduct(dto));
+
+        pageMaker.setCriteria(criteria);
+        pageMaker.setTotalDataCount(productService.getTotalData(dto));
+        map.put("pageMaker", pageMaker);
+
+        return map;
+    } // getProduct
 
 }
