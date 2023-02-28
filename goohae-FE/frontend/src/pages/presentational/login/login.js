@@ -114,7 +114,7 @@ export default function Login() {
                                 // disabled={adminValue === '' || loginPwValue === '' ? true : false}
                                 // disabled={loading}
                                 onClick={login}
-                            >로그인</SingleButton>
+                            children="로그인"></SingleButton>
                             <ul className="foot">
                                 <li><Link to="/signUp" >회원가입</Link></li>
                                 <li><Link to="/findId">아이디 비밀번호 찾기</Link></li>

@@ -55,7 +55,7 @@ function App() {
           <Route path='/myCoupon' element={<MyCoupon />} />
           <Route path='/myOrder' element={<MyOrder />} />
           <Route path='/myPost' element={<MyPost />} />
-          <Route path='/ShoppingCart' element={<ShoppingCart />} />
+          <Route path='/shopppingCart' element={<ShoppingCart />} />
 
 
           {/* 

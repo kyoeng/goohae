@@ -3,8 +3,7 @@ import styled from 'styled-components';
 // import oc from 'open-color';
 // import { shadow } from 'lib/styleUtils';
 
-const Wrapper = styled.div`
-
+const Button = styled.button`
     display: block;
     width: 320px;
     height: 36px;
@@ -22,10 +21,12 @@ const Wrapper = styled.div`
     }
 `;
 
+// 사용 : <SingleButton children="버튼이름"/>
 const SingleButton = ({ children, onClick }) => (
-    <Wrapper onClick={onClick}>
+    <Button onClick={onClick}>
+        {/* 버튼이름 */}
         {children}
-    </Wrapper>
+    </Button>
 );
 
 export default SingleButton;
