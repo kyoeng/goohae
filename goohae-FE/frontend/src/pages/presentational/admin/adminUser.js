@@ -1,33 +1,38 @@
-import UserData from '../../container/admin/adminUser';
-import MemberList from '../../../components/presentational/admin/memberList';
+import UserData from '../../../dummyData/userData';
 
-import '../../css/admin/adminUser.css';
+import TitleContainer from '../../../components/presentational/admin/titleContainer';
+import MemberList from '../../../components/presentational/admin/memberList';
+import TableHeader from '../../../components/presentational/admin/tableHeader';
+import SearchBar from '../../../components/presentational/admin/searchBar';
+import Pagination from '../../../common/pagination';
+
+import adminUstyled from '../../css/admin/adminUser.module.css';
 
 export default function AdminUser() {
 
     return (
-        <div className="adminUserContainer">
-            <div className="constentsHeader adminUser">
-                <span>회원관리</span>
-            </div>
-           
+        <div className={adminUstyled.adminUserContainer}>
+            <TitleContainer titleName='유저목록' />
+            <div className={adminUstyled.devideLine}></div>
 
+            <SearchBar />
 
-            <div className="userContainer">
-                <div className="userTable">
-                    <div className="uTableHead">
-                        <div>ID</div>
-                        <div>이름</div>
-                        <div>가입일</div>
-                        <div>회원상태</div>
-                    </div>
+            <TableHeader
+                headerName={`adminUser`}
+                header1={`id`}
+                header2={`이름`}
+                header3={`가입일자`}
+                header4={`회원상태`} />
+            <MemberList
+                tableName={`adminUser`}
+                data={UserData}
+                adminData1={UserData.id}
+                adminData2={UserData.name}
+                adminData3={UserData.joinDate}
+                adminData4={UserData.status}
+            />
 
-                    <div className="iTableBody">
-                        <MemberList data={UserData} tableName={`user`} />
-                    </div>
-                </div>
-            </div>
-
+            <Pagination />
         </div>
     );
 }

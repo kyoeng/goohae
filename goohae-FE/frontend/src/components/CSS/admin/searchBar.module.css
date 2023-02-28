@@ -1,0 +1,31 @@
+.searchBarContainer {
+    width: 30%;
+    height: 30px;
+
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+.searchBarContainer>#userSearchBar {
+    margin-right: 30px;
+    font-size: 1.2rem;
+
+    display: flex;
+    align-items: center;
+
+}
+
+.searchWrap {
+    height: 100%;
+}
+
+.searchBarContainer>button {
+    width: 20%;
+    border: 0.5px solid #C8c8c8;
+    border-radius: 1px;
+
+    cursor: pointer;
+
+}

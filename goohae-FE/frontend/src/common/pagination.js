@@ -1,27 +1,21 @@
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import pagiStyled from './CSS/pagination.module.css';
+import UserData from '../dummyData/userData';
 
-export default function Pagination({ subClassName, clickEve }) {
-    const clickStyled = {
-        backgroundColor: "black",
-        color: "white",
-    };
+export default function Pagination() {
+    // let pagingNum = Math.ceil(UserData.length / 10);
+    let pagingNum = 5;
 
-    const [pagingNum, setPagingNum] = useState(1);
 
     return (
-        <>
+        <div className={pagiStyled.pagingContainer}>
+            {UserData.map((item, idx) => {
+                if (idx < pagingNum) {
+                    return <div key={`pagingBtn${idx}`}>{idx + 1}</div>
+                } else {
+                    return;
+                }
 
-            <div className={`pagination ${subClassName}`}>
-                <div onClick={clickEve}>1</div>
-                <div onClick={clickEve}>2</div>
-                <div onClick={clickEve}>3</div>
-                <div onClick={clickEve}>4</div>
-                <div onClick={clickEve}>5</div>
-            </div>
-            {
-
-            }
-        </>
+            })}
+        </div>
     );
 }

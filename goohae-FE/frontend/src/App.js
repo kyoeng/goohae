@@ -6,8 +6,6 @@ import MainPage from './pages/presentational/mainPage/mainPage';
 import AdminMain from './pages/presentational/admin/adminMain';
 import AdminUser from './pages/presentational/admin/adminUser';
 import AdminProduct from './pages/presentational/admin/adminProduct';
-import AdminStaff from './pages/presentational/admin/adminStaff';
-import AdminEtc from './pages/presentational/admin/adminEtc';
 import AdminLogin from './pages/presentational/admin/adminLogin';
 
 //로그인,가입 ,아이디/비밀번호 찾기,비회원 배송조회 
@@ -96,14 +94,12 @@ function App() {
           <Route path='/memberInfo' element={<MemberInfo />} />
           <Route path='/myOrder' element={<MyOrder />} /> */}
 
-          {/* admin 페이지 */}
-          {/* <Route path='adminmain/*' element={<AdminMain />} >
+          {/* admin 관련페이지 */}
+          <Route path='adminmain/*' element={<AdminMain />} >
             <Route path='user' element={<AdminUser />} />
             <Route path='product' element={<AdminProduct />} />
-            <Route path='staff' element={<AdminStaff />} />
-            <Route path='etc' element={<AdminEtc />} />
           </Route>
-          <Route path='/adminlogin' element={<AdminLogin />} /> */}
+          <Route path='/adminlogin' element={<AdminLogin />} />
 
         </Routes>
 

@@ -1,0 +1,38 @@
+.memberList {
+    width: 70%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.memberList>.tableBodyWrap {
+    padding: 10px;
+
+    border-bottom: 0.5px solid #c8c8c8;
+
+    display: flex;
+    justify-content: space-evenly;
+    gap: 5%;
+
+}
+
+.memberList>.tableBodyWrap > button {
+    width: 10%;
+}
+
+
+.memberList>.tableBodyWrap>div {
+    width: 10%;
+
+    font-size: 1.3rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#checkedUser{
+    width: 13px;
+    height: 13px;
+}

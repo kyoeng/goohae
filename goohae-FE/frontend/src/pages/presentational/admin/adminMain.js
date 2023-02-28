@@ -1,75 +1,15 @@
-import AdminSide from "../../../components/presentational/adminSide";
+import AdminSide from '../../../components/presentational/admin/adminSide';
 
-import { useEffect, useState } from 'react';
 import { Outlet } from "react-router-dom";
 
-import axios from 'axios';
-
-import UserData from "../../../dummyData/userData";
-import '../../css/admin/adminMain.css';
+import adminMainStyled from '../../css/admin/adminMain.module.css';
 
 export default function AdminMain() {
-    // useEffect(() => {
-    //     axios.all([
-    //         axios.get('/admin/user'),
-    //         axios.get('/admin/product'),
-    //         axios.get('/admin/manager'),
-    //     ])
-    //         .then(
-    //             axios.spread((userRes, productRes, managerRes) => {
-    //                 const userData = userRes.data;
-    //                 const productData = productRes.data;
-    //                 const managerData = managerRes.data;
-
-    //                 const response = [
-    //                     ...userData,
-    //                     ...productData,
-    //                     ...managerData]
-    //             })
-    //         )
-    //         .catch((err) => {
-    //             console.log(err)
-    //         })
-    // }, [])
-
-    function reqDelUser() {
-        if (window.confirm('삭제하시겠습니까?')) {
-            axios.delete('/test', {
-                userSeq: "?",
-                id: "?",
-                name: "?"
-            })
-                .then((response) => {
-                    console.log(response.data)
-                })
-                .catch((err) => {
-                    console.log(err)
-                })
-        }
-    }
-
-    function reqAddProd(addData) {
-        axios.post('/test', addData)
-            .then((response) => {
-                console.log(response.data)
-            })
-            .catch((error) => {
-                console.log(error);
-
-            })
-    }
-
-    const outletProps = {
-        userData: UserData,
-        reqDelUser: reqDelUser,
-        reqAddProd: reqAddProd
-    };
-
     return (
-        <div className="adminMain">
+        <div className={adminMainStyled.adminMainContainer}>
             <AdminSide />
 
-            <Outlet context={outletProps} />
+            <Outlet />
         </div>
     );
-};
+}   

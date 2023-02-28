@@ -1,0 +1,8 @@
+.titleContainer {
+    width: 70%;
+}
+
+.titleContainer>h3 {
+    display: flex;
+    font-size: 3rem;
+}

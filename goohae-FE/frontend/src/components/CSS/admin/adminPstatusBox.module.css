@@ -1,0 +1,60 @@
+.statusContainer {
+    width: 90%;
+
+    background-color: #c8c8c8;
+
+    display: flex;
+    justify-content: center;
+}
+
+.statusContainer>.statusWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.statusContainer>.statusWrap>.pStatusBox {
+    display: flex;
+}
+
+/* 아이콘 CSS */
+.statusContainer>.statusWrap>.pStatusBox>.iconWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #9497AB;
+    border-radius: 50%;
+
+}
+
+.statusContainer>.statusWrap>.pStatusBox>.iconWrap>img {
+    margin-top: 4px;
+    margin-left: 5px;
+}
+
+/* ---------------------------------------------------------- */
+
+/* 상세항목, 제목과 갯수 보여주는 CSS */
+.statusContainer>.statusWrap>.pStatusBox>.prodStatusWrap {
+    width: 25px;
+    height: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.statusContainer>.statusWrap>.pStatusBox>.prodStatusWrap>span {
+    font-size: 1.3rem;
+}
+
+.iconWrap {
+    width: 50px;
+    height: 50px;
+}
+
+.iconWrap>img {
+    width: 100%;
+    height: 100%;
+}

@@ -1,22 +1,25 @@
-import { useState } from "react";
-import { useOutletContext } from "react-router-dom";
+import adminPstyled from '../../css/admin/adminProduct.module.css';
 
-import AddModal from './../../../components/presentational/addModal';
+import TitleContainer from './../../../components/presentational/admin/titleContainer';
+import AdminPstatusBox from '../../../components/presentational/admin/adminPstatusBox';
+import AdminPsearchBar from '../../../components/presentational/admin/adminPsearchBar';
+
+import { StatusArr, ProdData } from '../../../components/container/admin/adminPstatusBox';
 
 
 export default function AdminProduct() {
-    const [modalTrigger, setModalTrigger] = useState(false);
-
-    const reqAddProd = useOutletContext().reqAddProd;
-
-    function prodModalTrigger() {
-        setModalTrigger(pre => !pre);
-    }
 
     return (
-        <div className="productContainer">
-            <div onClick={prodModalTrigger}>상품추가</div>
-            {modalTrigger ? <AddModal modalTrigger={prodModalTrigger} /> : null}
+        <div className={adminPstyled.adminProdContainer}>
+            <TitleContainer titleName='상품조회/수정' />
+            <div className={adminPstyled.devideLine}></div>
+
+            <AdminPstatusBox
+                StatusArr={StatusArr}
+                ProdData={ProdData} />
+
+            <AdminPsearchBar />
+
         </div>
     );
 }
