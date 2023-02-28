@@ -1,4 +1,4 @@
-package com.kdt.goohae.jwt;
+package com.kdt.goohae.service.jwt;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
