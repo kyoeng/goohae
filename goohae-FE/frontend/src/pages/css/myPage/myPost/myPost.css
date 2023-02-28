@@ -33,17 +33,6 @@ body {
     font-size: 12px;
 }
 
-.myPostTitle {
-    width: 100%;
-    line-height: 2.5rem;
-    font-weight: 800;
-    font-size: 2rem;
-    font-family:'Nanum Myeongjo';
-    text-align: center;
-    color: #1A1B23;
-    padding: 100px 0px 38px;
-}
-
 .myPostTableWrap .myPostTableOption,
 .myPostTableWrap #myPostTableSelect  {
     color:#1A1B23;
@@ -55,19 +44,6 @@ body {
     margin-bottom: 200px;
 }
 
-.myPostTableCategory {
-    margin: 14px 0 12px;
-    margin-top: 170px;
-}
-
-.myPostTableCategory .myPageLink {
-    font-size: 1.2rem;
-}
-
-.myPostTableCategory #myOrderLink {
-    color: #505DD0;
-    font-weight: bold;
-}
 /* ====================Table=================== */
 /* ====================Table=================== */
 /* ====================Table=================== */

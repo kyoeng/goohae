@@ -2,6 +2,9 @@ import { Link } from 'react-router-dom';
 import '../../../css/myPage/myPost/myPost.css';
 import AppLayout from './../../../../common/layout/AppLayout';
 
+import MyPageSubPageCategory from '../../../../common/myPage/category';
+import MyPsgeSubPageTitle from '../../../../common/myPage/mySubPageTitle';
+
 
 export default function MyPost() {
 
@@ -21,12 +24,8 @@ export default function MyPost() {
         <AppLayout>
             <div className="myPostMain">
                 <section id="myPostWrap">
-                    <div className="myPostTableCategory">
-                        <Link to="/" className="myPageLink">홈&nbsp;&nbsp;&gt;</Link>
-                        <Link to="/MyPage" className="myPageLink">&nbsp;&nbsp;마이쇼핑&nbsp;&nbsp;&gt;</Link>
-                        <Link to="/MyPost" className="myPageLink" id="myPageSubLink">&nbsp;&nbsp;나의리뷰&nbsp;&nbsp;</Link>
-                    </div>
-                    <p className="myPostTitle">나의 리뷰</p>
+                    <MyPageSubPageCategory myPageSubLinkKr="나의 리뷰"/>
+                    <MyPsgeSubPageTitle myPsgeSubPageTitle="나의 리뷰"/>
                     <article className="myPostTableWrap">
                         <select name="#" id="myPostTableSelect">
                             <option value="1" className="myPostTableOption">작성최신순</option>

@@ -32,32 +32,8 @@ body {
     margin: 0 auto;
 }
 
-.myOrderTitle {
-    font-family: NanumMyeongjo;
-    margin-top: 10rem;
-    margin-bottom: 4rem;
-    font-size: 2rem;
-    text-align: center;
-    font-weight: 800;
-    color: black;
-}
-
 .myOrderHistory {
     margin: 20px 0;
-}
-
-.myOrderHistoryCategory {
-    margin-top: 170px;
-}
-
-.myOrderHistoryCategory>* {
-    color: gray;
-    font-size: 1.2rem;
-}
-
-.myOrderHistoryCategory .myOrderLink {
-    font-size: 1.2rem;
-    color: #505DD0;
 }
 
 .myOrderSelectOrderCondition {

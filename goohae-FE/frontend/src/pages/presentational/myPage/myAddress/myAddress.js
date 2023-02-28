@@ -1,9 +1,11 @@
 import { useState } from "react";
 
-import "../../../css/myPage/myAddress/myAddress.css"
+import "../../../css/myPage/myAddress/myAddress.css";
 import AddAddress from "./addAddress";
-import { Link } from 'react-router-dom';
 import AppLayout from './../../../../common/layout/AppLayout';
+
+import MyPageSubPageCategory from '../../../../common/myPage/category';
+import MyPsgeSubPageTitle from '../../../../common/myPage/mySubPageTitle';
 
 export default function MyAddress() {
     const [addAddress, setAddAddress] = useState(false);
@@ -46,12 +48,8 @@ export default function MyAddress() {
         <AppLayout>
             <div className="myAddressMain">
                 <section className="myAddressWrap">
-                    <div className="myAddressCategory">
-                        <Link to="/" className="myPageLink">홈&nbsp;&nbsp;&gt;</Link>
-                        <Link to="/MyPage" className="myPageLink">&nbsp;&nbsp;마이쇼핑&nbsp;&nbsp;&gt;</Link>
-                        <Link to="/MyCoupon" className="myPageLink" id="myPageSubLink">&nbsp;&nbsp;내 주소록&nbsp;&nbsp;</Link>
-                    </div>
-                    <p className="myAddressTitle">내 주소록</p>
+                    <MyPageSubPageCategory myPageSubLink="myAddress" myPageSubLinkKr="내 주소록"/>
+                    <MyPsgeSubPageTitle myPsgeSubPageTitle="내 주소록"/>
                     <article className="addressTableWrap">
                         <table className="addressTable">
                             <colgroup>

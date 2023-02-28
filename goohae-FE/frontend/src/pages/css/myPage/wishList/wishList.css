@@ -32,38 +32,10 @@ body {
     margin: 0 auto;
 }
 
-.myWhishListTitle {
-    line-height: 2.5rem;
-    font-weight: 800;
-    font-size: 2rem;
-    font-family: 'Nanum Myeongjo';
-    text-align: center;
-    color: #1A1B23;
-    padding: 100px 0px 38px;
-}
-
 .whishListTableWrap {
     width: 100%;
     margin: 0 auto;
     margin-top: 50px;
-}
-
-/* ====================테이블 왼쪽 위 작은 카테고리=================== */
-/* ====================테이블 왼쪽 위 작은 카테고리=================== */
-/* ====================테이블 왼쪽 위 작은 카테고리=================== */
-
-.whishListCategory {
-    margin: 14px 0 12px;
-    margin-top: 170px;
-}
-
-.whishListCategory a {
-    font-size: 1.2rem;
-}
-
-.whishListCategory a:last-of-type {
-    color: #505DD0;
-    font-weight: bold;
 }
 
 /* ====================Table=================== */

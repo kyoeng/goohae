@@ -2,6 +2,9 @@ import { Link } from 'react-router-dom';
 import '../../../css/myPage/shoppingCart/shoppingCart.css';
 import AppLayout from './../../../../common/layout/AppLayout';
 
+import MyPageSubPageCategory from '../../../../common/myPage/category';
+import MyPsgeSubPageTitle from '../../../../common/myPage/mySubPageTitle';
+
 export default function ShppingCart() {
     // // -------------수량 변동에 따른 상품가격
     // const resultElement = document.getElementById('result');
@@ -106,12 +109,8 @@ export default function ShppingCart() {
         <AppLayout>
             <div className="shoppingCartMain">
                 {/* <section class="cartWrap"> */}
-                <div className="ShoppingCartCategory">
-                    <Link to="/" className="myPageLink">홈&nbsp;&nbsp;&gt;</Link>
-                    <Link to="/MyPage" className="myPageLink">&nbsp;&nbsp;마이쇼핑&nbsp;&nbsp;&gt;</Link>
-                    <Link to="/MyCart" className="myPageLink" id="shoppingCartLink">&nbsp;&nbsp;쇼핑카트&nbsp;&nbsp;</Link>
-                </div>
-                <p className="shoppingCartTitle">cart</p>
+                <MyPageSubPageCategory myPageSubLinkKr="장바구니"/>
+                <MyPsgeSubPageTitle myPsgeSubPageTitle="cart"/>
                 <article className="shoppingCartTableContainer">
                     <table className="shoppingCartTable">
                         <colgroup>

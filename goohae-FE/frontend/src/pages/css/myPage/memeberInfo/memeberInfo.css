@@ -30,29 +30,6 @@
 
  }
 
- #memberInfoWrap>.myInfoCategory {
-     margin-top: 170px;
- }
-
- #memberInfoWrap>.myInfoCategory>a {
-     color: gray;
-     font-size: 1.2rem;
- }
-
- #memberInfoWrap>.myInfoCategory>a:last-of-type {
-     font-size: 1.2rem;
-     color: #505DD0
- }
-
- /* ===========내 정보 타이틀=========== */
- .memberInfoTitle {
-     margin-top: 14rem;
-     margin-bottom: 4rem;
-     font-size: 2rem;
-     text-align: center;
-     color: #1A1B23;
- }
-
  #memberInfoWrap>.Ment>.memberInfoHeadText {
      font-style: NanumMyeongjo;
      font-size: 2rem;

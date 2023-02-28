@@ -52,6 +52,7 @@ function App() {
           <Route path='/myAddress' element={<MyAddress />} />
           <Route path='/addAddress' element={<AddAddress />} />
           <Route path='/memberInfo' element={<MemberInfo />} />
+          <Route path='/myCoupon' element={<MyCoupon />} />
           <Route path='/myOrder' element={<MyOrder />} />
           <Route path='/myPost' element={<MyPost />} />
           <Route path='/ShoppingCart' element={<ShoppingCart />} />

@@ -2,6 +2,9 @@ import { Link } from 'react-router-dom';
 import '../../../css/myPage/myOrder/myOrder.css';
 import AppLayout from './../../../../common/layout/AppLayout';
 
+import MyPageSubPageCategory from '../../../../common/myPage/category';
+import MyPsgeSubPageTitle from '../../../../common/myPage/mySubPageTitle';
+
 export default function MyOrder() {
 
 
@@ -199,12 +202,10 @@ export default function MyOrder() {
         <AppLayout>
             <div className="myOrderMain">
                 <div className="OrderHistoryCategory">
-                    <Link to="/" className="myPageLink">홈&nbsp;&nbsp;&gt;</Link>
-                    <Link to="/MyPage" className="myPageLink">&nbsp;&nbsp;마이쇼핑&nbsp;&nbsp;&gt;</Link>
-                    <Link to="/MyOrder" className="myPageLink" id="myPageSubLink">&nbsp;&nbsp;주문조회&nbsp;&nbsp;</Link>
+                    <MyPageSubPageCategory myPageSubLinkKr="주문조회"/>
                 </div>
                 <section className="myOrderWrap">
-                    <p className="myOrderTitle">주문내역</p>
+                    <MyPsgeSubPageTitle myPsgeSubPageTitle="주문 내역"/>
                     <article className="myOrderHistory">
                         <div className="myOrderSelectOrderCondition">
                             <p className="myOrderInquireOrderCondition">주문내역조회 0</p>

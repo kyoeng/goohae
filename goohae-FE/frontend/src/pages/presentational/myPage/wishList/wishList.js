@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import '../../../css/myPage/wishList/wishList.css';
 import AppLayout from './../../../../common/layout/AppLayout';
 
+import MyPageSubPageCategory from '../../../../common/myPage/category';
+import MyPsgeSubPageTitle from '../../../../common/myPage/mySubPageTitle';
+
 export default function wishList() {
     // let wishChkAll = document.getElementsByName('wishChkAll'),
     //     wishChk = document.getElementsByName('wishChk');
@@ -45,12 +48,8 @@ export default function wishList() {
         <AppLayout>
             <div id="wishListMain">
                 <section id="myWhishListWrap">
-                    <div className="whishListCategory">
-                        <a href="../../index.html">홈 &gt;</a>
-                        <Link to="/MyPage">마이페이지 &gt;</Link>
-                        <Link to="/WishList">위시리스트</Link>
-                    </div>
-                    <p className="myWhishListTitle">위시리스트</p>
+                    <MyPageSubPageCategory myPageSubLinkKr="위시리스트"/>
+                    <MyPsgeSubPageTitle myPsgeSubPageTitle="위시리스트"/>
                     <article className="whishListTableWrap">
                         <table className="whishListTable">
                             <colgroup>

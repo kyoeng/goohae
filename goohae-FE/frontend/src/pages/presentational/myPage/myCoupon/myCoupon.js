@@ -1,18 +1,17 @@
 import { Link } from 'react-router-dom';
-import '../../../css/myPage/myCoupon/myCoupon.css'
+import '../../../css/myPage/myCoupon/myCoupon.css';
+
+import MyPageSubPageCategory from '../../../../common/myPage/category';
+import MyPsgeSubPageTitle from '../../../../common/myPage/mySubPageTitle';
 
 export default function myCoupon() {
     // const main = document.querySelector('main');
     return (
 
         <div className="myCouponMain">
-            <div className="myCouponListCategory">
-                <Link to="/" className="myPageLink">홈&nbsp;&nbsp;&gt;</Link>
-                <Link to="/MyPage" className="myPageLink">&nbsp;&nbsp;마이쇼핑&nbsp;&nbsp;&gt;</Link>
-                <Link to="/MyCoupon" className="myPageLink" id="myPageSubLink">&nbsp;&nbsp;쿠폰내역&nbsp;&nbsp;</Link>
-            </div>
             <div id="MyCouponListWrap">
-                <p className="myCouponListTitle">쿠폰</p>
+            <MyPageSubPageCategory myPageSubLinkKr="쿠폰내역"/>
+            <MyPsgeSubPageTitle myPsgeSubPageTitle="쿠폰"/>
                 <article className="myCouponListTableWrap">
                     <table className="myCouponListTable">
                         <colgroup>

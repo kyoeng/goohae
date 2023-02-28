@@ -2,6 +2,9 @@ import '../../../css/myPage/memeberInfo/memeberInfo.css';
 import { Link } from 'react-router-dom';
 import AppLayout from './../../../../common/layout/AppLayout';
 
+import MyPageSubPageCategory from '../../../../common/myPage/category';
+import MyPsgeSubPageTitle from '../../../../common/myPage/mySubPageTitle';
+
 export default function Memberinfo() {
 
 
@@ -10,12 +13,8 @@ export default function Memberinfo() {
         <AppLayout>
             <div className="memberInfonMain">
                 <section id="memberInfoWrap">
-                    <div className="myInfoCategory">
-                        <Link to="/" className="myPageLink">홈 &gt;</Link>
-                        <Link to="/myPage" className="myPageLink">마이쇼핑 &gt;</Link>
-                        <Link to="/memberInfo" className="myPageLink" id="myPageSubLink">내 정보</Link>
-                    </div>
-                    <p className="memberInfoTitle">내 정보</p>
+                <MyPageSubPageCategory myPageSubLinkKr="내 정보"/>
+                <MyPsgeSubPageTitle myPsgeSubPageTitle="내 정보"/>
                     <div className="Ment">
                         <p className='memberInfoHeadText'><strong className="memberInfoHeadTextName">유정현</strong> 님 환영합니다.</p>
                         <p><span className="memberInfoMemberGrade">일반회원</span>으로 <strong className="memberInfoPoint">10,000원 이상 구매 시 2% 추가 적립</strong>을 받을 수 있습니다.</p>
