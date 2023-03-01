@@ -1,13 +1,17 @@
-import tHeaderStyled from '../../CSS/admin/tableHeader.module.css';
+import tableHeaderStyled from '../../CSS/admin/tableHeader.module.css';
 
-export default function TableHeader({ header1, header2, header3, header4 }) {
+export default function TableHeader({ headData }) {
+    const headRow = headData;
+
     return (
-        <div className={tHeaderStyled.tableHeader}>
-            <div>{header1}</div>
-            <div>{header2}</div>
-            <div>{header3}</div>
-            <div>{header4}</div>
-            <div> </div>
+        <div className={tableHeaderStyled.tableHeaderWrap}>
+            {
+                headRow.map((item, idx) => {
+                    return (
+                        <div key={`tHead${idx}`}>{headRow[idx]}</div>
+                    );
+                })
+            }
         </div>
     );
 }

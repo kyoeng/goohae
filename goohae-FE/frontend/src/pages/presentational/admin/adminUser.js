@@ -1,38 +1,40 @@
-import UserData from '../../../dummyData/userData';
-
-import TitleContainer from '../../../components/presentational/admin/titleContainer';
-import MemberList from '../../../components/presentational/admin/memberList';
-import TableHeader from '../../../components/presentational/admin/tableHeader';
-import SearchBar from '../../../components/presentational/admin/searchBar';
-import Pagination from '../../../common/pagination';
-
 import adminUstyled from '../../css/admin/adminUser.module.css';
 
+import Title from './../../../components/presentatial/admin/title';
+import SearchBar from '../../../components/presentatial/admin/searchBar';
+import Table from '../../../components/presentatial/admin/table';
+import Paging from '../../../common/paging';
+
+import UserData from '../../../dummyData/userData';
+
 export default function AdminUser() {
+    const uOptions = [
+        '아이디',
+        '이름',
+        '회원상태',
+    ]
+
+    const uTableHeader = [
+        '아이디',
+        '이름',
+        '가입일지',
+        '회원상태'
+    ]
 
     return (
         <div className={adminUstyled.adminUserContainer}>
-            <TitleContainer titleName='유저목록' />
-            <div className={adminUstyled.devideLine}></div>
+            <Title titleName='유저목록' />
+            <SearchBar options={uOptions} />
 
-            <SearchBar />
+            <div className={adminUstyled.total}>{`전체 ${UserData.length}건`}</div>
 
-            <TableHeader
-                headerName={`adminUser`}
-                header1={`id`}
-                header2={`이름`}
-                header3={`가입일자`}
-                header4={`회원상태`} />
-            <MemberList
-                tableName={`adminUser`}
-                data={UserData}
-                adminData1={UserData.id}
-                adminData2={UserData.name}
-                adminData3={UserData.joinDate}
-                adminData4={UserData.status}
-            />
+            <Table
+                tHeadData={uTableHeader}
+                tBodyData={UserData} />
 
-            <Pagination />
+            <div className='pagingWrap'>
+                <Paging pagingLength={Math.ceil(UserData.length)} />
+            </div>
         </div>
     );
 }
