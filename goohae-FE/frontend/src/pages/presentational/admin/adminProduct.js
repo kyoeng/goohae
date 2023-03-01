@@ -1,8 +1,8 @@
 import adminPstyled from '../../css/admin/adminProd.module.css';
 
-import Title from '../../../components/presentatial/admin/title';
-import SearchBar from '../../../components/presentatial/admin/searchBar';
-import Table from '../../../components/presentatial/admin/table';
+import Title from '../../../components/presentational/admin/title';
+import SearchBar from '../../../components/presentational/admin/searchBar';
+import Table from '../../../components/presentational/admin/table';
 import Paging from '../../../common/paging';
 
 import ProdData from '../../../dummyData/data.json';

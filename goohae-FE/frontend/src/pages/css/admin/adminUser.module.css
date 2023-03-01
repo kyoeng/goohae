@@ -1,4 +1,4 @@
-.adminProdContainer {
+.adminUserContainer {
     width: 85%;
     height: 100%;
 
@@ -11,9 +11,6 @@
     gap: 20px;
 }
 
-.devideLine {
-    width: 70%;
-    height: 1px;
-
-    background-color: #c8c8c8;
+.total {
+    font-size: 1.4rem;
 }
