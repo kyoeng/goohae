@@ -3,7 +3,7 @@
 
 <mapper namespace="com.kdt.goohae.mapper.user.UserMapper">
     <!-- 로그인 및 회원정보 -->
-    <select id="login" resultType="UserVO">
+    <select id="getUserData" resultType="UserVO">
         select * from user where id = #{id}
     </select>
 
