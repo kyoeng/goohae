@@ -104,15 +104,15 @@ input {
 
 .loginIdPwForm {
     text-align: center;
-    padding-top: 41px;
+    padding-top: 44px;
 }
 
-/* .loginBodyInput input {
+.loginBodyInput input {
     height: 36px;
     margin-bottom: 8px;
     text-indent: 1.4rem;
     outline-style: none;
-} */
+}
 
 .idCheck {
     text-align: start;

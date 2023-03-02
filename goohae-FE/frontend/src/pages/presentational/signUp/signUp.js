@@ -5,6 +5,7 @@ import '../../css/signup/signUp.css';
 import logo from "../../../stores/images/icon/logo.png";
 
 import InputBox from '../../../common/singlePage/inputBox';
+import Checkbox from"../../../common/singlePage/inputBox"
 import SingleButton from '../../../common/singlePage/singleButton';
 import ServicePermition from './servicePermition';
 
@@ -240,6 +241,8 @@ export default function SignUp() {
     const [signUpPasswordConfirm, setSignUpPasswordConfirm] = useState()
     const [signUpName, setSignUpName] = useState("")
     const [signUpPhone, setSignUpPhone] = React.useState("");
+
+    const [service, setService] = React.useState(false);
 
     //오류메시지 상태저장
     const [signUpIdErrorMassage, setSignUpIdErrorMassage] = useState('')
@@ -492,9 +495,12 @@ export default function SignUp() {
                             </div>
                             <div>
                                 <div>
-                                    <input type="checkbox" name="EmailGet" id="emailNoGet" defaultValue="NoGet" />
+                                <Checkbox checked={service} onChange={setService}>
+                                (필수) 서비스 이용약관
+                                    </Checkbox>
+                                    {/* <input type="checkbox" name="EmailGet" id="emailNoGet" defaultValue="NoGet" />
                                     <label htmlFor="emailNoGet"><span className="radioImg">라디오버튼</span></label>
-                                    <label htmlFor="emailNoGet">개인정보 처리 및 약관 동의</label>
+                                    <label htmlFor="emailNoGet">개인정보 처리 및 약관 동의</label> */}
                                 </div>
                                 <a href="#">자세히 보기</a>
                                 <div className="personalInfoPermition">
@@ -637,7 +643,8 @@ export default function SignUp() {
                         </div>
                        
                             <SingleButton className="signUpSubmitBtn signUpBtn" type="submit" onChange={signUp} 
-                                disabled={!activeSinupbtn}
+                                // disabled={!activeSinupbtn}
+                                disabled={!service}
                             >
                                 회원가입 하기
                             </SingleButton>

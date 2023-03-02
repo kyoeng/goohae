@@ -9,20 +9,20 @@ import InputBox from '../../../common/singlePage/inputBox';
 import SingleButton from '../../../common/singlePage/singleButton';
 
 export default function Login() {
-    const [loginId, setLoginId] = useState()
-    const [loginPw, setLoginPw] = useState();
+    const [loginId, setLoginId] = useState("")
+    const [loginPw, setLoginPw] = useState("");
     const [loginMessage, setLoginMessage] = useState('');
-    const loginData = { loginUser }
+    // const loginData = { loginUser }
+    console.log(loginUser.id)
 
-    //비밀번호 아이지 value 관리
+    //비밀번호 아이디 value 관리
     function changeLoginId(e) { setLoginId(e.target.value) };
     function changeLoginPw(e) { setLoginPw(e.target.value) };
-
 
     function login() {
         console.log(loginId);
         console.log(loginPw);
-        
+
         if (loginId != '' && loginPw != '') {
             axios.post('/test', {
                 id: loginId,
@@ -49,13 +49,31 @@ export default function Login() {
                     console.log(err);
                     setLoginMessage('로그인실패');
                 })
-        }else if(loginId ===''&& loginPw !== ''){
-            setLoginMessage('아이디를 입력해주세요');
-        }else{
-            setLoginMessage('비밀번호를 입력해주세요');
         }
-    }
 
+
+        //     if (loginId != "" && loginPw != "") {
+        //         if (loginId == loginUser.id ){
+        //             if(loginPw == loginUser.password) {
+        //             console.log('로그인성공');
+        //             }
+        //         }
+        //         else {
+        //             console.log('로그인실패');
+
+        //         }
+
+        //     } else if (loginId === '' && loginPw !== '') {
+        //         setLoginMessage('아이디를 입력해주세요');
+        //         setLoginId("");
+
+        //     } else if (loginId !== '' && loginPw === '') {
+        //         setLoginMessage('비밀번호를 입력해주세요');
+        //         setLoginPw("");
+        //     } else {
+        //         setLoginMessage('아이디와 비밀번호를 입력해주세요');
+        //     }
+    }
 
 
     return (
@@ -77,8 +95,7 @@ export default function Login() {
                         </ul>
                     </div>
                     <div className="loginBody">
-                        <div className='loginIdPwForm'
-                        >
+                        <div className='loginIdPwForm'>
                             <div className="loginInputContainer">
                                 <InputBox
                                     type="text"
@@ -114,7 +131,7 @@ export default function Login() {
                                 // disabled={adminValue === '' || loginPwValue === '' ? true : false}
                                 // disabled={loading}
                                 onClick={login}
-                            children="로그인"></SingleButton>
+                                children="로그인"></SingleButton>
                             <ul className="foot">
                                 <li><Link to="/signUp" >회원가입</Link></li>
                                 <li><Link to="/findId">아이디 비밀번호 찾기</Link></li>

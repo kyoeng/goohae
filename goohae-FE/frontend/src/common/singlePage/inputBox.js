@@ -9,6 +9,7 @@ const InputWrapper = styled.div`
 `;
 
 const Label = styled.label`
+    display:block;
     color: #1A1B23;
     font-size: 1.4rem;
     font-weight: 700;

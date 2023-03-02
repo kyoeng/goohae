@@ -42,64 +42,63 @@ export default function MyOrder() {
         []
     );
 
-    const data = [
-        {
-            myOrderDate: "2022-10-20",
-            myOrderImage: <img src="../../../stores/images/Esker82Sofa2-1.jpg" alt="" />,
-            myOrderProductInfo: "에스커82 소파  옵션: 화이트",
-            myOrderQuantity: "1",
-            myOrderPrice: "1,200,000",
-            myOrderState: "배송준비중",
-            myOrderOther:''
-        },
-        {
-            myOrderDate: "2022-10-20",
-            myOrderImage:  <img src="../../../stores/images/Esker82Sofa2-1.jpg" alt="" />,
-            myOrderProductInfo: "에스커82 소파  옵션: 화이트",
-            myOrderQuantity: "1",
-            myOrderPrice: "1,200,000",
-            myOrderState: "배송전",
-            myOrderOther:''
-        },       
-        {
-            myOrderDate: "2022-10-20",
-            myOrderImage:  <img src="../../../stores/images/Esker82Sofa2-1.jpg" alt="" />,
-            myOrderProductInfo: "에스커82 소파  옵션: 화이트",
-            myOrderQuantity: "1",
-            myOrderPrice: "1,200,000",
-            myOrderState: "입금전",
-            myOrderOther:''
-        },       
-        {
-            myOrderDate: "2022-10-20",
-            myOrderImage:  <img src="../../../stores/images/Esker82Sofa2-1.jpg" alt="" />,
-            myOrderProductInfo: "에스커82 소파  옵션: 화이트",
-            myOrderQuantity: "1",
-            myOrderPrice: "1,200,000",
-            myOrderState: "배송완료",
-            myOrderOther:''
-        },
-        {
-            myOrderDate: "2022-10-20",
-            myOrderImage: <img src="../../../stores/images/Esker82Sofa2-1.jpg" alt="" />,
-            myOrderProductInfo: "에스커82 소파  옵션: 화이트",
-            myOrderQuantity: "1",
-            myOrderPrice: "1,200,000",
-            myOrderState: "배송완료",
-            myOrderOther:''
-        },
-        {
-            myOrderDate: "2022-10-20",
-            myOrderImage: <img src="./bed_1.png" alt="" />,
-            myOrderProductInfo: "카르톨로라제 침대",
-            myOrderQuantity: "1",
-            myOrderPrice: "1,200,000",
-            myOrderState: "결제 취소",
-            myOrderOther:"취소 완료"
-        }
-        
-    
-    ]
+    // const data = [
+    //     {
+    //         myOrderDate: "2022-10-20",
+    //         myOrderImage: <img src="../../../stores/images/Esker82Sofa2-1.jpg" alt="" />,
+    //         myOrderProductInfo: "에스커82 소파  옵션: 화이트",
+    //         myOrderQuantity: "1",
+    //         myOrderPrice: "1,200,000",
+    //         myOrderState: "배송준비중",
+    //         myOrderOther:''
+    //     },
+    //     {
+    //         myOrderDate: "2022-10-20",
+    //         myOrderImage:  <img src="../../../stores/images/Esker82Sofa2-1.jpg" alt="" />,
+    //         myOrderProductInfo: "에스커82 소파  옵션: 화이트",
+    //         myOrderQuantity: "1",
+    //         myOrderPrice: "1,200,000",
+    //         myOrderState: "배송전",
+    //         myOrderOther:''
+    //     },       
+    //     {
+    //         myOrderDate: "2022-10-20",
+    //         myOrderImage:  <img src="../../../stores/images/Esker82Sofa2-1.jpg" alt="" />,
+    //         myOrderProductInfo: "에스커82 소파  옵션: 화이트",
+    //         myOrderQuantity: "1",
+    //         myOrderPrice: "1,200,000",
+    //         myOrderState: "입금전",
+    //         myOrderOther:''
+    //     },       
+    //     {
+    //         myOrderDate: "2022-10-20",
+    //         myOrderImage:  <img src="../../../stores/images/Esker82Sofa2-1.jpg" alt="" />,
+    //         myOrderProductInfo: "에스커82 소파  옵션: 화이트",
+    //         myOrderQuantity: "1",
+    //         myOrderPrice: "1,200,000",
+    //         myOrderState: "배송완료",
+    //         myOrderOther:''
+    //     },
+    //     {
+    //         myOrderDate: "2022-10-20",
+    //         myOrderImage: <img src="../../../stores/images/Esker82Sofa2-1.jpg" alt="" />,
+    //         myOrderProductInfo: "에스커82 소파  옵션: 화이트",
+    //         myOrderQuantity: "1",
+    //         myOrderPrice: "1,200,000",
+    //         myOrderState: "배송완료",
+    //         myOrderOther:''
+    //     },
+    //     {
+    //         myOrderDate: "2022-10-20",
+    //         myOrderImage: <img src="./bed_1.png" alt="" />,
+    //         myOrderProductInfo: "카르톨로라제 침대",
+    //         myOrderQuantity: "1",
+    //         myOrderPrice: "1,200,000",
+    //         myOrderState: "결제 취소",
+    //         myOrderOther:"취소 완료"
+    //     }
+    // ]
+
     //   const myOrderWrap = document.querySelector(".MyOrderWrap"),
     //   historyBtnWrap = myOrderWrap.querySelector(".SelectOrderCondition"),
     //   orderConditionWrap = myOrderWrap.querySelector(".OrderConditionWrap "),
@@ -290,11 +289,13 @@ export default function MyOrder() {
     //     .join("-");
     // }
 
+
+
     return (
         <AppLayout>
             <div className="myOrderMain">
                 <div className="OrderHistoryCategory">
-                    <MyPageSubPageCategory myPageSubLinkKr="주문조회"/>
+                    <MyPageSubPageCategory myPageSubLinkKr="주문 내역"/>
                 </div>
                 <section className="myOrderWrap">
                     <MyPsgeSubPageTitle myPsgeSubPageTitle="주문 내역"/>
@@ -406,7 +407,7 @@ export default function MyOrder() {
                                 </tr>
                             </tbody>
                         </table> */}
-                        <OrderTable columns={columns} data={data} />
+                        <OrderTable columns={columns} />
                     {/* </article> */}
                 </section>
             </div>
