@@ -1,13 +1,105 @@
 import { Link } from 'react-router-dom';
+import { useMemo } from "react";
 import '../../../css/myPage/myOrder/myOrder.css';
 import AppLayout from './../../../../common/layout/AppLayout';
 
 import MyPageSubPageCategory from '../../../../common/myPage/category';
 import MyPsgeSubPageTitle from '../../../../common/myPage/mySubPageTitle';
-
+import OrderTable from '../../../../components/presentational/myPage/myOrder/myOrderTable';
 export default function MyOrder() {
 
+    const columns = useMemo(
+        () => [
+            {
+                accessor: "myOrderDate",
+                Header: "주문일자",
+            },
+            {
+                accessor: "myOrderImage",
+                Header: "이미지",
+            },
+            {
+                accessor: "myOrderProductInfo",
+                Header: "상품정보",
+            },
+            {
+                accessor: "myOrderQuantity",
+                Header: "수량",
+            },
+            {
+                accessor: "myOrderPrice",
+                Header: "상품구매금액",
+            },
+            {
+                accessor: "myOrderState",
+                Header: "주문처리상태",
+            },
+            {
+                accessor: "myOrderOther",
+                Header: "취소/교환/반품",
+            },
+        ],
+        []
+    );
 
+    const data = [
+        {
+            myOrderDate: "2022-10-20",
+            myOrderImage: <img src="../../../stores/images/Esker82Sofa2-1.jpg" alt="" />,
+            myOrderProductInfo: "에스커82 소파  옵션: 화이트",
+            myOrderQuantity: "1",
+            myOrderPrice: "1,200,000",
+            myOrderState: "배송준비중",
+            myOrderOther:''
+        },
+        {
+            myOrderDate: "2022-10-20",
+            myOrderImage:  <img src="../../../stores/images/Esker82Sofa2-1.jpg" alt="" />,
+            myOrderProductInfo: "에스커82 소파  옵션: 화이트",
+            myOrderQuantity: "1",
+            myOrderPrice: "1,200,000",
+            myOrderState: "배송전",
+            myOrderOther:''
+        },       
+        {
+            myOrderDate: "2022-10-20",
+            myOrderImage:  <img src="../../../stores/images/Esker82Sofa2-1.jpg" alt="" />,
+            myOrderProductInfo: "에스커82 소파  옵션: 화이트",
+            myOrderQuantity: "1",
+            myOrderPrice: "1,200,000",
+            myOrderState: "입금전",
+            myOrderOther:''
+        },       
+        {
+            myOrderDate: "2022-10-20",
+            myOrderImage:  <img src="../../../stores/images/Esker82Sofa2-1.jpg" alt="" />,
+            myOrderProductInfo: "에스커82 소파  옵션: 화이트",
+            myOrderQuantity: "1",
+            myOrderPrice: "1,200,000",
+            myOrderState: "배송완료",
+            myOrderOther:''
+        },
+        {
+            myOrderDate: "2022-10-20",
+            myOrderImage: <img src="../../../stores/images/Esker82Sofa2-1.jpg" alt="" />,
+            myOrderProductInfo: "에스커82 소파  옵션: 화이트",
+            myOrderQuantity: "1",
+            myOrderPrice: "1,200,000",
+            myOrderState: "배송완료",
+            myOrderOther:''
+        },
+        {
+            myOrderDate: "2022-10-20",
+            myOrderImage: <img src="./bed_1.png" alt="" />,
+            myOrderProductInfo: "카르톨로라제 침대",
+            myOrderQuantity: "1",
+            myOrderPrice: "1,200,000",
+            myOrderState: "결제 취소",
+            myOrderOther:"취소 완료"
+        }
+        
+    
+    ]
     //   const myOrderWrap = document.querySelector(".MyOrderWrap"),
     //   historyBtnWrap = myOrderWrap.querySelector(".SelectOrderCondition"),
     //   orderConditionWrap = myOrderWrap.querySelector(".OrderConditionWrap "),
@@ -241,7 +333,7 @@ export default function MyOrder() {
                             <li className="myOrderHistoryNotice">주문번호를 클릭하시면 해당 주문에 대한 상세내역을 확인하실 수 있습니다.</li>
                         </ul>
                     </article>
-                    <article className="myOrderTableWrap">
+                    {/* <article className="myOrderTableWrap">
                         <table className="myOrderTable">
                             <colgroup>
                                 <col width="10%" />
@@ -313,8 +405,9 @@ export default function MyOrder() {
                                     <td className="myOrderTableRow"> 취소 완료</td>
                                 </tr>
                             </tbody>
-                        </table>
-                    </article>
+                        </table> */}
+                        <OrderTable columns={columns} data={data} />
+                    {/* </article> */}
                 </section>
             </div>
         </AppLayout>

@@ -4,7 +4,7 @@ import AppLayout from './../../../../common/layout/AppLayout';
 
 import MyPageSubPageCategory from '../../../../common/myPage/category';
 import MyPsgeSubPageTitle from '../../../../common/myPage/mySubPageTitle';
-
+import ShoppingCartTable from '../../../../components/presentational/myPage/shoppingCart/shoppingCartTable';
 export default function ShoppingCart() {
 
     return (
@@ -13,7 +13,8 @@ export default function ShoppingCart() {
                 {/* <section class="cartWrap"> */}
                 <MyPageSubPageCategory myPageSubLinkKr="장바구니"/>
                 <MyPsgeSubPageTitle myPsgeSubPageTitle="cart"/>
-                <article className="shoppingCartTableContainer">
+                <ShoppingCartTable/>
+                {/* <article className="shoppingCartTableContainer">
                     <table className="shoppingCartTable">
                         <colgroup>
                             <col width="4%" />
@@ -27,9 +28,9 @@ export default function ShoppingCart() {
                             <tr className="shoppingCartTableLine">
                                 <th scope="col" className="shoppingCartTitleTh">
                                     선택
-                                    {/* <label>
+                                    <label>
                                         <input type="checkbox" name="checkAll" className="shoppingCartCheck" checked="" value="selectAll" onclick="selectAll(this.checked)" />
-                                    </label> */}
+                                    </label> 
                                 </th>
                                 <th scope="cos" className="shoppingCartTitleTh">이미지</th>
                                 <th scope="col" className="shoppingCartTitleTh">상품정보</th>
@@ -59,16 +60,16 @@ export default function ShoppingCart() {
                                 </td>
                                 <td className="shoppingCartTableRow">
                                     <span className="shoppingCartTableFontSize"></span>
-                                    {/* <div>10000원</div> */}
+                                    <div>10000원</div>
                                 </td>
                                 <td className="shoppingCartTableRow">
                                     <button className="shoppingCartTableBtn">
                                         삭제
                                     </button>
                                 </td>
-                            </tr>
-                            {/* 
-                                <tr class="productBox">
+                            </tr> */}
+                           
+                                {/* <tr class="productBox">
                                     <td class="productCheckbox">
                                         <input type="checkbox" name="checkbox" class="checkbox" checked="" value="10000"
                                             onclick="Calculator()">
@@ -98,10 +99,10 @@ export default function ShoppingCart() {
                                         <button>바로구매</button>
                                         <button>삭제하기</button>
                                     </td>
-                                </tr> */}
+                                </tr>
                         </tbody>
                     </table>
-                    {/* </article> */}
+                 </article>
                     <div className="shoppingCartTotalPriceContainer">
                         <div className="shoppingCartTotalPrcieInner">
                             <p className="shoppingCartTotalPrice totals" />
@@ -112,10 +113,10 @@ export default function ShoppingCart() {
                             <a className="btnDisabled shoppingCartOrderButton" href="../memberPayment/memberPayment.html">선택상품 주문</a>
                             <a className="btnDisabled shoppingCartOrderButton" href="../memberPayment/memberPayment.html">전체상품 주문</a>
                         </div>
-                    </div>
-                    {/* </section> */}
-                </article>
-            </div>
+                    </div> 
+                 </section> 
+                 </article> */}
+            </div> 
         </AppLayout>
     );
 }

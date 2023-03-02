@@ -4,7 +4,7 @@ import AppLayout from './../../../../common/layout/AppLayout';
 
 import MyPageSubPageCategory from '../../../../common/myPage/category';
 import MyPsgeSubPageTitle from '../../../../common/myPage/mySubPageTitle';
-
+import MyPostTable from '../../../../components/presentational/myPage/myPost/myPostTable';
 
 export default function MyPost() {
 
@@ -26,7 +26,8 @@ export default function MyPost() {
                 <section id="myPostWrap">
                     <MyPageSubPageCategory myPageSubLinkKr="나의 리뷰"/>
                     <MyPsgeSubPageTitle myPsgeSubPageTitle="나의 리뷰"/>
-                    <article className="myPostTableWrap">
+                    <MyPostTable/>
+                    {/* <article className="myPostTableWrap">
                         <select name="#" id="myPostTableSelect">
                             <option value="1" className="myPostTableOption">작성최신순</option>
                             <option value="2" className="myPostTableOption">작성오래된순</option>
@@ -92,7 +93,7 @@ export default function MyPost() {
                                 </tr>
                             </tbody>
                         </table>
-                    </article>
+                    </article> */}
                 </section>
             </div>
         </AppLayout>
