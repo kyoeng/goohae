@@ -13,23 +13,18 @@ import java.io.IOException;
 
 
 @Slf4j
-@WebFilter(urlPatterns = {"/api/admin/valid/", "/api/user/valid/"})
+@WebFilter(urlPatterns = {"/api/admin/valid/*", "/api/user/valid/*"})
 public class FilterImpl implements Filter {
 
     private final JwtService jwtService = new JwtService();
 
 
     @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
-        Filter.super.init(filterConfig);
-    }
-
-    @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
         HttpServletResponse httpServletResponse = (HttpServletResponse) response;
 
-        String token = httpServletRequest.getHeader(HttpHeaders.AUTHORIZATION.substring(7));
+        String token = httpServletRequest.getHeader(HttpHeaders.AUTHORIZATION).substring(7);
 
         if (token == null || !jwtService.validateToken(token)) {
             httpServletResponse.setStatus(HttpStatus.UNAUTHORIZED.value());

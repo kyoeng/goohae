@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Slf4j
 @RestController
@@ -82,6 +84,28 @@ public class UserController {
             return "수정에 실패하였습니다.";
         }
     } // changeAddress
+
+
+    /**
+     * 회원이 탈퇴하기를 누를 경우 실행될 컨트롤러 ( 바로 삭제가 아닌 휴면계정으로 )
+     * @param vo = 유저에 관한 VO
+     * @param response = HttpServletResponse
+     * @return 성공 시 성공메시지, 실패 시 실패메시지 202 상태코드
+     */
+    @PostMapping("/api/user/valid/disabled")
+    public String disabledUser(@RequestBody UserVO vo, HttpServletResponse response) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date current = new Date();
+
+        vo.setJoinDate(dateFormat.format(current));
+
+        if (userService.disabledUser(vo) > 0) {
+            return "탈퇴에 성공하였습니다.";
+        } else {
+            response.setStatus(HttpStatus.ACCEPTED.value());
+            return "탈퇴에 실패하였습니다.";
+        }
+    } // disabledUser
 
 
 

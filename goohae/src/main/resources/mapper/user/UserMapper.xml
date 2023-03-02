@@ -24,4 +24,9 @@
         update user set post_number = #{postNumber}, address = #{address}
         where id = #{id}
     </update>
+
+    <!-- 회원 탈퇴 ( 휴면계정으로 ) -->
+    <update id="disabledUser">
+        update user set status = 'H', join_date = #{joinDate} where id = #{id}
+    </update>
 </mapper>

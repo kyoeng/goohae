@@ -60,4 +60,15 @@ public class UserServiceImpl implements UserService {
     public int changeAddress(UserVO vo) {
         return userMapper.changeAddress(vo);
     } // changeAddress
+
+
+    /**
+     * 회원 탈퇴에 관한 메서드 ( 휴면계정으로 )
+     * @param vo = userVO
+     * @return 성공 시 1, 실패 시 0
+     */
+    @Override
+    public int disabledUser(UserVO vo) {
+        return userMapper.disabledUser(vo);
+    }
 }

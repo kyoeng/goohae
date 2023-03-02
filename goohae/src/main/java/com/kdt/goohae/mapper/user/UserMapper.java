@@ -19,4 +19,7 @@ public interface UserMapper {
     /* 배송지 수정 */
     int changeAddress(UserVO vo);
 
+    /* 회원 탈퇴 ( 휴면으로 ) */
+    int disabledUser(UserVO vo);
+
 }
