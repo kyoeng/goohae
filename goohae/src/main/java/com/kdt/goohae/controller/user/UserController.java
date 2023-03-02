@@ -40,7 +40,10 @@ public class UserController {
      */
     @GetMapping("/api/user/valid/my-info")
     public UserVO getUserInfo(UserVO vo) {
-        return userService.getUserData(vo);
+        vo = userService.getUserData(vo);
+        vo.setPassword(null);
+
+        return vo;
     } // getUserInfo
 
 
