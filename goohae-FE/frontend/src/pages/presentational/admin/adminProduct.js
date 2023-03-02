@@ -1,28 +1,39 @@
-import adminPstyled from '../../css/admin/adminProduct.module.css';
+import adminPstyled from '../../css/admin/adminProd.module.css';
 
-import TitleContainer from './../../../components/presentational/admin/titleContainer';
-import AdminPstatusBox from '../../../components/presentational/admin/adminPstatusBox';
-import AdminPsearchBar from '../../../components/presentational/admin/adminPsearchBar';
-import AdminPtable from '../../../components/presentational/admin/adminPtable';
+import Title from '../../../components/presentational/admin/title';
+import SearchBar from '../../../components/presentational/admin/searchBar';
+import Table from '../../../components/presentational/admin/table';
+import Paging from '../../../common/paging';
 
-
-import { StatusArr, ProdData } from '../../../components/container/admin/adminPstatusBox';
+import ProdData from '../../../dummyData/data.json';
 
 
 export default function AdminProduct() {
+    const pOptions = [
+        '상품이름',
+        '카테고리',
+    ]
+
+    const pTableHeader = [
+        '카테고리',
+        '상품이름',
+        '가격',
+        '원가'
+    ]
+
+
 
     return (
         <div className={adminPstyled.adminProdContainer}>
-            <TitleContainer titleName='상품조회/수정' />
-            <div className={adminPstyled.devideLine}></div>
+            <Title titleName='상품목록' />
+            <SearchBar options={pOptions} />
 
-            <AdminPstatusBox
-                StatusArr={StatusArr}
-                ProdData={ProdData} />
+            <div className={adminPstyled.total}>{`전체 ${ProdData.length}건`}</div>
 
-            <AdminPsearchBar />
+            <Table
+                tHeadData={pTableHeader}
+                tBodyData={ProdData} />
 
-            <AdminPtable />
         </div>
     );
 }

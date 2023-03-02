@@ -1,35 +1,8 @@
-/* 공통사항 */
-.tableHeader {
-    width: 70%;
-    padding: 1%;
-    background-color: #f5f5f5;
-    
-    display: flex;
-    justify-content: center;
-    gap : 30px
-}
-
-.tableHeader>div {
-    margin-left: 80px;
-    font-size: 1.6rem;
+.tableHeaderWrap {
+    grid-column: 3/11;
+    grid-row: 1/1;
+    padding: 5px;
 
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
 }
-
-.tableHeader>div:nth-child(1){
-    margin-right: 30px;
-}
-.tableHeader>div:nth-child(2){
-    margin-right: 15px;
-}
-.tableHeader>div:nth-child(3){
-    margin-right: 5px;
-}
-.tableHeader>div:nth-child(4){
-    margin-right: 3px;
-}
-
-
-

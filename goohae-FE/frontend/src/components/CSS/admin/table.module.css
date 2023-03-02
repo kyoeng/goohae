@@ -1,0 +1,8 @@
+.tableContainer {
+    width: 70%;
+    height: 50%;
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(11, 0.5fr);
+}

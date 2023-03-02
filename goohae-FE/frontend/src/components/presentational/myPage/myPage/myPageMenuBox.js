@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-
+// 아미페이지 서브페이지 메뉴 링크 
 const myPageData = [
     {
         myPageSubPageLink: "/myOrder",
@@ -25,11 +25,6 @@ const myPageData = [
         myPageMenuBoxContent: "관심상품으로 등록하신 상품의 목록을 보여드립니다.",
     },
     {
-        myPageSubPageLink: "/myCoupon",
-        myPageMenuTitle: "쿠폰",
-        myPageMenuBoxContent: "관심상품으로 등록하신 상품의 목록을 보여드립니다.",
-    },
-    {
         myPageSubPageLink: "/myPost",
         myPageMenuTitle: "내 리뷰",
         myPageMenuBoxContent: "고객님께서 작성하신 게시물을 관리하는 공간입니다.",
@@ -43,7 +38,20 @@ const myPageData = [
 
 
 
+const MyMenuWrap = styled.article`
+`;
 
+const MyPageMenuContainer = styled.div`
+    margin-top: 40px;
+    width: 100%;
+    height: 900px;
+    display: grid;
+    grid-template: 30% 30% 30% / 30% 30% 30%;
+    row-gap: 3.3%;
+    column-gap: 3.3%;
+    justify-content: space-between;
+    margin-bottom: 100px;
+`; 
 
 const MyPageMenuBoxContent = styled.div` 
     display: flex;
@@ -79,21 +87,21 @@ const MyPageMenuBoxContent = styled.div`
 
 //사용 : <MyPageMenuBox myPageSubPageLink ="서브 페이지 링크" myPageMenuTitle="메뉴제목" myPageMenuBoxContent="서브페이지 설명 입력"/>
 const MyPageMenuBox = ({ myPageSubPageLink, myPageMenuBoxContent, myPageMenuTitle }) => (
-    <>
-    {
-        myPageData.map((data) => (
-            <MyPageMenuBoxContent>
-                <Link to={data.myPageSubPageLink} className="myPageMenuTitle">{data.myPageMenuTitle}</Link>
-                <Link to={data.myPageSubPageLink}>
-                    <p className="myPageMenuContent">
-                        {data.myPageMenuBoxContent}
-                    </p>
-                </Link>
-                <Link to={myPageSubPageLink} className="myPageOrderMenuMore">더보기&gt;</Link>
-            </MyPageMenuBoxContent>
-        ))
-    }
-    </>
+    <MyMenuWrap>
+        <MyPageMenuContainer>
+            {myPageData.map((data) => (
+                <MyPageMenuBoxContent>
+                    <Link to={data.myPageSubPageLink} className="myPageMenuTitle">{data.myPageMenuTitle}</Link>
+                    <Link to={data.myPageSubPageLink}>
+                        <p className="myPageMenuContent">
+                            {data.myPageMenuBoxContent}
+                        </p>
+                    </Link>
+                    <Link to={data.myPageSubPageLink} className="myPageOrderMenuMore">더보기&gt;</Link>
+                </MyPageMenuBoxContent>
+            ))}
+        </MyPageMenuContainer>
+    </MyMenuWrap>
 );
 
 export default MyPageMenuBox;

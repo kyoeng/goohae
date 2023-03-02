@@ -23,11 +23,10 @@ body {
     min-width: 700px;
 }
 
-.myPostMain, 
-#myPostWrap,
-.myPostTableWrap {
+.myPostMain {
     margin: 0 auto;
 }
+/* 
 
 .myPostUpper #myPostTableSelect {
     font-size: 12px;
@@ -40,15 +39,15 @@ body {
 
 .myPostTableWrap {
     width: 100%;
-    /* margin: 50px auto;    */
+    margin: 50px auto;   /
     margin-bottom: 200px;
-}
+} */
 
 /* ====================Table=================== */
 /* ====================Table=================== */
 /* ====================Table=================== */
 
-
+/* 
 .myPostTable {
     width: 100%;
     margin: 10px auto;
@@ -80,7 +79,7 @@ body {
 
 .nondisplay{
     display: none;
-}
+} */
 /* .PostConmypostTableTrolButton {
     margin: 0 auto;
     width: 90%;

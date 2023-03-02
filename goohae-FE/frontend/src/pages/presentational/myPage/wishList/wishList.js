@@ -5,6 +5,7 @@ import AppLayout from './../../../../common/layout/AppLayout';
 
 import MyPageSubPageCategory from '../../../../common/myPage/category';
 import MyPsgeSubPageTitle from '../../../../common/myPage/mySubPageTitle';
+import WishListTable from '../../../../components/presentational/myPage/whishList/wishListTable';
 
 export default function wishList() {
     // let wishChkAll = document.getElementsByName('wishChkAll'),
@@ -48,9 +49,10 @@ export default function wishList() {
         <AppLayout>
             <div id="wishListMain">
                 <section id="myWhishListWrap">
-                    <MyPageSubPageCategory myPageSubLinkKr="위시리스트"/>
-                    <MyPsgeSubPageTitle myPsgeSubPageTitle="위시리스트"/>
-                    <article className="whishListTableWrap">
+                    <MyPageSubPageCategory myPageSubLinkKr="위시리스트" />
+                    <MyPsgeSubPageTitle myPsgeSubPageTitle="위시리스트" />
+                    <WishListTable />
+                    {/* <article className="whishListTableWrap">
                         <table className="whishListTable">
                             <colgroup>
                                 <col width="4%" />
@@ -107,8 +109,8 @@ export default function wishList() {
                         <button className="whishlistButton" id="whishListBlackButton">
                             전체 상품 주문
                             {/* <a href="#">관심상품 비우기</a> */}
-                        </button>
-                    </article>
+                        {/* </button>
+                    </article> */} 
                 </section>
             </div>
         </AppLayout>
