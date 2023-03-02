@@ -11,6 +11,7 @@ public class ProductVO {
 
     private int categoryCode;
     private String managerId;
+    private int productCode;
     private String productName;
     private int price;
     private String productInfo;

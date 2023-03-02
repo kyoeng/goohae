@@ -13,7 +13,7 @@ import java.io.IOException;
 
 
 @Slf4j
-@WebFilter(urlPatterns = {"/api/admin/certi/", "/api/user/certi/"})
+@WebFilter(urlPatterns = {"/api/admin/valid/", "/api/user/valid/"})
 public class FilterImpl implements Filter {
 
     private final JwtService jwtService = new JwtService();
