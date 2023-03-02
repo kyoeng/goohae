@@ -8,10 +8,12 @@ import com.kdt.goohae.domain.forPaging.PageMaker;
 import com.kdt.goohae.domain.forPaging.SearchCri;
 import com.kdt.goohae.service.admin.ProductService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -40,7 +42,7 @@ public class ProductController {
      * @throws IOException
      */
     @PostMapping("/api/admin/valid/reg-pro")
-    public String regProduct(@ModelAttribute ProductVO vo, ProductImgVO img_vo, HttpServletRequest request) throws IOException {
+    public String regProduct(@ModelAttribute ProductVO vo, ProductImgVO img_vo, HttpServletRequest request, HttpServletResponse response) throws IOException {
         String manager = (String) request.getAttribute("id");
         String auth = (String)request.getAttribute("auth");
 
@@ -66,12 +68,14 @@ public class ProductController {
                     fileNum++;
 
                     if (productService.regProductImg(img_vo, m, request, fileNum) < 1) {
+                        response.setStatus(HttpStatus.ACCEPTED.value());
                         return "상품 이미지 등록 실패";
                     }
                 }
 
                 return "상품 등록 성공";
             } else {
+                response.setStatus(HttpStatus.ACCEPTED.value());
                 return "상품 등록 실패";
             }
         }
@@ -85,16 +89,18 @@ public class ProductController {
      * @return String ( 결과 정보 )
      */
     @PostMapping("/api/admin/valid/del-pro")
-    public String deleteProduct(ProductVO vo, HttpServletRequest request) {
+    public String deleteProduct(@RequestBody ProductVO vo, HttpServletRequest request, HttpServletResponse response) {
         String manager = (String) request.getAttribute("id");
         String auth = (String)request.getAttribute("auth");
 
         if (auth == null || auth == "" || auth.equalsIgnoreCase("C")) {
+            response.setStatus(HttpStatus.ACCEPTED.value());
             return "권한이 없습니다.";
         } else {
             if (productService.deleteProduct(vo) > 0) {
                 return "삭제가 완료되었습니다.";
             } else {
+                response.setStatus(HttpStatus.ACCEPTED.value());
                 return "삭제에 실패했습니다.";
             }
         }

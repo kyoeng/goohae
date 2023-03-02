@@ -19,13 +19,17 @@ import java.util.UUID;
 @Service
 public class ProductServiceImpl implements ProductService {
 
+    // 필드
     private final ProductMapper productMapper;
 
+    // 생성자
     public ProductServiceImpl(ProductMapper productMapper) {
         this.productMapper = productMapper;
     }
 
 
+
+    // 메서드
     /**
      * 상품 테이블에 상품 업로드 메서드
      * @param vo = 상품에 대한 데이터
