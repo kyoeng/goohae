@@ -1,28 +1,32 @@
 [
     {
-        "img": "./images/main/bed.png",
+        "img": "../stores/images/main/bed.png",
         "title": "빈티지 윌넛 일체형 침대",
+        "category": "bed",
         "price": 200000,
         "orig_price": 250000,
         "dis": 20
     },
     {
-        "img": "./images/main/sofa.jpg",
+        "img": "../stores/images/main/sofa.jpg",
         "title": "패브릭 다크 그레이 소파",
+        "category": "sofa",
         "price": 200000,
         "orig_price": 250000,
         "dis": 20
     },
     {
-        "img": "./images/main/bed.png",
+        "img": "../stores/images/main/bed.png",
         "title": "빈티지 윌넛 일체형 침대",
+        "category": "bed",
         "price": 200000,
         "orig_price": 250000,
         "dis": 20
     },
     {
-        "img": "./images/main/sofa.jpg",
+        "img": "../stores/images/main/sofa.jpg",
         "title": "패브릭 다크 그레이 소파",
+        "category": "sofa",
         "price": 200000,
         "orig_price": 250000,
         "dis": 20
