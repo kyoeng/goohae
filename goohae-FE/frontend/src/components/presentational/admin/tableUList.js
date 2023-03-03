@@ -4,6 +4,7 @@ import ListStyled from '../../CSS/admin/tableUlist.module.css';
 export default function TableUlist({ listData }) {
     const [tListData, setListData] = useState(listData);
 
+    console.log(tListData);
     function reqDelete() {
         if (window.confirm('삭제하시겠습니까?')) {
             return;

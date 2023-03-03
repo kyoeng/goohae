@@ -34,6 +34,7 @@ export default function AdminProduct() {
                 tHeadData={pTableHeader}
                 tBodyData={ProdData} />
 
+            <Paging pagingLength={ProdData.length} />
         </div>
     );
 }

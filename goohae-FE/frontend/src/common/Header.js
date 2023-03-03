@@ -3,7 +3,7 @@ import loginIcon from "../stores/images/icon/login_icon.png";
 import joinIcon from "../stores/images/icon/join.png";
 import cartIcon from "../stores/images/icon/cart.png";
 import faqIcon from "../stores/images/icon/FAQicon.png";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Header() {
     const login = loginIcon,
@@ -44,7 +44,7 @@ export default function Header() {
                                 </a>
                             </li>
                         </ul>
-
+                        {/* ------11--- */}
                         <form action="." className="searchContainer">
                             <input type="text" placeholder="Search" />
 
@@ -52,7 +52,7 @@ export default function Header() {
                         </form>
                     </div>
                 </div>
-
+                {/* ````````2222```````` */}
 
 
                 {/* ===== 카테고리 및 이용문의 부분 ===== */}
@@ -60,7 +60,7 @@ export default function Header() {
                     <ul className="categoryContainer">
                         <li><span>거실</span>
                             <ul>
-                                <li><a href="/">소파</a></li>
+                                <li><Link to='/subpage'>소파</Link></li>
                                 <li><a href="/">테이블</a></li>
                                 <li><a href="/">의자</a></li>
                                 <li><a href="/">TV콘솔</a></li>
@@ -90,18 +90,17 @@ export default function Header() {
                             </ul>
                         </li>
 
-                        <li><span><img src={faq} alt="faq" />고객센터</span>
+                        <li><span>고객문의</span>
                             <ul>
-                                <li><a href="/">이용문의</a></li>
-                                <li><a href="/">공지사항</a></li>
-                                <li><a href="/">FAQ</a></li>
+                                <li><Link to="/customer/main">이용문의</Link></li>
+                                <li><Link to="/">공지사항</Link></li>
+                                <li><Link to="/">FAQ</Link></li>
+                                <li><Link to="/">상담문의</Link></li>
                             </ul>
                         </li>
                     </ul>
                 </div>
             </header>
-
-            <Outlet />
         </>
     );
 }

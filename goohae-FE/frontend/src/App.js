@@ -31,6 +31,10 @@ import SubPage from './pages/presentational/subPage/SubPage';
 import MemberPayMent from './pages/presentational/memberPayment/memberPayMent';
 import Header from './common/Header';
 
+//고객 페이지
+import Customer from './pages/presentational/customer/customer';
+import CustomerMain from './pages/presentational/customer/customerMain';
+
 function App() {
 
   return (
@@ -43,7 +47,9 @@ function App() {
 
           {/* 메인페이지 */}
           <Route path='/' element={<MainPage />} />
-          <Route path='/subpage' element={<SubPage/>}/>
+          <Route path='/subpage' element={<SubPage />}>
+
+          </Route>
 
           {/* 마이페이지 */}
           <Route path='/myPage' element={<MyPage />} />
@@ -67,7 +73,12 @@ function App() {
           <Route path='/findPw' element={<FindPw />} />
           <Route path='/nonMemberInquire' element={<NonMemberInquire />} />
 
-
+          <Route path='customer/*' element={<Customer />}>
+            <Route path="main" element={<CustomerMain />} />
+            <Route path="faq" />
+            <Route path="notice" />
+            <Route path="inqury" />
+          </Route>
 
           {/* 로그인,가입 ,아이디/비밀번호 찾기 */}
           {/* <Route path='login' element={<Login />} />

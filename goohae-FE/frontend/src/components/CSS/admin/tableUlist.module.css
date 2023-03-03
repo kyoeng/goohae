@@ -1,4 +1,15 @@
 .rowWRap {
+    height: 10%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+}
+
+.rowWRap >div{
+    display: flex;
+    font-size: 1.5rem;
+    justify-content: center;
+}
+
+.rowWRap>button {
+    height: 70%;
 }
