@@ -1,0 +1,20 @@
+
+
+[
+    {
+        "img": "./images/main/bed.png",
+        "title": "빈티지 윌넛 일체형 침대",
+        "option" : "brown, kingSize",
+        "price": 200000,
+        "ea" : 2,
+        "post_fee" : 25000
+    },
+    {
+        "img": "./images/main/sofa.jpg",
+        "title": "패브릭 다크 그레이 소파",
+        "option" : "red, smallSize",
+        "price": 200000,
+        "ea" : 2,
+        "post_fee" : 25000
+    }
+]
