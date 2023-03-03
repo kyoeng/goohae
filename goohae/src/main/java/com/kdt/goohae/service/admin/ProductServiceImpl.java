@@ -1,9 +1,11 @@
 package com.kdt.goohae.service.admin;
 
 
+import com.kdt.goohae.domain.admin.CategoryVO;
 import com.kdt.goohae.domain.admin.GetProductDTO;
 import com.kdt.goohae.domain.admin.ProductImgVO;
 import com.kdt.goohae.domain.admin.ProductVO;
+import com.kdt.goohae.domain.forPaging.SearchCri;
 import com.kdt.goohae.mapper.admin.ProductMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -17,13 +19,17 @@ import java.util.UUID;
 @Service
 public class ProductServiceImpl implements ProductService {
 
+    // 필드
     private final ProductMapper productMapper;
 
+    // 생성자
     public ProductServiceImpl(ProductMapper productMapper) {
         this.productMapper = productMapper;
     }
 
 
+
+    // 메서드
     /**
      * 상품 테이블에 상품 업로드 메서드
      * @param vo = 상품에 대한 데이터
@@ -84,23 +90,73 @@ public class ProductServiceImpl implements ProductService {
         return productMapper.regProductImg(vo);
     } // regProductImg
 
+
     /**
-     * 카테고리별 상품 데이터를 위한 메서드 ( 페이지에 보일 상품을 위한 데이터 )
-     * @param dto = 상품과 상품이미지를 전송하기 위한 DTO
-     * @return GetProductDTO로 이루어진 List
+     * 상품 삭제를 위한 메서드
+     * @param vo = 상품에 관한 VO
+     * @return 성공 시 1, 실패 시 0
      */
     @Override
-    public List<GetProductDTO> getProduct(GetProductDTO dto) {
-        return productMapper.getProduct(dto);
+    public int deleteProduct(ProductVO vo) {
+        return productMapper.deleteProduct(vo);
+    }
+
+
+
+
+
+    /**
+     * 상품 데이터 검색 전 카테고리 코드 가져오는 메서드
+     * @param vo = 카테고리에 관한 VO
+     * @return categoryCode
+     */
+    @Override
+    public int getCategory(CategoryVO vo) {
+        return productMapper.getCategory(vo);
+    } // getCategory
+
+
+    /**
+     * 카테고리별 상품 데이터를 위한 메서드
+     * @param cri = 카테고리별 상품 데이터 검색과 페이징을 위한 Criteria 객체
+     * @return GetProduct Type의 List
+     */
+    @Override
+    public List<GetProductDTO> getProduct(SearchCri cri) {
+        return productMapper.getProduct(cri);
     } // getProduct
 
 
     /**
      * 카테고리별 상품 테이블의 전체 데이터 갯수 조회
-     * @return
+     * @return 카테고리별 데이터 전체 갯수
      */
     @Override
-    public int getTotalData(GetProductDTO dto) {
-        return productMapper.getTotalData(dto);
-    }
+    public int getTotalData(SearchCri cri) {
+        return productMapper.getTotalData(cri);
+    } // getTotalData
+
+
+
+
+    /**
+     * 전체 검색 ( 헤더의 검색바 )를 위한 메서드
+     * @param cri = 상품 데이터 검색을 위한 객체
+     * @return GetProduct Type의 List
+     */
+    @Override
+    public List<GetProductDTO> getSearchProduct(SearchCri cri) {
+        return productMapper.getSearchProduct(cri);
+    } // getSearchProduct
+
+
+    /**
+     * 전체 검색 ( 헤더의 검색바 )를 위한 전체 데이터 갯수 조회
+     * @param cri = 상품 데이터 검색을 위한 객체
+     * @return 검색한 데이터 전체 갯수
+     */
+    @Override
+    public int getSearchTotalData(SearchCri cri) {
+        return productMapper.getSearchTotalData(cri);
+    } // getSearchTotalData
 }

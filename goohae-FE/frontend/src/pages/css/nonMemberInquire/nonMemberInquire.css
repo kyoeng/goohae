@@ -100,12 +100,15 @@ input {
 .redInputBox{
     border: 1px solid #FF655B;
 }
-
+.nonMemberWarningBox{
+    height: 15px;
+}
 .nonMemberWarning{
     color: #FF655B;
     font-size: 1.2rem;
     line-height: 1.2rem;
     margin: 2px 0;
+
 }
 
 .buttonLogin{

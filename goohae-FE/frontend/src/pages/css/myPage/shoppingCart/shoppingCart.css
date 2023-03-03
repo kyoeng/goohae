@@ -36,7 +36,7 @@ body {
 /* ====================Table=================== */
 /* ====================Table=================== */
 /* ====================Table=================== */
-.shoppingCartTable {
+/* .shoppingCartTable {
     width: 100%;
     margin: 0 auto;
     border-collapse: collapse;
@@ -55,11 +55,7 @@ body {
     text-align: center;
     font-size: 1.4rem;
 }
-/* 
-.shoppingCartTable .shoppingCartTableLine .shoppingCartTableRow {
-    text-align: center;
-    height: 100px;
-} */
+
 .shoppingCartTable .shoppingCartTableTbody .shoppingCartTableRow:nth-of-type(1) .shoppingCartTableChoice{
     border: #1A1B23 1px solid;
 }
@@ -101,8 +97,9 @@ body {
 
 .shoppingCartTable .shoppingCartTableRow:nth-of-type(5){
     padding:0 10px;
-    text-align: right;
+    text-align: right; 
 } 
+*/
 /* 마우스 오버  */
 .hover{
     color: #505DD0;

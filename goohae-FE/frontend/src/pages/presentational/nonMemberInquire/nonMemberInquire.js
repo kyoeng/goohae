@@ -7,6 +7,7 @@ import SingleButton from '../../../common/singlePage/singleButton';
 
 
 export default function NonMemberInquire() {
+    
     //이름, 이메일, 비밀번호, 비밀번호 확인
 
     const [nonMemberName, setNonMemberName] = useState("")
@@ -24,7 +25,7 @@ export default function NonMemberInquire() {
     const [isNonMemberName, setIsNonMemberName] = useState(false);
     const [isNonMemberPhone, setIsNonMemberPhone] = useState(false);
     const [isNonMemberNumber, setIsNonMemberNumber] = useState(false);
-    
+
     const [disabled, setDisabled] = useState(true);
 
 
@@ -32,7 +33,7 @@ export default function NonMemberInquire() {
     const onChangeNonMemberName = (e) => {
         const currentName = e.target.value;
         setNonMemberName(currentName);
-        if (currentName.length < 2 ) {
+        if (currentName.length < 2) {
             setNonMemberNameMassage("이름을 입력해주세요");
             setIsNonMemberName(false);
         } else {
@@ -65,10 +66,10 @@ export default function NonMemberInquire() {
             setIsNonMemberNumber(true);
         }
     };
-    function nonMember(){
-        if(isNonMemberName&&isNonMemberPhone&&isNonMemberNumber){
+    function nonMember() {
+        if (isNonMemberName && isNonMemberPhone && isNonMemberNumber) {
             return setDisabled(false);
-        }   
+        }
     }
 
 
@@ -92,11 +93,17 @@ export default function NonMemberInquire() {
                     <div className="nonMemBody">
                         <div className="nonMemberForm">
                             <InputBox type="text" id="nonMemberName" label="이름" name="nonMemberName" onChange={onChangeNonMemberName} required placeholder="국문으로 입력해 주세요" onkeyup="this.value=this.value.replace(/[^-ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g,'');" />
-                            <p className="nonMemberWarning">{nonMemberNameMassage}</p>
+                            <div className="nonMemberWarningBox">
+                                <p className="nonMemberWarning">{nonMemberNameMassage}</p>
+                            </div>
                             <InputBox type="text" name="mobile" label="휴대전화" className="nonMemberPhone" onChange={onChangeNonMemberPhone} minLength={11} maxLength={11} required onkeyup="this.value=this.value.replace(/[^-0-9]/g,'');" />
-                            <p className="nonMemberWarning">{nonMemberPhoneMassage}</p>
+                            <div className="nonMemberWarningBox">
+                                <p className="nonMemberWarning">{nonMemberPhoneMassage}</p>
+                            </div>
                             <InputBox type="text" id="nonMemberEmail" label="주문번호" name="nonMemberEmail" onChange={onChangeNonMemberNumber} required placeholder="메일, 문자로 발송된 번호를 입력해 주세요" />
-                            <p className="nonMemberWarning">{nonMemberNumberMassage}</p>
+                            <div className="nonMemberWarningBox">
+                                <p className="nonMemberWarning">{nonMemberNumberMassage}</p>
+                            </div>
                             <SingleButton className="nonMemberBtn" type="summit" onclick={nonMember} disabled={disabled}>
                                 주문조회하기
                             </SingleButton>

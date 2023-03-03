@@ -151,7 +151,7 @@ body {
     line-height: 25px;
     color: #1A1B23;
 }
-
+/* 
 .myOrderTable {
     width: 100%;
     margin: 0 auto;
@@ -237,7 +237,7 @@ body {
 .myOrderTable .myOrderTableRow {
     text-align: center;
     height: 100px;
-}
+} */
 
 /* .myOrderTable+p {
     padding: 30px;

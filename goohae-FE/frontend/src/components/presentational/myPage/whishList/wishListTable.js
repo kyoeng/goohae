@@ -1,18 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import data2 from "../../../../dummyData/data2.json"
 
-
-const wishListData=[
-    {
-    wishListLink:"",
-    wishListProductImage:"",
-    wishListProduct:"월넛 빈티지 우드 프레임 침대 + 클라우드 매트리스 Queen set",
-    wishListOption:"화이트",
-    wishListProductPrice:"1500000원",
-    wishListDelevery:"3000원"
-}
-]
+// const wishListData=[
+//     {
+//     wishListLink:"",
+//     imagePath:"",
+//     productName:"월넛 빈티지 우드 프레임 침대 + 클라우드 매트리스 Queen set",
+//     price:1500000,
+//     delPrice:"3000"
+// }
+// ]
 
 const WishListTableWrap = styled.article`
 width: 100%;
@@ -64,6 +63,7 @@ wishListTbody >.wishListTd:nth-of-type(2)>img {
 .whishListTable .wishListTd:nth-of-type(3) {
     text-align: left;
     font-weight: 700;
+    padding-left:30px;
 }
 
 /* 마우스 오버  */
@@ -71,11 +71,11 @@ wishListTbody >.wishListTd:nth-of-type(2)>img {
     color: #505DD0;
 }
 
-.whishListTable .wishListTd:nth-of-type(3) .wishListProductName:last-child {
-    padding-top: 11px;
-    opacity: 0.5;
+// .whishListTable .wishListTd:nth-of-type(3) .wishListProductName:last-child {
+//     padding-top: 11px;
+//     opacity: 0.5;
 
-}
+// }
 
 
 .wishListRight {
@@ -83,7 +83,7 @@ wishListTbody >.wishListTd:nth-of-type(2)>img {
     text-align: right;
 }
 
-.whishListTable .wishListTd:last-of-type {
+.wishListTd:last-of-type {
     display: flex;
     flex-flow: column wrap;
     justify-content: space-around;
@@ -153,20 +153,19 @@ const WishListTable = ({ wishListLink, wishListProductImage,wishListProduct,wish
                     </tr>
                 </thead>
                 <tbody id="wishListTbody">
-                {wishListData.map((data) => (
+                {data2.map((data) => (
                     <tr className="wishListLine">
                         <td className="wishListTd">
                             <input type="checkbox" className="wishListCheckBox" name="wishChk" cheked="cheked" />
                         </td>
                         <td className="wishListTd">
-                            <a href={data.wishListLink}>{data.wishListProductImage}</a>
+                            <a href={data.wishListLink}><img src={data.imagePath} alt="상품이미지" className="myOrderTableProductImage" /></a>
                         </td>
                         <td className="wishListTd">
-                            <p className="wishListProductName">{data.wishListProduct}</p>
-                            <p className="wishListProductName">{data.wishListOption}</p>
+                            <p className="wishListProductName">{data.productName}</p>
                         </td>
                         <td className="wishListTd wishListRight">
-                            {data.wishListProductPrice}
+                            {data.price}
                         </td>
                         <td className="wishListTd wishListRight">
                             {data.wishListDelevery}
