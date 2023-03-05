@@ -1,0 +1,27 @@
+
+.payMentBox {
+    border:1px solid black; 
+    display:inline-block;
+    position:sticky; 
+    height:100px; 
+    width:100px; 
+    right:0; 
+    top:100;
+}
+
+.FinPayBtn{
+    margin-top:30px;
+    font-size:2rem; 
+    display:flex; 
+    width:30rem;
+    height:4rem; 
+    justify-content:center;
+    align-items:center;
+    background-color: #9497AB;
+    color:#F7F7FB;
+}
+
+.FinPayBtn:hover {
+    background-color:#505DD0 ;
+    color: white;
+}
