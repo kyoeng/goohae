@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Children, useState } from 'react';
 
 import tableStyled from '../../CSS/admin/table.module.css';
 
@@ -12,7 +12,7 @@ export default function Table({ tHeadData, tBodyData }) {
     return (
         <div className={`${tableStyled.tableContainer}`}>
             <TableHeader headData={headData} />
-            <TablePbody tableData={tableData} />
+            {Children}
         </div>
     );
 }

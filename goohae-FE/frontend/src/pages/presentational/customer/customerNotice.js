@@ -1,4 +1,6 @@
-import Table from './../../../components/presentational/admin/table';
+import Table from '../../../common/tableComponent/table';
+import NoticeTable from '../../../components/presentational/customer/noticeTable';
+
 import CustomerData from './../../../dummyData/customerData';
 
 
@@ -9,10 +11,11 @@ export default function CustomerNotice() {
         '작성일',
         '작성자',
     ];
-    
+
     return (
-        <Table 
-            tHeadData={cHeadData}
-            />
+        <Table>
+
+
+        </Table>
     );
 }
