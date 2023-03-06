@@ -67,7 +67,7 @@
      flex-flow: column wrap;
  }
 
- .memberInfonMain>section>.FormWrap>.memberInfoForm>div:not(.ButtonWrap) {
+ .memberInfonMain>section>.FormWrap>.memberInfoForm>div:not(.buttonWrap) {
      margin-bottom: 20px;
  }
 
@@ -157,21 +157,21 @@
      margin-right: 10px;
  }
 
- .ButtonWrap {
+ .buttonWrap {
      display: flex;
      justify-content: center;
      gap: 20px;
      margin-bottom: 100px;
  }
 
- .ButtonWrap>#memberInfoSubmitBtn {
+ .buttonWrap>#memberInfoSubmitBtn {
      border: 1px solid #1A1B23;
      background-color: #1A1B23;
      color: white;
      /* font-weight: 700; */
  }
 
- .ButtonWrap>.memberInfoBtn {
+ .buttonWrap>.memberInfoBtn {
      display: inline-block;
      text-align: center;
      width: 150px;
@@ -184,29 +184,29 @@
      font-weight: normal;
  }
 
- .ButtonWrap>.memberInfoBtn>.memberInfoSubmitWhtBtn {
+ .buttonWrap>.memberInfoBtn>.memberInfoSubmitWhtBtn {
      text-align: center;
  }
 
- .ButtonWrap>#memberInfoSubmitBtn:hover {
+ .buttonWrap>#memberInfoSubmitBtn:hover {
      background-color: #505DD0;
      border-color: #505DD0;
  }
 
- .ButtonWrap>.memberInfoBtn:hover {
+ .buttonWrap>.memberInfoBtn:hover {
      border: 1px solid #505DD0;
      color: #505DD0;
  }
 
- /* .ButtonWrap>button>span {
+ /* .buttonWrap>button>span {
     color: white;
     font-weight: normal;
     align-items: center;
 } */
- .ButtonWrap>a:hover {
+ .buttonWrap>a:hover {
      background-color: white;
-     border: var(--PurpleBlue) 1px solid;
-     color: var(--PurpleBlue);
+     border: #505DD0 1px solid;
+     color: #505DD0;
  }
 
  .btnDisable {

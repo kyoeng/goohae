@@ -1,0 +1,22 @@
+
+.singlePageInputForm{
+    width: 320px;
+    /* text-align: center; */
+    /* padding-bottom: 41px; */
+}
+
+/* 헤더 각 리스트 */
+.singlePageHeaderList {
+    height: 100%;
+    width: 160px;
+    text-align: center;
+}
+
+.singlePageHeaderListLink {
+    display: block;
+    height: 100%;
+    margin: auto;
+    padding: .7rem 0px;
+    font-size: 14px;
+
+}

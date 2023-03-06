@@ -1,0 +1,9 @@
+.errorMessageBox{
+    height: 15px;
+}
+.errorMessage{
+    color: #FF655B;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    margin: 2px 0;
+}

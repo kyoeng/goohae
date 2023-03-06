@@ -1,0 +1,103 @@
+.wishListTableWrap{
+width: 100%;
+margin: 0 auto;
+margin-top: 50px;
+}
+
+.whishListTable {
+    width: 100%;
+    min-width: 700px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    font-size: 1.5rem;
+}
+
+.whishListTable #wishListThead,
+.whishListTable #wishListTbody,
+.whishListTable .wishListLine {
+    border-bottom: 2px solid #1A1B23;
+}
+
+.wishListLine {
+    height: 40px;
+    border-bottom: 1px;
+}
+
+.wishListTh {
+    text-align: center;
+}
+
+.wishListTd {
+    text-align: center;
+    height: 100px;
+}
+
+wishListTbody >.wishListTd:nth-of-type(2)>img {
+    display: inline-block;
+    width: 90%;
+    height: 90%;
+}
+
+#wishListTbody>.wishListLine {
+    height: 140px;
+}
+
+.wishListTd:nth-of-type(1) {
+    width: 40px;
+}
+
+.whishListTable .wishListTd:nth-of-type(3) {
+    text-align: left;
+    font-weight: 700;
+    padding-left:30px;
+}
+
+/* 마우스 오버  */
+.whishListTable .wishListTd:nth-of-type(3) .wishListProductName :hover{
+    color: #505DD0;
+}
+
+.wishListRight {
+    padding: 0 10px;
+    text-align: right;
+}
+
+.wishListTd:last-of-type {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: center;
+    text-decoration: underline;
+    height: 83px;
+    margin: 28.5px 0;
+}
+
+.whishlistButtonWrap {
+    margin: 10px auto;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 150px;
+}
+
+.whishlistControlButtonWrap,
+.whishlistOrderButton {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.whishlistButton{
+    text-align: center;
+    width: 160px;
+    height: 36px;
+    line-height: 36px;
+    background-color: #F5F5F5;
+    border: 1px solid #1A1B23;
+}
+
+.whishlistButtonWrap #whishListBlackButton {
+    display: inline-block;
+    background-color: #1A1B23;
+    color: #F5F5F5;
+} 

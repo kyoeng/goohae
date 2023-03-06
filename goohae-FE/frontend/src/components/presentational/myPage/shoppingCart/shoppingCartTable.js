@@ -1,85 +1,7 @@
 import React, { useCallback } from 'react';
-import styled from 'styled-components';
+import styles from '../../../CSS/myPage/shoppingCart/shoppingCartTable.module.css';
 
-
-const ShoppingCartTableWrap = styled.article`
-
-    margin: 0 auto;
-
-.myPostUpper #shoppingCartTableSelect {
-    font-size: 12px;
-}
-
-.shoppingCartTableWrap .shoppingCartTableOption,
-.shoppingCartTableWrap #shoppingCartTableSelect  {
-    color:#1A1B23;
-}
-
-.shoppingCartTableWrap {
-    width: 100%;
-    /* margin: 50px auto;    */
-    margin-bottom: 200px;
-}
-
-/* ====================Table=================== */
-/* ====================Table=================== */
-/* ====================Table=================== */
-
-
-.shoppingCartTable {
-    width: 100%;
-    margin: 10px auto;
-    border-collapse: collapse;
-}
-
-
-.shoppingCartTitleThaed {
-    border-bottom: 2px solid #1A1B23;
-    text-align: center;
-    height: 40px;
-}
-
-.shoppingCartTableLine {
-    border-bottom: 1px solid #1A1B23;
-    height: 140px;
-}
-
-.shoppingCartTableRow {
-    border-bottom: 2px solid #1A1B23;
-    text-align: center;
-    height: 70px;
-}
-
-.shoppingCartTableRow:nth-of-type(3){
-    text-align: left;
-    font-weight: 700;
-    padding-left: 10px;
-}
-.shoppingCartTableRow:nth-of-type(4){
-    text-align: center;
-}
-.shoppingCartTableCount{
-    text-align:center;
-    padding:0;
-    width: 15px;
-    height: 20px;
-}
-
-.shoppingCartTableRow:nth-of-type(5){
-    padding:0 10px;
-    text-align: right; 
-} 
-
- .myPostSubject:hover{
-    color: #505DD0;
-}
-
-.nondisplay{
-    display: none;
-}
-`
-
-const ShppingCartTable = () => {
+export default  function ShppingCartTable(){
     const orderInfo = [
         {
             orderSeq: 1,
@@ -124,8 +46,8 @@ const ShppingCartTable = () => {
 
 
     return (
-        <ShoppingCartTableWrap>
-            <table className="shoppingCartTable">
+        <article className={styles.shoppingCartTableWrap}>
+            <table className={styles.shoppingCartTable}>
                 <colgroup>
                     <col width="4%" />
                     <col width="14%" />
@@ -134,50 +56,46 @@ const ShppingCartTable = () => {
                     <col width="10%" />
                     <col width="10%" />
                 </colgroup>
-                <thead className="shoppingCartTitleThaed">
+                <thead className={styles.shoppingCartTitleThaed}>
                     <tr>
-                        <th scope="col" className="shoppingCartTitleTh">
+                        <th scope="col" className={styles.shoppingCartTitleTh}>
                             선택
                             {/* <label>
-                        <input type="checkbox" name="checkAll" className="shoppingCartCheck" checked="" value="selectAll" onclick="selectAll(this.checked)" />
+                        <input type="checkbox" name="checkAll" className={styles.shoppingCartCheck} checked="" value="selectAll" onclick="selectAll(this.checked)" />
                     </label> */}
                         </th>
-                        <th scope="cos" className="shoppingCartTitleTh" style={{ display: 'none' }}>주문번호</th>
-                        <th scope="cos" className="shoppingCartTitleTh">이미지</th>
-                        <th scope="col" className="shoppingCartTitleTh">상품정보</th>
-                        <th scope="col" className="shoppingCartTitleTh">수량</th>
-                        <th scope="col" className="shoppingCartTitleTh">상품금액</th>
-                        <th scope="col" className="shoppingCartTitleTh">삭제</th>
+                        <th scope="cos" className={styles.shoppingCartTitleTh}>이미지</th>
+                        <th scope="col" className={styles.shoppingCartTitleTh}>상품정보</th>
+                        <th scope="col" className={styles.shoppingCartTitleTh}>수량</th>
+                        <th scope="col" className={styles.shoppingCartTitleTh}>상품금액</th>
+                        <th scope="col" className={styles.shoppingCartTitleTh}>삭제</th>
                     </tr>
                 </thead>
-                <tbody className="shoppingCartTableTbody">
+                <tbody className={styles.shoppingCartTableTbody}>
                     {orderInfo.map((data) => (
-                        <tr className="shoppingCartTableLine">
-                            <td className="shoppingCartTableRow">
-                                <input type="checkbox" name="checkbox" className="shoppingCartTableChoice" defaultValue={10000} onclick="Calculator()" />
+                        <tr className={styles.shoppingCartTableLine}>
+                            <td className={styles.shoppingCartTableRow}>
+                                <input type="checkbox" name="checkbox" className={styles.shoppingCartTableChoice} defaultValue={10000} onclick="Calculator()" />
                             </td>
-                            <td className="shoppingCartTableRow" style={{ display: 'none' }} >
-                                <p className="shoppingCartTableProductName shoppingCartTableFontSize">{data.orderSeq}</p>
+                            <td className={styles.shoppingCartTableRow}>
+                                <a href="#"><img src="../images/icon/HunkerBed1-1.jpg" alt="상품이미지" className={styles.shoppingCartTableProductImage} /></a>
                             </td>
-                            <td className="shoppingCartTableRow">
-                                <a href="#"><img src="../images/icon/HunkerBed1-1.jpg" alt="상품이미지" className="shoppingCartTableProductImage" /></a>
-                            </td>
-                            <td className="shoppingCartTableRow">
-                                <a href="#" className="cartName">
-                                    <p className="shoppingCartTableProductName shoppingCartTableFontSize">{data.productName}</p>
+                            <td className={styles.shoppingCartTableRow}>
+                                <a href="#" className={styles.cartName}>
+                                    <p className={[styles.shoppingCartTableProductName, styles.shoppingCartTableFontSize]}>{data.productName}</p>
                                 </a>
                             </td>
-                            <td className="shoppingCartTableRow">
-                                <span className="shoppingCartTableFontSize"  >{data.productEa}</span>
-                                <input type="button" className="shoppingCartTableCount" defaultValue="+" />
-                                <input type="button" className="shoppingCartTableCount" defaultValue="-" />
+                            <td className={styles.shoppingCartTableRow}>
+                                <span className={styles.shoppingCartTableFontSize}  >{data.productEa}</span>
+                                <input type="button" className={styles.shoppingCartTableCount} defaultValue="+" />
+                                <input type="button" className={styles.shoppingCartTableCount} defaultValue="-" />
                             </td>
-                            <td className="shoppingCartTableRow">
-                                <span className="shoppingCartTableFontSize"></span>
+                            <td className={styles.shoppingCartTableRow}>
+                                <span className={styles.shoppingCartTableFontSize}></span>
                                 {data.price}
                             </td>
-                            <td className="shoppingCartTableRow">
-                                <button className="shoppingCartTableBtn">
+                            <td className={styles.shoppingCartTableRow}>
+                                <button className={styles.shoppingCartTableBtn}>
                                     삭제
                                 </button>
                             </td>
@@ -186,19 +104,18 @@ const ShppingCartTable = () => {
                 </tbody>
             </table>
             {/* </article> */}
-            <div className="shoppingCartTotalPriceContainer">
-                <div className="shoppingCartTotalPrcieInner">
-                    <p className="shoppingCartTotalPrice totals" />
-                    <p className="shoppingCartTotalPrice plusImg" />
-                    <p className="shoppingCartTotalPrice equalImg" />
+            <div className={styles.shoppingCartTotalPriceContainer}>
+                <div className={styles.shoppingCartTotalPrcieInner}>
+                    <p className={[styles.shoppingCartTotalPrice,styles.totals]} />
+                    <p className={[styles.shoppingCartTotalPrice,styles.plusImg]}/>
+                    <p className={[styles.shoppingCartTotalPrice,styles.equalImg]} />
                 </div>
-                <div className="shoppingCartOrderButtonBox">
-                    <a className="btnDisabled shoppingCartOrderButton" href="../memberPayment/memberPayment.html">선택상품 주문</a>
-                    <a className="btnDisabled shoppingCartOrderButton" href="../memberPayment/memberPayment.html">전체상품 주문</a>
+                <div className={styles.shoppingCartOrderButtonBox}>
+                    <a className={[styles.btnDisabled, styles.shoppingCartOrderButton]} id={styles.shoppingCarSelectBtn} href="../memberPayment/memberPayment.html">선택상품 주문</a>
+                    <a className={[styles.btnDisabled, styles.shoppingCartOrderButton]} id={styles.shoppingCartDeleteBtn}href="../memberPayment/memberPayment.html">전체상품 주문</a>
                 </div>
             </div>
             {/* </section> */}
-        </ShoppingCartTableWrap>
+        </article>
     );
 }
-export default ShppingCartTable

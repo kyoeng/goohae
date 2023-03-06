@@ -1,0 +1,71 @@
+*{
+    color: #1A1B23;
+    margin: 0;
+    padding-left: 0;
+    font-family: 'NanumGothic';
+}
+body {
+    background-color: #F5F5F5;
+    ;
+}
+
+.container>.nonMemberListWrap:nth-of-type(1),
+input {
+    border: 1px solid #1A1B23
+}
+
+/*---------------컨테이너 중앙, 균등 ---------------*/
+.nonMemberMain::after,
+.nonMemberMain::before {
+    content: " ";
+    display: block;
+    flex-grow: 1;
+    height: 1em;
+    width: 100%;
+}
+
+.nonMemberMain {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ------------개별 요소들--------------------- */
+.singlePageHeaderList:first-of-type>.singlePageHeaderListLink {
+    /* width: 60px; */
+    /* border-bottom:  #1A1B23 solid 2px; */
+    color:  #1A1B23;
+    border:none;
+    /* cursor: pointer;
+    font-weight: 700 */
+}
+
+/*비회원 배송조회 링크 보라색 */
+.singlePageHeaderList:last-of-type>.singlePageHeaderListLink {
+    width: 115px;
+    border-bottom:#505DD0 solid 2px ;
+    color:  #505DD0;;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+/* ------------------------ */
+
+/* .redInputBox{
+    border: 1px solid #FF655B;
+}
+.nonMemberWarningBox{
+    height: 15px;
+}
+.nonMemberWarning{
+    color: #FF655B;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    margin: 2px 0;
+} */
+
+.buttonLogin{
+    background-color: #1A1B23;
+}

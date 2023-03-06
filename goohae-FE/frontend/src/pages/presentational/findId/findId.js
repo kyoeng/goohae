@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "../../css/findId/findId.css";
+import styles from "../../../pages/css/findId/findId.module.css";
 
 import InputBox from '../../../common/singlePage/inputBox';
 import SingleButton from '../../../common/singlePage/singleButton';
+import SinglePageFindContainer from '../../../common/singlePage/singlePageFindContainer';
+import SinglePageFindHeader from './../../../common/singlePage/singlePageFindHeader';
+import EmailInput from "../../../common/singlePage/emailInput";
 
 export default function FindID() {
     //이름, 이메일, 비밀번호, 비밀번호 확인
@@ -71,54 +74,21 @@ export default function FindID() {
 
 
     return (
+        <SinglePageFindContainer className="styles.container">
+            <SinglePageFindHeader />
+            <div className={styles.findIdForm} action method="post">
+                <InputBox type="text" id="fiName" name="fiName" label="이름" className={styles.findIdInput} onChange={onChangeFindIdName} required placeholder="이름" />
+                <p className={[styles.findIdWarning, styles.hidden]}>이름을 입력해주세요</p>
 
-        <div className="findIdMain">
-            <div className="findIdContainer">
-                <div className="findIdInnerContainer">
-                    <div className="findIdHead">
-                        <div className="findIdHeadLogo">
-                            <Link to="/">
-                                logo
-                            </Link>
-                        </div>
-                        <ul className="findIdHeadListWrap">
-                            <li className="findIdHeadList">
-                                <Link to="/findId" className="findIdLink">아이디 찾기</Link>
-                            </li>
-                            <li className="findIdHeadList">
-                                <Link to="/findPw" className="findPwLink">비밀번호 찾기</Link>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div className="findIdForm" action method="post">
-                        <InputBox type="text" id="fiName" name="fiName" label="이름" className="findIdInput" onChange={onChangeFindIdName} required placeholder="이름" />
-                        <p className="findIdWarning hidden">이름을 입력해주세요</p>
-                        <label htmlFor="findiw_name" className="findIdLabel">이메일</label>
-                        <div className="findIEemailWrap">
-                            <input type="text" id="fiEmail" name="fiEmail" className="findIdInput" onChange={onChangeFindIdEmail} minLength={5} autofocus required />
-                            @
-                            <select className="fpInput">
-                                <option value="gmail.com">gmail.com</option>
-                                <option value="naver.com">naver.com</option>
-                                <option value="daum.net">daum.net</option>
-                                <option value="hanmail.net">hanmail.net</option>
-                                <option value="nate.com">nate.com</option>
-                                <option value="hotmail.com">hotmail.com</option>
-                                <option value="outlook.com">outlook.com</option>
-                                <option value="icloud.com">icloud.com</option>
-                                {/* <option value="_manual">집적입력</option> */}
-                            </select>
-                        </div><p className="findIdWarning hidden">이메일을 입력해주세요</p>
-                        <InputBox type="text" name="mobile" label="휴대전화" className="findIdInput fiMobile" onChange={onChangeFindIdPhone} minLength={11} maxLength={11} required />
-                        <p className="findIdWarning hidden">휴대전화를 입력해주세요</p>
-                        <SingleButton type="submit" className="findIdBtn" onClick={findIdBtn}>아이디 찾기</SingleButton>
-                    </div>
-                    <Link to="/Login" className="findIdLinkToLogin">로그인으로 돌아가기</Link>
-
-                </div>
+                <EmailInput />
+                <p className={[styles.findIdWarning, styles.hidden]}>이메일을 입력해주세요</p>
+                <InputBox type="text" name="mobile" label="휴대전화" className={[styles.findIdInput, styles.fiMobile]} onChange={onChangeFindIdPhone} minLength={11} maxLength={11} required />
+                <p className={[styles.findIdWarning, styles.hidden]}>휴대전화를 입력해주세요</p>
+                <SingleButton type="submit" className={styles.findIdBtn} onClick={findIdBtn}>아이디 찾기</SingleButton>
             </div>
-        </div>
+            <a href="/Login" className={styles.findIdLinkToLogin}>로그인으로 돌아가기</a>
+
+        </SinglePageFindContainer>
     );
 
 

@@ -1,8 +1,13 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom";
-import "../../css/findPw/findPw.css";
+import styles from "../../css/findPw/findPw.module.css";
 import InputBox from '../../../common/singlePage/inputBox';
 import SingleButton from '../../../common/singlePage/singleButton';
+import SinglePageFindContainer from '../../../common/singlePage/singlePageFindContainer';
+import SinglePageFindHeader from "../../../common/singlePage/singlePageFindHeader";
+import EmailInput from "../../../common/singlePage/emailInput";
+import ErrorMessage from "../../../common/singlePage/errorMessage";
+
 
 export default function FindPw() {
 
@@ -70,56 +75,22 @@ export default function FindPw() {
     }
 
     return (
-        <div className="findIdMain">
-            <div className="container">
-                <div className="innerContainer">
-                    <div className="findPwHead">
-                        <div className="findPwHeadLogo">
-                            <Link to="/">
-                                logo
-                            </Link>
-                        </div>
-                        <ul className="findPwHeadListWrap">
-                            <li className="findPwHeadList">
-                                <Link to="/findId" className="findIdLink">아이디 찾기</Link>
-                            </li>
-                            <li className="findPwHeadList">
-                                <Link to="/findPw" className="findPwLink">비밀번호 찾기</Link>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="findPwFormContainer">
-                        <div className="findPwForm" action method="post">
-                            <InputBox type="id" id="fpId" label="아이디" className="findPwInput" name="fpId" required placeholder="아이디" />
-                            <span className="hidden">아이디를 입력해주세요</span>
-                            <InputBox type="text" id="fpName" label="이름" className="findPwInput" name="fpName" required placeholder="이름" />
-                            <span className="hidden">이름을 입력해주세요</span>
-                            <InputBox type="text" name="mobile" label="휴대전화" className="findPwInput fpMobile" minLength={11} maxLength={11} required onkeyup="this.value=this.value.replace(/[^0-9]/g,'');" />
-                            {/* <input type="email" name="fdEmail" id="fdEmail" required placeholder="이메일"> */}
-                            <span className="hidden">휴대전화를 <span className="nonDisplay">정확하게</span> 입력해주세요</span>
-                            <label htmlFor="findPw_email" className="findPwLabel">이메일</label>
-                            <div className="findPwEmail">
-                                <input type="email" className="findPwInput" id="findPwEmail" name="fpFw" minLength={5} autofocus required />
-                                @
-                                <select className="findPwEmailSel">
-                                    <option value="gmail.com">gmail.com</option>
-                                    <option value="naver.com">naver.com</option>
-                                    <option value="daum.net">daum.net</option>
-                                    <option value="hanmail.net">hanmail.net</option>
-                                    <option value="nate.com">nate.com</option>
-                                    <option value="hotmail.com">hotmail.com</option>
-                                    <option value="outlook.com">outlook.com</option>
-                                    <option value="icloud.com">icloud.com</option>
-                                    {/* <option value="_manual">집적입력</option> */}
-                                </select>
-                            </div>
-                            <p className="findPwWarning hidden">이메일을 입력해주세요</p>
-                            <SingleButton type="submit" className="findPwBtn" onClick={findPwBtn}>비밀번호 찾기</SingleButton>
-                        </div>
-                        <Link to="/Login" className="findPwLinkToLogin">로그인으로 돌아가기</Link>
-                    </div>
+        <SinglePageFindContainer>
+            <SinglePageFindHeader />
+            <div className={styles.findPwFormContainer}>
+                <div className={styles.findPwForm} action method="post">
+                    <InputBox type="id" id="fpId" label="아이디" className={styles.findPwInput} name="fpId" required placeholder="아이디" />
+                    <span className={styles.hidden}>아이디를 입력해주세요</span>
+                    <InputBox type="text" id="fpName" label="이름" className={styles.findPwInput} name="fpName" required placeholder="이름" />
+                    <span className={styles.hidden}>이름을 입력해주세요</span>
+                    <InputBox type="text" name="mobile" label="휴대전화" className={[styles.findPwInput, styles.fpMobile]} minLength={11} maxLength={11} required onkeyup="this.value=this.value.replace(/[^0-9]/g,'');" />
+                    <span className={styles.hidden}>휴대전화를 <span className={styles.nonDisplay}>정확하게</span> 입력해주세요</span>
+                    <EmailInput/>
+                    <ErrorMessage></ErrorMessage>
+                    <SingleButton type="submit" className={styles.findPwBtn} onClick={findPwBtn}>비밀번호 찾기</SingleButton>
                 </div>
+                <Link to="/Login" className={styles.findPwLinkToLogin}>로그인으로 돌아가기</Link>
             </div>
-        </div>
+        </SinglePageFindContainer>
     );
 }

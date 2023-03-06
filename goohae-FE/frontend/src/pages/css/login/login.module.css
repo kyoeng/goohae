@@ -1,0 +1,101 @@
+* {
+    color: #1A1B23;
+    font-family: 'NanumGothic';
+}
+
+body {
+    background-color: #F5F5F5;
+}
+
+
+
+/* --------컨테이너------------- */
+
+.loginInputContainer{
+    padding-top: 40px;
+}
+/* --------각각---------------- */
+
+
+
+/* 보라색  링크  */
+.pupleLink {
+    width: 60px;
+    border-bottom: #505DD0 solid 2px;
+    color: #505DD0;
+    cursor: pointer;
+    font-weight: 700
+}
+
+.singlePageHeaderList:last-of-type>.singlePageHeaderListLink {
+    color: #1A1B23;
+    border: none;
+}
+
+.idCheck {
+    text-align: start;
+}
+
+.idCheck>* {
+    color: #1A1B23;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.idCheck .idCheckInput {
+    margin-right: 10px;
+    width: 14px;
+    font-family: 'Nanum Gothic';
+}
+
+.loginIdPwForm .loginErrorBox {
+    height: 30px;
+}
+
+
+.loginIdPwForm .loginError {
+    text-align: left;
+    padding-top: 15px;
+    color: #FF655B;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+}
+
+.redInputBox {
+    border: 1px solid #FF655B;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.loginButton {
+    display: block;
+    width: 320px;
+    height: 36px;
+    margin: 30px auto 0px;
+    border: 0;
+    /* background-color:#9497AB;
+    color: whitesmoke; */
+}
+
+.foot li {
+    margin: 15px auto;
+    text-align: center;
+}
+
+.foot li a {
+    color: #9497AB;
+    font-size: 12px;
+    text-decoration: underline;
+}
+
+.loginButtonUnActive {
+    background-color: #9497AB;
+    color: whitesmoke;
+}
+
+.loginButtonActive {
+    background-color: #1A1B23;
+    color: whitesmoke;
+}

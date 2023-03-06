@@ -1,0 +1,25 @@
+.myPageWMent{
+    text-align: center;
+}
+
+.myPageMentContent,
+.myPageMentContentName {
+    font-size: 2rem;
+    font-family: NanumMyeongjo;
+    font-weight: bold;
+}
+
+.myPageMentContent>.myPageMentContentName {
+    color: #505DD0;
+}
+
+.myPageInfoMent {
+    margin: 40px 0;
+    font-size: 1.5rem;
+}
+
+.myPageInfoMenMinPrice {
+    font-size: 1.5rem;
+    color: #505DD0;
+}
+
