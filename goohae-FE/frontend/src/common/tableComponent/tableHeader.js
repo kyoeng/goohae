@@ -1,12 +1,13 @@
-import styled from '../CSS/table/table.module.css';
-import TheadColumn from './tableHeaderColumn';
-
-export default function TableHeader({ tableHeaderdata }) {
+export default function Thead({ tHeadData }) {
     return (
-        <div className={styled.tableContainer}>
-            {
-                
-            }
-        </ div >
+        <thead>
+            <tr>
+                {tHeadData.map((head, i) => {
+                    return (
+                        <th key={`thead${i}`}>{head}</th>
+                    );
+                })}
+            </tr>
+        </thead >
     );
 }
