@@ -2,7 +2,6 @@ import adminUstyled from '../../css/admin/adminUser.module.css';
 
 import Title from '../../../components/presentational/admin/title';
 import SearchBar from '../../../components/presentational/admin/searchBar';
-import Table from '../../../components/presentational/admin/table';
 import Paging from '../../../common/paging';
 
 import UserData from '../../../dummyData/userData';
@@ -28,9 +27,6 @@ export default function AdminUser() {
 
             <div className={adminUstyled.total}>{`전체 ${UserData.length}건`}</div>
 
-            <Table
-                tHeadData={uTableHeader}
-                tBodyData={UserData} />
 
             <div className='pagingWrap'>
                 <Paging pagingLength={Math.ceil(UserData.length)} />

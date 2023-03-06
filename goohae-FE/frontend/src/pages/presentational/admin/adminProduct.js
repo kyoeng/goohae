@@ -2,7 +2,6 @@ import adminPstyled from '../../css/admin/adminProd.module.css';
 
 import Title from '../../../components/presentational/admin/title';
 import SearchBar from '../../../components/presentational/admin/searchBar';
-import Table from '../../../components/presentational/admin/table';
 import Paging from '../../../common/paging';
 
 import ProdData from '../../../dummyData/data.json';
@@ -30,9 +29,6 @@ export default function AdminProduct() {
 
             <div className={adminPstyled.total}>{`전체 ${ProdData.length}건`}</div>
 
-            <Table
-                tHeadData={pTableHeader}
-                tBodyData={ProdData} />
 
             <Paging pagingLength={ProdData.length} />
         </div>
