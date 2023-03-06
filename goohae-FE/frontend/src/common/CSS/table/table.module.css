@@ -1,0 +1,16 @@
+#tableComponent {
+    width: 60%;
+    height: 50%;
+}
+
+#tableComponent>thead,
+#tableComponent>tbody {
+    margin: auto;
+    padding: 10px;
+}
+
+/* #tableComponent > tbody , */
+#tableComponent>thead>tr>th,
+#tableComponent>tbody>tr>td {
+    font-size: 1.5rem;
+}

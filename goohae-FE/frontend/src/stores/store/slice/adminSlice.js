@@ -16,7 +16,7 @@ const productSlice = createSlice({
     reducers: {
         setProd: (state, action) => {
             state.push(...action.payload);
-        }
+        },
     }
 })
 

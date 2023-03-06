@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { setProd } from '../../../stores/store/slice/adminSlice';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -10,10 +10,7 @@ import Paging from '../../../common/paging';
 import Table from '../../../common/tableComponent/table';
 
 import ProdData from '../../../dummyData/data.json';
-import AdminPtBody from './adminPtBody';
-
-
-
+import Modal from '../../../common/modal/modal';
 
 export default function AdminProduct() {
     const dummy = ProdData;
@@ -25,7 +22,15 @@ export default function AdminProduct() {
     }, [])
 
     const data = useSelector((state) => state.adminProduct);
+    const [select, setSelect] = useState(null);
+    const [modalFlag, setModalFlag] = useState(false);
 
+    const selectedProduct = (key) => {
+        setSelect(data.find(product => product.prod_id == key));
+        setModalFlag(pre => !pre)
+    }
+
+    console.log(select);
     const pOptions = [
         '상품이름',
         '카테고리',
@@ -45,9 +50,22 @@ export default function AdminProduct() {
             <div className={adminPstyled.total}>{`전체 ${data.length}건`}</div>
 
             <Table tHeadData={pTableHeader}>
-                <AdminPtBody />
+                <tbody>
+                    {data.map((product) => {
+                        return (
+                            <tr key={product.prod_id} onClick={() => { selectedProduct(product.prod_id) }}>
+                                <td>{product.title}</td>
+                                <td>{product.category}</td>
+                                <td>{product.price}</td>
+                                <td>{product.orig_price}</td>
+                            </tr>
+                        );
+                    })}
+                </tbody>
             </Table>
             <Paging pagingLength={ProdData.length} />
-        </div>
+
+            {modalFlag ? <Modal infoData={select} /> : null}
+        </div >
     );
 }
