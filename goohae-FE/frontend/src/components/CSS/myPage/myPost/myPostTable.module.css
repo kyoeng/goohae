@@ -1,0 +1,56 @@
+.myPostTableWrap{ 
+
+    margin: 0 auto;
+}
+
+.myPostUpper #myPostTableSelect {
+    font-size: 12px;
+}
+
+.myPostTableWrap .myPostTableOption,
+.myPostTableWrap #myPostTableSelect  {
+    color:#1A1B23;
+}
+
+.myPostTableWrap {
+    width: 100%;
+    /* margin: 50px auto;    */
+    margin-bottom: 200px;
+}
+
+/* ====================Table=================== */
+/* ====================Table=================== */
+/* ====================Table=================== */
+
+.myPostTable {
+    width: 100%;
+    margin: 10px auto;
+    border-collapse: collapse;
+}
+
+.myPostTable .myPostTableTr {
+    height: 40px;
+    border-bottom: 1px solid #1A1B23;
+}
+
+.myPostTable .myPostTableTh {
+    border-bottom: 2px solid #1A1B23;
+    text-align: center;
+}
+
+.myPostTable .myPostTableRow {
+    border-bottom: 2px solid #1A1B23;
+    text-align: center;
+}
+
+.myPostTable .myPostTablTbody .myPostTableRow{
+    height: 70px;
+}
+
+.myPostTable .myPostTableRow .myPostSubject:hover{
+    color: #505DD0;
+}
+
+.nondisplay{
+    display: none;
+}

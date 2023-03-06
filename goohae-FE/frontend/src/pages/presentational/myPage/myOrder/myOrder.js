@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
 import { useMemo } from "react";
-import '../../../css/myPage/myOrder/myOrder.css';
+import  styles from '../../../css/myPage/myOrder/myOrder.module.css';
 import AppLayout from './../../../../common/layout/AppLayout';
 
 import MyPageSubPageCategory from '../../../../common/myPage/category';
 import MyPsgeSubPageTitle from '../../../../common/myPage/mySubPageTitle';
 import OrderTable from '../../../../components/presentational/myPage/myOrder/myOrderTable';
+import MyOrderHistory from '../../../../components/presentational/myPage/myOrder/myOrderTop';
 export default function MyOrder() {
 
     const columns = useMemo(
@@ -295,120 +296,12 @@ export default function MyOrder() {
         <AppLayout>
             <div className="myOrderMain">
                 <div className="OrderHistoryCategory">
-                    <MyPageSubPageCategory myPageSubLinkKr="주문 내역"/>
+                    <MyPageSubPageCategory myPageSubLinkKr="주문 내역" />
                 </div>
                 <section className="myOrderWrap">
-                    <MyPsgeSubPageTitle myPsgeSubPageTitle="주문 내역"/>
-                    <article className="myOrderHistory">
-                        <div className="myOrderSelectOrderCondition">
-                            <p className="myOrderInquireOrderCondition">주문내역조회 0</p>
-                            <p className="myOrderNegativeOrderCondition">취소&nbsp;·&nbsp;반품&nbsp;·&nbsp;교환 내역 0</p>
-                        </div>
-                        <div className="myOrderConditionWrap">
-                            <select className="myOrderCondition" name="OrderCondition" >
-                                <option value="totalOrderCondition">전체 주문처리상태</option>
-                                <option value="beforePay">입금전</option>
-                                <option value="readyDelivery">배송준비중</option>
-                                <option value="deliveryProcess">배송중</option>
-                                <option value="deliveryComplete">배송완료</option>
-                                <option value="orderCancel">취소</option>
-                                <option value="orderChange">교환</option>
-                                <option value="orderReturn">반품</option>
-                            </select>
-                            <div className="OrderConditionDate">
-                                <a className="myOrderSelectConditionDate">오늘</a>
-                                <a className="myOrderSelectConditionDate">1주일</a>
-                                <a className="myOrderSelectConditionDate">1개월</a>
-                                <a className="myOrderSelectConditionDate">3개월</a>
-                                <a className="myOrderSelectConditionDate">6개월</a>
-                            </div>
-                            <div className="myOrderDateSelectContainer">
-                                <input type="date" className="myOrderSelectDate" />
-                                <span>&nbsp;~&nbsp;</span>
-                                <input type="date" className="myOrderSelectDate" />
-                                <button type="submit" id="myOrderSelectDateBtn">조회</button>
-                            </div>
-                        </div>
-                        <ul id="myOrderHistoryNotices">
-                            <li className="myOrderHistoryNotice">기본적으로 최근 3개월간의 자료가 조회되며, 기간 검색시 지난 주문내역을 조회하실 수 있습니다.</li>
-                            <li className="myOrderHistoryNotice">주문번호를 클릭하시면 해당 주문에 대한 상세내역을 확인하실 수 있습니다.</li>
-                        </ul>
-                    </article>
-                    {/* <article className="myOrderTableWrap">
-                        <table className="myOrderTable">
-                            <colgroup>
-                                <col width="10%" />
-                                <col width="10%" />
-                                <col width="30%" />
-                                <col width="7%" />
-                                <col width="13%" />
-                                <col width="13%" />
-                                <col width="13%" />
-                            </colgroup>
-                            <thead id="myOrderTableThead">
-                                <tr className="myOrderTableLine">
-                                    <th scope="col" className="myOrderTableTh">주문일자</th>
-                                    <th scope="col" className="myOrderTableTh">이미지</th>
-                                    <th scope="col" className="myOrderTableTh">상품정보</th>
-                                    <th scope="col" className="myOrderTableTh">수량</th>
-                                    <th scope="col" className="myOrderTableTh">상품구매금액</th>
-                                    <th scope="col" className="myOrderTableTh">주문처리상태</th>
-                                    <th scope="col" className="myOrderTableTh">취소/교환/반품</th>
-                                </tr>
-                            </thead>
-                            <tbody id="myOrderTableTbody">
-                                <tr className="myOrderTableLine">
-                                    <td className="myOrderTableRow orderDate">2022-10-20</td>
-                                    <td className="myOrderTableRow myOrderProductImage"><img src="./Esker82Sofa2-1.jpg" alt="" /></td>
-                                    <td className="myOrderTableRow">
-                                        <p className="myOrderProductName">에스커82 소파</p>
-                                        <p className="myOrderProductOption">옵션: 화이트</p>
-                                    </td>
-                                    <td className="myOrderTableRow myOrderProductEA">1개</td>
-                                    <td className="myOrderTableRow myOrderProductPrice">1,200,000</td>
-                                    <td className="myOrderTableRow rderProduct">배송준비중</td>
-                                    <td className="myOrderTableRow"> </td>
-                                </tr>
-                                <tr className="myOrderTableLine">
-                                    <td className="myOrderTableRow orderDate">2022-10-20</td>
-                                    <td className="myOrderTableRow myOrderProductImage"><img src="./Esker82Sofa2-1.jpg" alt="" /></td>
-                                    <td className="myOrderTableRow">
-                                        <p className="myOrderProductName">에스커82 소파</p>
-                                        <p className="myOrderProductOption">옵션: 화이트</p>
-                                    </td>
-                                    <td className="myOrderTableRow myOrderProductEA">1개</td>
-                                    <td className="myOrderTableRow myOrderProductPrice">1,200,000</td>
-                                    <td className=" myOrderTableRow myOrderProduct">입금전</td>
-                                    <td className="myOrderTableRow"> </td>
-                                </tr>
-                                <tr className="myOrderTableLine">
-                                    <td className="myOrderTableRow orderDate">2022-10-20</td>
-                                    <td className="myOrderTableRow orderProductImage"><img src="./Esker82Sofa2-1.jpg" alt="" /></td>
-                                    <td className="myOrderTableRow">
-                                        <p className="myOrderProductName">에스커82 소파</p>
-                                        <p className="myOrderProductOption">옵션: 화이트</p>
-                                    </td>
-                                    <td className="myOrderTableRow myOrderProductEA">1개</td>
-                                    <td className="myOrderTableRow myOrderProductPrice">1,200,000</td>
-                                    <td className="myOrderTableRow myOrderProduct">배송완료</td>
-                                    <td className="myOrderTableRow"> </td>
-                                </tr>
-                                <tr className="myOrderTableLine">
-                                    <td className="myOrderTableRow orderDate">2022-10-20</td>
-                                    <td className="myOrderTableRow myOrderProductImage"><img src="./bed_1.png" alt="" /></td>
-                                    <td className="myOrderTableRow">
-                                        <p className="myOrderProductName">카르톨로라제 침대</p>
-                                        <p className="myOrderProductOption">옵션: 미드나잇 그린</p>
-                                    </td>
-                                    <td className="myOrderTableRow myOrderProductEA">1개</td>
-                                    <td className="myOrderTableRow myOrderProductPrice">1,200,000</td>
-                                    <td className="myOrderTableRow myOrderProduct">결제 취소</td>
-                                    <td className="myOrderTableRow"> 취소 완료</td>
-                                </tr>
-                            </tbody>
-                        </table> */}
-                        <OrderTable columns={columns} />
-                    {/* </article> */}
+                    <MyPsgeSubPageTitle myPsgeSubPageTitle="주문 내역" />
+                    <MyOrderHistory />
+                    <OrderTable columns={columns} />
                 </section>
             </div>
         </AppLayout>

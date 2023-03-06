@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import '../../../css/myPage/myPage/myPage.css';
+import styles from  '../../../css/myPage/myPage/myPage.module.css';
 
 import MyPageProcessBox from "../../../../components/presentational/myPage/myPage/myPageProcessInnerContainer";
 import MyPageMenuBox from "../../../../components/presentational/myPage/myPage/myPageMenuBox";
@@ -13,7 +13,9 @@ export default function MyPage() {
         <div className="myPageMain" >
             <MyPsgeSubPageTitle myPsgeSubPageTitle="MY PAGE" />
             <MyPageTopWrap/>
-            <MyPageMenuBox myPageSubPageLink="/myPageSubPageLink" myPageMenuTitle="myPageMenuTitle"
+            <MyPageMenuBox 
+                myPageSubPageLink="/myPageSubPageLink" 
+                myPageMenuTitle="myPageMenuTitle"
                 myPageMenuBoxContent="myPageMenuBoxContent">
             </MyPageMenuBox>
         </div>

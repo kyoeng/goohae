@@ -1,0 +1,39 @@
+.singlePageHeader {
+    width: 320px;
+    height: 144px;
+}
+
+/* 로고------------------------------------- */
+.singlePageHeadLogo {
+    display: block;
+    height: 70px;
+    width: 200px;
+    margin: 0px 60px 34px;
+    text-indent: -9999em;
+    background: url("../../../stores/images/icon/logo.png") center/cover;
+}
+
+/* 헤더리스트------------------------------- */
+.singlePageHeaderListWrap {
+    display: flex;
+    justify-content: stretch;
+    height: 40px;
+    width: 320px;
+    list-style-type: none;
+}
+
+/* 헤더 각 리스트 */
+.singlePageHeaderList {
+    height: 100%;
+    width: 160px;
+    text-align: center;
+}
+
+.singlePageHeaderListLink {
+    display: block;
+    height: 100%;
+    margin: auto;
+    padding: .7rem 0px;
+    font-size: 14px;
+
+}

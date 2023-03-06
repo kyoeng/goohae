@@ -1,0 +1,21 @@
+
+.singleInputLabel{
+    display:block;
+    color: #1A1B23;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-align:left;
+}
+.singleInput{
+    padding: 10px 0px;
+    border: 1px solid #1A1B23;
+    border-radius: 0px;
+    width: 320px;
+    height: 36px;
+    outline: none;
+    line-height: 36px;
+    font-size: 1.4rem;
+    outline-style: none; 
+    margin-bottom: 8px;
+}

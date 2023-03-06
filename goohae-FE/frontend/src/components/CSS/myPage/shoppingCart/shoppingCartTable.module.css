@@ -1,0 +1,139 @@
+
+
+
+.shoppingCartTableWrap {
+    margin: 0 auto;
+}
+
+.myPostUpper #shoppingCartTableSelect {
+    font-size: 12px;
+}
+
+.shoppingCartTableWrap .shoppingCartTableOption,
+.shoppingCartTableWrap #shoppingCartTableSelect  {
+    color:#1A1B23;
+}
+
+.shoppingCartTableWrap {
+    width: 100%;
+    /* margin: 50px auto;    */
+    margin-bottom: 200px;
+}
+
+/* ====================Table=================== */
+/* ====================Table=================== */
+/* ====================Table=================== */
+
+
+.shoppingCartTable {
+    width: 100%;
+    margin: 10px auto;
+    border-collapse: collapse;
+}
+
+
+.shoppingCartTitleThaed {
+    border-bottom: 2px solid #1A1B23;
+    text-align: center;
+    height: 40px;
+}
+
+.shoppingCartTableLine {
+    border-bottom: 1px solid #1A1B23;
+    height: 140px;
+}
+
+.shoppingCartTableRow {
+    border-bottom: 2px solid #1A1B23;
+    text-align: center;
+    height: 70px;
+}
+
+.shoppingCartTableRow:nth-of-type(3){
+    text-align: left;
+    font-weight: 700;
+    padding-left: 10px;
+}
+.shoppingCartTableRow:nth-of-type(4){
+    text-align: center;
+}
+.shoppingCartTableCount{
+    text-align:center;
+    padding:0;
+    width: 15px;
+    height: 20px;
+}
+
+.shoppingCartTableRow:nth-of-type(5){
+    padding:0 10px;
+    text-align: right; 
+} 
+
+ .myPostSubject:hover{
+    color: #505DD0;
+}
+
+.nondisplay{
+    display: none;
+}
+
+/* 총 주문금액 라인 */
+.shoppingCartTotalPrcieInner{
+    height: 70px;
+}
+
+.shoppingCartTotalPrcieInner > .shoppingCartTotalPrice {
+    padding: 3px;
+    text-align: right;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+
+/* 주문 버튼 */
+.shoppingCartOrderButtonBox {
+    display: flex;
+    justify-content: center;
+}
+
+.shoppingCartOrderButton {
+    display: inline-block;
+    text-align: center;
+    width: 264px;
+    height: 36px;
+    line-height: 36px;
+    margin: 40px 20px;
+    font-size: 1.4rem;
+}
+
+.shoppingCartOrderButtonBox #shoppingCarSelectBtn,
+.shoppingCartOrderButtonBox #shoppingCartDeleteBtn {
+    display: inline-block;
+    text-align: center;
+    width: 264px;
+    height: 36px;
+    line-height: 36px;
+    margin: 40px 20px;
+    font-size: 1.4rem;
+}
+
+.shoppingCartOrderButtonBox #shoppingCarSelectBtn{
+    background-color: #F5F5F5;
+    color: #1A1B23;
+}
+
+.shoppingCartOrderButtonBox #shoppingCartDeleteBtn {
+    display: inline-block;
+    text-align: center;
+    width: 264px;
+    height: 36px;
+    line-height: 36px;
+    margin: 40px 20px;
+    font-size: 1.4rem;
+    background-color: #1A1B23;
+    color: #F7F7FB;
+}
+
+.btnDisabled {
+    pointer-events: none;
+}

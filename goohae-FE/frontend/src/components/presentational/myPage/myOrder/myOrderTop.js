@@ -1,138 +1,16 @@
 
 import { styled } from 'styled-components';
+import styles from '../../../CSS/myPage/myOrder/myOrderTop.module.css';
 
-
-
-
-
-
-
-
-
-
-
-const MyOrderHistorContainer=styled.article`
-
-    margin: 20px 0;
-
-.myOrderSelectOrderCondition {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 40px;
-}
-
-.myOrderSelectOrderCondition .myOrderInquireOrderCondition,
-.myOrderSelectOrderCondition .myOrderNegativeOrderCondition {
-    width: 200px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 1.5rem;
-}
-
-.myOrderSelectOrderCondition p span {
-}
-
-.myOrderSelectOrderCondition .myOrderInquireOrderCondition{
-    border-bottom: 2px solid #505DD0;
-    color: #505DD0;
-}
-
-/* .myOrderSelectOrderCondition p:first-of-type span {
-} */
-
-.myOrderSelectOrderCondition .myOrderNegativeOrderCondition {
-    color: black;
-}
-
-.myOrderConditionWrap {
-    width: 100%;
-    height: 130px;
-    border: solid 2px var(--LightGray);
-    display: flex;
-    gap: 10px;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: center;
-}
-
-.myOrderConditionWrap>.myOrderCondition {
-    display: inline-block;
-    padding: 11px;
-    width: 20%;
-    height: 40px;
-    font-size: 1.4rem
-}
-
-.OrderConditionDate {
-    display: flex;
-    flex-flow: row nowrap;
-    padding: 0 10px;
-    padding-right: 5px;
-}
-
-.OrderConditionDate .myOrderSelectConditionDate {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 56px;
-    height: 36px;
-    text-align: center;
-    border: 1px solid black;
-    font-size: 1.5rem;
-    padding: 4px;
-    margin-right: 5px;
-}
-
-.myOrderDateSelectContainer {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-.myOrderDateSelectContainer>.myOrderSelectDate {
-    display: inline-block;
-    width: 200px;
-    height: 40px;
-    padding: 5px;
-}
-
-.myOrderDateSelectContainer #myOrderSelectDateBtn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40px;
-    width: 60px;
-    border: 1px solid;
-    font-size: 1.2rem;
-    padding: 4px;
-    background-color: black;
-    color: white;
-}
-
-.myOrderHistory #myOrderHistoryNotices{
-    margin-top: 10px;
-    margin-bottom: 40px;
-}
-
-.myOrderHistory #myOrderHistoryNotices .myOrderHistoryNotice {
-    margin: 5px 0;
-    font-size: 1.5rem;
-    color: #9497AB;
-}`
-const MyOrderHistory= ({ myPageSubLink, myPageSubLinkKr }) => (
-
-<MyOrderHistorContainer>
-                        <div className="myOrderSelectOrderCondition">
-                            <p className="myOrderInquireOrderCondition">주문내역조회 0</p>
-                            <p className="myOrderNegativeOrderCondition">취소&nbsp;·&nbsp;반품&nbsp;·&nbsp;교환 내역 0</p>
+export default function MyOrderHistory({ myPageSubLink, myPageSubLinkKr }) {
+return(
+<article className={styles.myOrderHistorContainer}>
+                        <div className={styles.myOrderSelectOrderCondition}>
+                            <p className={styles.myOrderInquireOrderCondition}>주문내역조회 0</p>
+                            <p className={styles.myOrderNegativeOrderCondition}>취소&nbsp;·&nbsp;반품&nbsp;·&nbsp;교환 내역 0</p>
                         </div>
-                        <div className="myOrderConditionWrap">
-                            <select className="myOrderCondition" name="OrderCondition" >
+                        <div className={styles.myOrderConditionWrap}>
+                            <select className={styles.myOrderCondition} name="OrderCondition" >
                                 <option value="totalOrderCondition">전체 주문처리상태</option>
                                 <option value="beforePay">입금전</option>
                                 <option value="readyDelivery">배송준비중</option>
@@ -142,20 +20,24 @@ const MyOrderHistory= ({ myPageSubLink, myPageSubLinkKr }) => (
                                 <option value="orderChange">교환</option>
                                 <option value="orderReturn">반품</option>
                             </select>
-                            <div className="OrderConditionDate">
-                                <a className="myOrderSelectConditionDate">오늘</a>
-                                <a className="myOrderSelectConditionDate">1주일</a>
-                                <a className="myOrderSelectConditionDate">1개월</a>
-                                <a className="myOrderSelectConditionDate">3개월</a>
-                                <a className="myOrderSelectConditionDate">6개월</a>
+                            <div className={styles.orderConditionDate}>
+                                <a className={styles.myOrderSelectConditionDate}>오늘</a>
+                                <a className={styles.myOrderSelectConditionDate}>1주일</a>
+                                <a className={styles.myOrderSelectConditionDate}>1개월</a>
+                                <a className={styles.myOrderSelectConditionDate}>3개월</a>
+                                <a className={styles.myOrderSelectConditionDate}>6개월</a>
                             </div>
-                            <div className="myOrderDateSelectContainer">
-                                <input type="date" className="myOrderSelectDate" />
+                            <div className={styles.myOrderDateSelectContainer}>
+                                <input type="date" className={styles.myOrderSelectDate} />
                                 <span>&nbsp;~&nbsp;</span>
-                                <input type="date" className="myOrderSelectDate" />
-                                <button type="submit" id="myOrderSelectDateBtn">조회</button>
+                                <input type="date" className={styles.myOrderSelectDate} />
+                                <button type="submit" id={styles.myOrderSelectDateBtn}>조회</button>
                             </div>
                         </div>
+                        <ul id={styles.myOrderHistoryNotices}>
+                            <li className={styles.myOrderHistoryNotice}>기본적으로 최근 3개월간의 자료가 조회되며, 기간 검색시 지난 주문내역을 조회하실 수 있습니다.</li>
+                            <li className={styles.myOrderHistoryNotice}>주문번호를 클릭하시면 해당 주문에 대한 상세내역을 확인하실 수 있습니다.</li>
+                        </ul>
                         </article>
 );
-export default myOrderHistory;
+}

@@ -1,13 +1,16 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom";
-import "../../css/nonMemberInquire/nonMemberInquire.css"
+
+import styles from "../../css/nonMemberInquire/nonMemberInquire.module.css";
 
 import InputBox from '../../../common/singlePage/inputBox';
 import SingleButton from '../../../common/singlePage/singleButton';
-
+import SinglePageContainer from '../../../common/singlePage/singlePageContainer';
+import ErrorMessage from "../../../common/singlePage/errorMessage";
+import SinglePageHeader from "../../../common/singlePage/singlePageHeader";
 
 export default function NonMemberInquire() {
-    
+
     //이름, 이메일, 비밀번호, 비밀번호 확인
 
     const [nonMemberName, setNonMemberName] = useState("")
@@ -74,44 +77,23 @@ export default function NonMemberInquire() {
 
 
     return (
-        <div className="nonMemberMain">
-            <div className="nonMemberContainer">
-                <div className="nonMemberInnerContainer">
-                    <div className="nonMemberHead">
-                        <div className="nonMemberHeadLogo">
-                            <Link to="http://192.168.0.86:3000"> logo</Link>
-                        </div>
-                        <ul className="nonMemberListWrap">
-                            <li className="nonMemberList">
-                                <Link to="/Login" className="LoginLink">로그인</Link>
-                            </li>
-                            <li className="nonMemberList">
-                                <Link to="/nonMemberInquire" className="nonMemberLink">비회원 배송조회</Link>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="nonMemBody">
-                        <div className="nonMemberForm">
-                            <InputBox type="text" id="nonMemberName" label="이름" name="nonMemberName" onChange={onChangeNonMemberName} required placeholder="국문으로 입력해 주세요" onkeyup="this.value=this.value.replace(/[^-ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g,'');" />
-                            <div className="nonMemberWarningBox">
-                                <p className="nonMemberWarning">{nonMemberNameMassage}</p>
-                            </div>
-                            <InputBox type="text" name="mobile" label="휴대전화" className="nonMemberPhone" onChange={onChangeNonMemberPhone} minLength={11} maxLength={11} required onkeyup="this.value=this.value.replace(/[^-0-9]/g,'');" />
-                            <div className="nonMemberWarningBox">
-                                <p className="nonMemberWarning">{nonMemberPhoneMassage}</p>
-                            </div>
-                            <InputBox type="text" id="nonMemberEmail" label="주문번호" name="nonMemberEmail" onChange={onChangeNonMemberNumber} required placeholder="메일, 문자로 발송된 번호를 입력해 주세요" />
-                            <div className="nonMemberWarningBox">
-                                <p className="nonMemberWarning">{nonMemberNumberMassage}</p>
-                            </div>
-                            <SingleButton className="nonMemberBtn" type="summit" onclick={nonMember} disabled={disabled}>
-                                주문조회하기
-                            </SingleButton>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <SinglePageContainer>
+            <SinglePageHeader/>
+            <InputBox type="text" id="nonMemberName" label="이름" name="nonMemberName" onChange={onChangeNonMemberName} required placeholder="국문으로 입력해 주세요" onkeyup="this.value=this.value.replace(/[^-ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g,'');" />
+            <ErrorMessage>{nonMemberNameMassage}</ErrorMessage>
+            
+            <InputBox type="text" name="mobile" label="휴대전화" className={styles.nonMemberPhone} onChange={onChangeNonMemberPhone} minLength={11} maxLength={11} required onkeyup="this.value=this.value.replace(/[^-0-9]/g,'');" />
+            <ErrorMessage>{nonMemberPhoneMassage}</ErrorMessage>
+            
+            <InputBox type="text" id="nonMemberEmail" label="주문번호" name="nonMemberEmail" onChange={onChangeNonMemberNumber} required placeholder="메일, 문자로 발송된 번호를 입력해 주세요" />
+            <ErrorMessage>{nonMemberNumberMassage}</ErrorMessage>
+            
+            <SingleButton className={styles.nonMemberBtn} type="summit" onclick={nonMember} disabled={disabled}>
+                주문조회하기
+            
+            </SingleButton>
+        </SinglePageContainer>
+
     );
 
 }
