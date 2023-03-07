@@ -3,4 +3,24 @@
 
 <mapper namespace="com.kdt.goohae.mapper.admin.ManagerMapper">
 
+    <select id="selectList" resultType="ManagerVO">
+        select id,name,join_Date,auth,status from manager where id != "admin";
+    </select>
+
+    <select id="selectOne" resultType="ManagerVO">
+        select id,password,name,join_Date,auth,status from manager where id = #{id}
+    </select>
+
+    <insert id="insert">
+        insert into manager ( id, password, name, auth) values(#{id},#{password},#{name},#{auth})
+    </insert>
+
+    <delete id="delete">
+        delete from manager where id = #{id}
+    </delete>
+
+    <update id="update">
+        update manager set name=#{name}, password = #{password}, auth=#{auth}, status=#{status} where id =#{id}
+    </update>
+
 </mapper>
