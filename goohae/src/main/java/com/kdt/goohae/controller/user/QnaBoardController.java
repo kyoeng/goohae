@@ -114,4 +114,30 @@ public class QnaBoardController {
         return map;
     }
 
+
+    /**
+     * 게시판 글 클릭 시 해당 게시글의 내용 전송을 위한 컨트롤러
+     * @param vo = QnaBoard VO
+     * @return 해당 QnaBoard 데이터
+     */
+    @GetMapping("/api/qna/get/detail")
+    public Map<String, Object> getQnaDetail(QnaBoardVO vo, HttpServletResponse response) {
+        String qnaPw = vo.getBoardPassword();
+
+        vo = qnaBoardService.getQnaDetail(vo);
+        Map<String, Object> map = new LinkedHashMap<>();
+
+        if (qnaPw != null) {
+            if (!passwordEncoder.matches(qnaPw, vo.getBoardPassword())) {
+                response.setStatus(HttpStatus.UNAUTHORIZED.value());
+                return null;
+            }
+        }
+
+        map.put("board", vo);
+        map.put("comment", qnaBoardService.getQnaComment(vo.getBoardSeq()));
+
+        return map;
+    }
+
 }

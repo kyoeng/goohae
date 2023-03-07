@@ -20,4 +20,10 @@ public interface QnaBoardService {
     /* QnA 댓글 등록 */
     int regQnaComment(QnaCommentVO vo);
 
+    /* QnA 게시글 디테일 요청 */
+    QnaBoardVO getQnaDetail(QnaBoardVO vo);
+
+    /* QnA 게시글 디테일에 대한 댓글 전송 */
+    QnaCommentVO getQnaComment(Integer boardSeq);
+
 }

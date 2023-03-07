@@ -36,7 +36,7 @@
 
     <!-- QnA 게시판 데이터 가져오기 -->
     <select id="getQnaBoard" resultType="QnaBoardVO">
-        select user_id, title, board_password, reg_date
+        select board_seq, user_id, title, board_password, reg_date
         from qna_board
         <include refid="check" />
         order by reg_date desc
@@ -47,5 +47,21 @@
         select count(*)
         from qna_board
         <include refid="check" />
+    </select>
+
+
+
+
+    <!-- QnA 게시글 디테일 요청 -->
+    <select id="getQnaDetail" resultType="QnaBoardVO">
+        select * from qna_board
+        where board_seq = #{boardSeq}
+    </select>
+
+    <!-- QnA 게시글 디테일에 대한 댓글 전송 -->
+    <select id="getQnaComment" resultType="QnaCommentVO">
+        select * from qna_comment
+        where board_seq = #{boardSeq}
+        order by comment_seq asc;
     </select>
 </mapper>

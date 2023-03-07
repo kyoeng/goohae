@@ -65,4 +65,24 @@ public class QnaBoardServiceImpl implements QnaBoardService {
     public int regQnaComment(QnaCommentVO vo) {
         return qnaBoardMapper.regQnaComment(vo);
     }
+
+    /**
+     * QnA 게시글 디테일을 위한 메서드
+     * @param vo QnaBoardVO
+     * @return QnaBoardVO
+     */
+    @Override
+    public QnaBoardVO getQnaDetail(QnaBoardVO vo) {
+        return qnaBoardMapper.getQnaDetail(vo);
+    }
+
+    /**
+     * QnA 게시글 디테일에 대한 댓글 전송을 위한 메서드
+     * @param boardSeq = 게시판의 P.K
+     * @return QnaCommentVO
+     */
+    @Override
+    public QnaCommentVO getQnaComment(Integer boardSeq) {
+        return qnaBoardMapper.getQnaComment(boardSeq);
+    }
 }
