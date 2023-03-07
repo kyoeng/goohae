@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { setProd } from '../../../stores/store/slice/adminSlice';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom'
+import axios from 'axios';
 
 import adminPstyled from '../../css/admin/adminProd.module.css';
 
@@ -15,8 +17,17 @@ import Modal from '../../../common/modal/modal';
 export default function AdminProduct() {
     const dummy = ProdData;
     const disPatch = useDispatch();
+    const navigate = useNavigate();
 
     useEffect(() => {
+        axios.get('/api/product/get')
+            .then((response) => {
+                console.log(response.data)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+
         disPatch(setProd([]))
         disPatch(setProd(dummy));
     }, [])
@@ -66,6 +77,7 @@ export default function AdminProduct() {
             <Paging pagingLength={ProdData.length} />
 
             {modalFlag ? <Modal infoData={select} /> : null}
+            <button onClick={() => { navigate('/addprod') }}>상품추가하기</button>
         </div >
     );
 }

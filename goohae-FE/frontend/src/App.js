@@ -6,6 +6,7 @@ import MainPage from './pages/presentational/mainPage/mainPage';
 import AdminMain from './pages/presentational/admin/adminMain';
 import AdminUser from './pages/presentational/admin/adminUser';
 import AdminProduct from './pages/presentational/admin/adminProduct';
+import AddProduct from './pages/presentational/admin/addProduct';
 import AdminLogin from './pages/presentational/admin/adminLogin';
 
 //로그인,가입 ,아이디/비밀번호 찾기,비회원 배송조회 
@@ -113,6 +114,8 @@ function App() {
             <Route path='user' element={<AdminUser />} />
             <Route path='product' element={<AdminProduct />} />
           </Route>
+            <Route path='/addprod' element={<AddProduct />} />
+            
           <Route path='/adminlogin' element={<AdminLogin />} />
 
         </Routes>

@@ -1,9 +1,11 @@
+import styled from '../CSS/modal.module.css';
+
 export default function Modal({ children, infoData }) {
     const container = {
         width: "500px",
         height: "300px",
         position: "absolute",
-        backgroundColor : "black"
+        backgroundColor: "black"
     }
 
     const css = {
@@ -18,12 +20,12 @@ export default function Modal({ children, infoData }) {
     }
 
     return (
-        <div style={container}>
-            <div style={css} className='modalWindow'>모달창
+        <div className={styled.modalContainer}>
+            <div className='modalWindow'>모달창
                 <div>{infoData.title}</div>
                 <div>{infoData.price}</div>
                 <div>{infoData.orig_price}</div>
-                <img style={imgCss} src={infoData.img} alt="이미지" />
+                <img className={styled.modalImg} src={infoData.img} alt="이미지" />
             </div>
         </div>
     );
