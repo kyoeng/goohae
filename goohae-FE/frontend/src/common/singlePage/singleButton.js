@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 // import oc from 'open-color';
 // import { shadow } from 'lib/styleUtils';
+import { useDispatch } from 'react-redux';
+import { findPassword } from '../../stores/store/slice/singlePage/findPwSlice';
 
 const Button = styled.button`
     display: block;
@@ -22,11 +24,20 @@ const Button = styled.button`
 `;
 
 // 사용 : <SingleButton children="버튼이름"/>
-const SingleButton = ({ children, onClick }) => (
-    <Button onClick={onClick}>
-        {/* 버튼이름 */}
-        {children}
-    </Button>
-);
+
+
+const SingleButton = ({ children, ...rest }) => {
+    const dispatch = useDispatch();
+
+    const handleFindPassword = () => {
+        dispatch(findPassword('id', 'name', 'email', 'mobile'));
+    };
+
+    return (
+        <Button onClick={handleFindPassword}{...rest}>
+            {children}
+        </Button>
+    );
+};
 
 export default SingleButton;

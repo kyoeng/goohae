@@ -7,6 +7,7 @@ import SingleButton from '../../../common/singlePage/singleButton';
 import SinglePageFindContainer from '../../../common/singlePage/singlePageFindContainer';
 import SinglePageFindHeader from './../../../common/singlePage/singlePageFindHeader';
 import EmailInput from "../../../common/singlePage/emailInput";
+import ErrorMessage from "../../../common/singlePage/errorMessage";
 
 export default function FindID() {
     //이름, 이메일, 비밀번호, 비밀번호 확인
@@ -27,6 +28,7 @@ export default function FindID() {
     const [disabled, setDisabled] = useState(true);
 
 
+    
     //이름 유효성검시
     const onChangeFindIdName = (e) => {
         const currentName = e.target.value;
@@ -78,12 +80,11 @@ export default function FindID() {
             <SinglePageFindHeader />
             <div className={styles.findIdForm} action method="post">
                 <InputBox type="text" id="fiName" name="fiName" label="이름" className={styles.findIdInput} onChange={onChangeFindIdName} required placeholder="이름" />
-                <p className={[styles.findIdWarning, styles.hidden]}>이름을 입력해주세요</p>
-
+                <ErrorMessage>이름을 입력해주세요</ErrorMessage>
                 <EmailInput />
-                <p className={[styles.findIdWarning, styles.hidden]}>이메일을 입력해주세요</p>
+                <ErrorMessage>이메일을 입력해주세요</ErrorMessage>
                 <InputBox type="text" name="mobile" label="휴대전화" className={[styles.findIdInput, styles.fiMobile]} onChange={onChangeFindIdPhone} minLength={11} maxLength={11} required />
-                <p className={[styles.findIdWarning, styles.hidden]}>휴대전화를 입력해주세요</p>
+                <ErrorMessage>휴대전화를 입력해주세요</ErrorMessage>
                 <SingleButton type="submit" className={styles.findIdBtn} onClick={findIdBtn}>아이디 찾기</SingleButton>
             </div>
             <a href="/Login" className={styles.findIdLinkToLogin}>로그인으로 돌아가기</a>
