@@ -4,7 +4,7 @@ import DepositPayBox from "./DepositPayBox";
 import PhonePayBox from "./PhonePayBox";
 import KakaoPayBox from "./KakaoPayBox";
 import styled from "styled-components";
-import FinPay from "./FinPay";
+// import FinPay from "../../../../stores/images/icon/";
 
 export default function PayMethod ({
     creditCard, setCreditCard,  depositPay, setDepositPay, phonePay, setPhonePay, kakaoPay, setKakaoPay, clicked, setClicked,
@@ -15,19 +15,19 @@ export default function PayMethod ({
     const payMethBtn = [
         {
             "title" : "신용카드",
-            "icon" : "./credit-cards.png"
+            "icon" : "../../../../stores/images/icon/credit-cards.png"
         },
         {
             "title" : "무통장 입금",
-            "icon" : "./transaction.png"
+            "icon" : "../../../../stores/images/icon/transaction.png"
         },
         {
             "title" : "핸드폰 결제",
-            "icon" : "./smartphone-call.png"
+            "icon" : "../../../../stores/images/icon/smartphone-call.png"
         },
         {
             "title" : "카카오페이",
-            "icon" : "./kakao-talk.png"
+            "icon" : "../../../../stores/images/icon/kakao-talk.png"
         },
     ]
     

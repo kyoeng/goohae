@@ -113,6 +113,6 @@ const FinPayWrap = styled.div`
     position: sticky;
     padding: 10px;
     width: 350px;
-    left: 830px;
+    left: 1200px;
     top: 250px;
 `
