@@ -1,5 +1,5 @@
 import SubFormTitle from "./SubFormTitle";
-import styles from "./OrderProductInfo.module.css"
+import styles from "../../../CSS/myPage/memberPayments/OrderProductInfo.module.css"
 
 
 export default function OrderProductInfo({orderProductData}) {

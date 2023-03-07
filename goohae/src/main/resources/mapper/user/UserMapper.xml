@@ -13,6 +13,13 @@
         values(#{id}, #{password}, #{name}, #{postNumber}, #{address}, #{phoneNumber})
     </insert>
 
+    <!-- 아이디 중복확인 -->
+    <select id="idCheck" resultType="int">
+        select count(*)
+        from user
+        where id = #{id}
+    </select>
+
     <!-- 패스워드 수정 -->
     <update id="changePassword">
         update user set password = #{password}

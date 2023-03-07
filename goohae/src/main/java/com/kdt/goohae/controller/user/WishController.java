@@ -32,6 +32,9 @@ public class WishController {
         } else {
             return ResponseEntity.status(500).body("error");
         }
+    public ResponseEntity<?> selectList(HttpServletRequest httpServletRequest, WishVO vo){
+        vo.setUserId((String) httpServletRequest.getAttribute("id"));
+        return ResponseEntity.status(200).body(wishService.selectList(vo));
     }
 
     /**

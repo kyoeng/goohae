@@ -19,4 +19,7 @@ public interface UserService {
     /* 회원 탈퇴 ( 휴면으로 ) */
     int disabledUser(UserVO vo);
 
+    /* 아이디 중복 확인 */
+    int idCheck(UserVO vo);
+
 }

@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: gray;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    margin: auto;
+    position: relative;
+}
+
+:root {
+    font-size: 10px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="checkbox"] {
+    /* display: none; */
+}
+
+input[type="checkbox"]+label span.radioImg {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    margin: -2px 9px 0 4px;
+    font-size: 0;
+    vertical-align: middle;
+    background: url('../../../stores/images/icon/unChecked.png') no-repeat;
+    background-size: cover;
+}
+
+input[type="checkbox"]:checked+label span.radioImg {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    font-size: 0;
+    vertical-align: middle;
+    background: url('../../../stores/images/icon/checked.png') no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked+label+label:hover,
+input[type="checkbox"]+label+label:hover {
+    color: var(--PurpleBlue);
+}
+

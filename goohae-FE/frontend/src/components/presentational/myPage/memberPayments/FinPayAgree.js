@@ -1,4 +1,3 @@
-import styles from "../../css/memberPayment/memberPayment.module.css"
 import styled from 'styled-components';
 
 export default function FinPayAgree({allAgree, setAllAgree, agree1,setAgree1,agree2,setAgree2,agree3,setAgree3, }) {
@@ -49,7 +48,7 @@ export default function FinPayAgree({allAgree, setAllAgree, agree1,setAgree1,agr
     const agreeMap = agreeTitle.map((v,i) => {
         return (
             <div  id={`agreeCheck_${i}`}   key={`agreeCheck_${i}`} style={{marginBottom:"5px", display:"flex", alignItems:"center", gap:"10px", cursor:"pointer"}}>
-                <CheckImag onClick={(e)=>{check(e)}} src={require(`../../../stores/images/icon/${agreeArray[(i+1)*2-1]?"checked":"unChecked"}.png`)} alt="img" />
+                <CheckImag onClick={(e)=>{check(e)}} src={require(`../../../../stores/images/icon/${agreeArray[(i+1)*2-1]?"checked":"unChecked"}.png`)} alt="img" />
                 <span onClick={(e)=>{check(e)}} style={{color:"black"}}>
                     {v}
                 </span>
@@ -62,10 +61,10 @@ export default function FinPayAgree({allAgree, setAllAgree, agree1,setAgree1,agr
     return (
         <AgreeWrap>
             <p style={{fontSize:"15px", marginBottom:"10px", display:"flex", alignItems:"center", gap:"10px", cursor:"pointer"}}>
-                <AllCheckImag onClick={()=>allCheck()} src={require(`../../../stores/images/icon/${allAgree?"checked":"unChecked"}.png`)} alt="img" />
+                <AllCheckImag onClick={()=>allCheck()} src={require(`../../../../stores/images/icon/${allAgree?"checked":"unChecked"}.png`)} alt="img" />
                 <span onClick={()=>allCheck()} style={{color:"black"}}>전체 동의하기</span>
             </p>
-            <div className={styles.MemPayOrderTotalAgreeSection}>
+            <div>
                 {agreeMap}
             </div>
         </AgreeWrap>

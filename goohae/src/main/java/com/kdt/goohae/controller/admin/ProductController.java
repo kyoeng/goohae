@@ -167,4 +167,17 @@ public class ProductController {
         return map;
     } // getSearchProduct
 
+
+    /**
+     * 메인 페이지 시작 시 상품 정보를 위한 컨트롤러
+     * @return 상품 정보 ( new, best )
+     */
+    @GetMapping("/api/product/get/main")
+    public Map<String, Object> getMainProducts() {
+        Map<String, Object> map = new LinkedHashMap<>();
+        map.put("new", productService.getMainNew());
+        map.put("best", productService.getMainBest());
+        return map;
+    }
+
 }

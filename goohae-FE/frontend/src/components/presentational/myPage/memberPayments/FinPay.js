@@ -1,6 +1,6 @@
 import FinPayAgree from "./FinPayAgree"
 import styled from "styled-components"
-import styles from "./FinPay.module.css"
+import styles from "../../../CSS/myPage/memberPayments/FinPay.module.css"
 
 export default function FinPay({orderProductData,allAgree, setAllAgree, agree1,setAgree1,agree2,setAgree2,agree3,setAgree3, }) {
 

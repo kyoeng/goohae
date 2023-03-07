@@ -29,7 +29,7 @@ import ShoppingCart from './pages/presentational/myPage/shoppingCart/shoppingCar
 import SubPage from './pages/presentational/subPage/SubPage';
 
 // 결제페이지
-// import MemberPayMent from './pages/presentational/memberPayment/MemberPayment';
+import MemberPayMent from './pages/presentational/memberPayment/MemberPayMent';
 import Header from './common/Header';
 
 //고객 페이지
@@ -99,7 +99,7 @@ function App() {
           <Route path='/myCoupon' element={<MyCoupon />} />
           <Route path='/ShoppingCart' element={<ShoppingCart />} /> */}
           {/* 결제페이지 */}
-          {/* <Route path='/memberpayment' element={<MemberPayMent />} /> */}
+          <Route path='/memberpayment' element={<MemberPayMent />} />
 
           {/* 마이페이지 */}
           {/* <Route path='/myPage' element={<MyPage />} />

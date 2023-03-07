@@ -7,10 +7,7 @@ import com.kdt.goohae.service.user.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
 import java.text.SimpleDateFormat;
@@ -165,5 +162,22 @@ public class UserController {
             return "가입 실패";
         }
     } // join
+
+
+    /**
+     * 아이디 중복확인에 대한 컨트롤러
+     * @param vo UserVO
+     * @param response HttpServletResponse
+     * @return 중복 여부
+     */
+    @PostMapping("/api/user/id-check")
+    public String idCheck(@RequestBody UserVO vo, HttpServletResponse response) {
+        if (userService.idCheck(vo) > 0) {
+            response.setStatus(HttpStatus.ACCEPTED.value());
+            return "중복된 아이디가 있습니다.";
+        } else {
+            return "사용 가능한 아이디 입니다.";
+        }
+    }
 
 }

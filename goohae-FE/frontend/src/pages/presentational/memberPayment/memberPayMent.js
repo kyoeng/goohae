@@ -1,12 +1,12 @@
 import styled from "styled-components"; // 임포트 해줘야함
-import OrderInfo from "./OrderInfo";
-import OrderProductInfo from "./OrderProductInfo"
-import PayMethod from "./PayMethod";
-import { useRef, useState, useEffect } from 'react';
 import orderProductData from "../../../dummyData/orderProductData.json"
+import { useRef, useState, useEffect } from 'react';
 import AppLayout from '../../../common/layout/AppLayout';
-import FinPay from "./FinPay";
-import { all } from "axios";
+import OrderProductInfo from "../../../components/presentational/myPage/memberPayments/OrderProductInfo"
+import FinPay from "../../../components/presentational/myPage/memberPayments/FinPay";
+import PayMethod from "../../../components/presentational/myPage/memberPayments/PayMethod";
+import OrderInfo from '../../../components/presentational/myPage/memberPayments/OrderInfo';
+
 
 export default function MemberPayment() {
     const [
@@ -113,6 +113,6 @@ const FinPayWrap = styled.div`
     position: sticky;
     padding: 10px;
     width: 350px;
-    left: 830px;
+    left: 1200px;
     top: 250px;
 `
