@@ -71,4 +71,15 @@ public class UserServiceImpl implements UserService {
     public int disabledUser(UserVO vo) {
         return userMapper.disabledUser(vo);
     }
+
+
+    /**
+     * 아이디 중복 체크에 관한 메서드
+     * @param id = 아이디
+     * @return 중복 시 1, 중복 없을 시 0
+     */
+    @Override
+    public int idCheck(UserVO vo) {
+        return userMapper.idCheck(vo);
+    }
 }
