@@ -29,12 +29,10 @@ const Button = styled.button`
 const SingleButton = ({ children, ...rest }) => {
     const dispatch = useDispatch();
 
-    const handleFindPassword = () => {
-        dispatch(findPassword('id', 'name', 'email', 'mobile'));
-    };
+
 
     return (
-        <Button onClick={handleFindPassword}{...rest}>
+        <Button {...rest}>
             {children}
         </Button>
     );
