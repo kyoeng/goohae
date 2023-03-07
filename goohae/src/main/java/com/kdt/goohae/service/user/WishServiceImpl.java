@@ -1,8 +1,11 @@
 package com.kdt.goohae.service.user;
 
+import com.kdt.goohae.domain.admin.GetProductDTO;
 import com.kdt.goohae.domain.user.WishVO;
 import com.kdt.goohae.mapper.user.WishMapper;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 
 @Service
 public class WishServiceImpl implements WishService{
@@ -12,7 +15,7 @@ public class WishServiceImpl implements WishService{
         this.wishMapper = wishMapper;
     }
 
-    public String[] selectList(WishVO vo){return wishMapper.selectList(vo);}
+    public ArrayList<GetProductDTO> selectList(WishVO vo){return wishMapper.selectList(vo);}
     public int insert(WishVO vo){
         return wishMapper.insert(vo);
     }

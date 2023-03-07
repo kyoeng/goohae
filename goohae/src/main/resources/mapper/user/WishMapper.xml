@@ -3,8 +3,9 @@
 
 <mapper namespace="com.kdt.goohae.mapper.user.WishMapper">
 
-    <select id="selectList" resultType="String">
-        select product_code from wish where user_id = #{userId}
+    <select id="selectList" resultType="GetProductDTO">
+        select p.product_code, p.image_path, pr.product_name, pr.price from product pr , product_image p
+        where pr.product_code IN (select product_code from wish where user_id = #{userId} ) and pr.product_code = p.product_code ;
     </select>
     <insert id="insert">
         insert into wish ( user_id, product_code ) values (#{userId}, #{productCode})

@@ -27,13 +27,8 @@ public class WishController {
      * */
     @PostMapping(value = "/api/user/valid/wish/list")
     public ResponseEntity<?> selectList(HttpServletRequest httpServletRequest, WishVO vo){
-        vo.setUserId((String)httpServletRequest.getAttribute("id"));
-        String[] result =  wishService.selectList(vo);
-        if(result != null){
-            return ResponseEntity.status(200).body(result);
-        } else {
-            return ResponseEntity.status(500).body("error");
-        }
+        vo.setUserId((String) httpServletRequest.getAttribute("id"));
+        return ResponseEntity.status(200).body(wishService.selectList(vo));
     }
 
     /**

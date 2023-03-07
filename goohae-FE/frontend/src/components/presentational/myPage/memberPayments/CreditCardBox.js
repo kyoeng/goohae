@@ -1,4 +1,4 @@
-import SelectBox from './SelectBox';
+import SelectBox from '../../../../pages/presentational/memberPayment/SelectBox';
 
 export default function CreditCardBox({cardBrand,cardMonthly}) {
 
