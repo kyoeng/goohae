@@ -159,4 +159,23 @@ public class ProductServiceImpl implements ProductService {
     public int getSearchTotalData(SearchCri cri) {
         return productMapper.getSearchTotalData(cri);
     } // getSearchTotalData
+
+
+    /**
+     * 메인페이지 새로운 상품 가져오기
+     * @return GetProductDTO List
+     */
+    @Override
+    public List<GetProductDTO> getMainNew() {
+        return productMapper.getMainNew();
+    }
+
+    /**
+     * 메인페이지 베스트 상품 가져오기
+     * @return GetProductDTO List
+     */
+    @Override
+    public List<GetProductDTO> getMainBest() {
+        return productMapper.getMainBest();
+    }
 }

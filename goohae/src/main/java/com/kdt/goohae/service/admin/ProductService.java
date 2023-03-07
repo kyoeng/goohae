@@ -39,4 +39,12 @@ public interface ProductService {
     /* 전체 검색( 헤더의 검색바 ) */
     List<GetProductDTO> getSearchProduct(SearchCri cri);
     int getSearchTotalData(SearchCri cri);
+
+
+
+    /* new product */
+    List<GetProductDTO> getMainNew();
+
+    /* best product */
+    List<GetProductDTO> getMainBest();
 }
