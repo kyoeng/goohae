@@ -1,5 +1,6 @@
 package com.kdt.goohae.controller.user;
 
+import com.kdt.goohae.domain.admin.GetProductDTO;
 import com.kdt.goohae.domain.user.WishVO;
 import com.kdt.goohae.service.user.WishService;
 import lombok.extern.slf4j.Slf4j;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 
 @RestController
 @Slf4j
@@ -24,14 +26,6 @@ public class WishController {
      * 유저의 위시리스트를 가져오는 로직 메소드
      */
     @PostMapping(value = "/api/user/valid/wish/list")
-    public ResponseEntity<?> selectList(HttpServletRequest httpServletRequest, WishVO vo) {
-        vo.setUserId((String) httpServletRequest.getAttribute("id"));
-        String[] result = wishService.selectList(vo);
-        if (result != null) {
-            return ResponseEntity.status(200).body(result);
-        } else {
-            return ResponseEntity.status(500).body("error");
-        }
     public ResponseEntity<?> selectList(HttpServletRequest httpServletRequest, WishVO vo){
         vo.setUserId((String) httpServletRequest.getAttribute("id"));
         return ResponseEntity.status(200).body(wishService.selectList(vo));

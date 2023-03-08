@@ -56,10 +56,10 @@ public class ProductServiceImpl implements ProductService {
 
         // C:\Users\Administrator.User -2022BCCGJ\AppData\Local\Temp\tomcat-docbase.8080.3283113623034941828\
         String realPath = request.getServletContext().getRealPath("/");
-        String saveFileNameToDB = "";
+        String saveFileNameToDB = "/images/product/" + vo.getCategoryCode() + "/";
 
         if (realPath.contains("Temp")) {
-            realPath = "C:\\goohae\\goohae-FE\\frontend\\src\\stores\\images\\sub\\" + vo.getCategoryCode() + "\\" + vo.getProductName() + "\\";
+            realPath = "C:\\goohae\\goohae-FE\\frontend\\public\\images\\product\\" + vo.getCategoryCode() + "\\";
         } else {
             realPath = "";
         }
