@@ -9,8 +9,24 @@ import Product_container_8ea from './../../../common/Product_container_8ea';
 import MainCategory from "../../../components/presentational/MainCategory";
 import ReviewContainer from "../../../common/ReviewContainer";
 import ReviewWrapper from './../../../common/ReviewWrapper';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 export default function MainPage() {
+    const [newData, setNewData] = useState([]);
+    const [bestData, setBestData] = useState([]);
+
+    useEffect(() => {
+        axios.get('/api/product/get/main')
+            .then((res) => {
+                setNewData(res.data.new);
+                setBestData(res.data.best);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }, []);
+
     return (
         <>
             <AppLayout>
@@ -18,11 +34,11 @@ export default function MainPage() {
 
                 <article style={{ width: "1200px", margin: "50px auto" }}>
                     <Product_container_4ea title={"New Product"}>
-                        <Product_Box data={data} />
+                        <Product_Box data={newData} />
                     </Product_container_4ea>
 
                     <Product_container_8ea title={"Best Product"}>
-                        <Product_Box data={data2} />
+                        <Product_Box data={bestData} />
                     </Product_container_8ea>
 
                 </article>

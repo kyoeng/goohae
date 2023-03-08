@@ -8,13 +8,13 @@ import styles from '../CSS/singlePage/singleButton.module.css';
 // 사용 : <SingleButton children="버튼이름"/>
 
 
-const SingleButton = ({ children, ...rest }) => {
+const SingleButton = ({ contents, ...rest }) => {
     // const dispatch = useDispatch();
 
     return (
-        <button {...rest} className={styles.singlePageButton}>
-            {children}
-        </button>
+        <p {...rest} className={styles.singlePageButton}>
+            {contents}
+        </p>
     );
 };
 

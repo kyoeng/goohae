@@ -72,7 +72,7 @@ public class ProductServiceImpl implements ProductService {
         String origName = file.getOriginalFilename();
 
         // 바꿔서 저장할 파일 이름 생성
-        String uuid = vo.getProductName() + "-" + UUID.randomUUID().toString().substring(0, 10) + "-" + fileNum;
+        String uuid = UUID.randomUUID().toString().substring(0, 15) + "-" + fileNum;
 
         // 파일 확장자 가져오기
         String extension = origName.substring(origName.lastIndexOf("."));

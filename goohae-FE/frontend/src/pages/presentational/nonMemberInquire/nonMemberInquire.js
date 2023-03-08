@@ -78,7 +78,7 @@ export default function NonMemberInquire() {
 
     return (
         <SinglePageContainer>
-            <SinglePageHeader/>
+            <SinglePageHeader isLogin={true}/>
             <InputBox type="text" id="nonMemberName" label="이름" name="nonMemberName" onChange={onChangeNonMemberName} required placeholder="국문으로 입력해 주세요" onkeyup="this.value=this.value.replace(/[^-ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g,'');" />
             <ErrorMessage>{nonMemberNameMassage}</ErrorMessage>
             
@@ -88,10 +88,7 @@ export default function NonMemberInquire() {
             <InputBox type="text" id="nonMemberEmail" label="주문번호" name="nonMemberEmail" onChange={onChangeNonMemberNumber} required placeholder="메일, 문자로 발송된 번호를 입력해 주세요" />
             <ErrorMessage>{nonMemberNumberMassage}</ErrorMessage>
             
-            <SingleButton className={styles.nonMemberBtn} type="summit" onclick={nonMember} disabled={disabled}>
-                주문조회하기
-            
-            </SingleButton>
+            <SingleButton className={styles.nonMemberBtn} type="summit" onclick={nonMember} disabled={disabled} contents={"주문조회하기"}/>
         </SinglePageContainer>
 
     );

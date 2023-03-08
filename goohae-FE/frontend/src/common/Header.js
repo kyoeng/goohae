@@ -10,11 +10,9 @@ export default function Header() {
         join = joinIcon,
         cart = cartIcon,
         faq = faqIcon;
-
-
     return (
         <>
-            <header>
+            <header style={{backgroundColor:"white"}} >
                 <div className="upperHeader">
                     {/* ===== 로고 및 네비 부분 ===== */}
                     <h1 className="logoContainer">
@@ -56,7 +54,7 @@ export default function Header() {
 
 
                 {/* ===== 카테고리 및 이용문의 부분 ===== */}
-                <div className="underHeader">
+                <div className="underHeader"  style={{}}>
                     <ul className="categoryContainer">
                         <li><span>거실</span>
                             <ul>

@@ -10,7 +10,7 @@ export default function SubHeaderNav ({productCategory,setSelectedNavCon,selecte
             NavCon = ["소파","테이블","의자","TV콘솔" ]
             return "거실"
         } else if(classify === "B") {
-            NavCon = ["침대","매트리스","협탁" ]
+            NavCon = ["침대","매트리스","협탁","TV콘솔" ]
             return "침실"
         } else if(classify === "K") {
             NavCon = ["식탁", "의자" ]

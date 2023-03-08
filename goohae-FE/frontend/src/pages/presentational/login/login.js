@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import styles from "../../css/login/login.module.css"
 import { Link } from "react-router-dom";
@@ -17,35 +17,32 @@ export default function Login() {
     const [errorMessage, setErrorMassage] = useState('');
     // const loginData = { loginUser }
     console.log(loginUser.id)
-
     //비밀번호 아이디 value  관리
     function changeLoginId(e) { setLoginId(e.target.value) };
     function changeLoginPw(e) { setLoginPw(e.target.value) };
+    
+    const navigate = useNavigate();
 
     function login() {
         console.log(loginId);
         console.log(loginPw);
-
         if (loginId != '' && loginPw != '') {
-            axios.post('/test', {
+            axios.post('/api/user/login', {
                 id: loginId,
                 password: loginPw,
             })
                 .then((response) => {
                     const { aceessToken } = response.data;
-                    if (!aceessToken) {
+                    if (!!aceessToken) {
+
                         setErrorMassage('로그인실패');
                         setLoginId();
                         setLoginPw();
                     } else {
-                        if (response.status === 200) {
-                            axios.defaults.headers.common[
-                                "Authorization"
-                            ] = `Bearer ${aceessToken}`;
-                            return <Navigate to="/" replace={true} />
-                        } else {
-                            return;
-                        }
+                        axios.defaults.headers.common[
+                            "Authorization"
+                        ] = `Bearer ${aceessToken}`;
+                        return navigate('/')
                     }
                 })
                 .catch((err) => {
@@ -82,26 +79,21 @@ export default function Login() {
 
     return (
         <SinglePageContainer className={styles.loginContainer}>
-            <SinglePageHeader/>
+            <SinglePageHeader isLogin={"login"} />
             <div className={styles.loginInputContainer}>
                 <InputBox className={styles.pupleLink}
                     type="text"
-                    id="loginId"
-                    // name="id"
                     autofocus
-                    // required
                     placeholder="아이디"
                     value={loginId}
-                    // onKeyUp={ActiveIsPassedLogin}
-                    onChange={changeLoginId} />
+                    onChange={changeLoginId} 
+                    />
                 <InputBox
                     type="password"
                     id="loginPw"
                     name="password" autoFocus
-                    // required 
                     placeholder="비밀번호"
                     value={loginPw}
-                    // onKeyUp={ActiveIsPassedLogin}
                     onChange={changeLoginPw}
                 />
             </div>
@@ -109,7 +101,7 @@ export default function Login() {
                 <input type="idCheckbox" className={styles.idCheckInput} name="loginCheck" />
                 <p>아이디저장</p>
             </div>
-            <ErrorMessage>{errorMessage} </ErrorMessage>
+            <ErrorMessage errorMessage={errorMessage}/>
             <SingleButton
                 type="submit"
                 className={styles.loginButton}
@@ -117,14 +109,12 @@ export default function Login() {
                 // disabled={adminValue === '' || loginPwValue === '' ? true : false}
                 // disabled={loading}
                 onClick={login}
-                children="로그인">
-
-            </SingleButton>
+                contents="로그인"/>
             <ul className={styles.foot}>
                 <li><Link to="/signUp" >회원가입</Link></li>
                 <li><Link to="/findId">아이디 비밀번호 찾기</Link></li>
             </ul>
-        </SinglePageContainer >
+        </SinglePageContainer>
     );
 }
 
