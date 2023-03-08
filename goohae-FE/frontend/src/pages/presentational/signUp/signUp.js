@@ -20,17 +20,20 @@ export default function SignUp() {
     const [signUpPasswordConfirm, setSignUpPasswordConfirm] = useState()
     const [signUpName, setSignUpName] = useState("")
     const [signUpPhone, setSignUpPhone] = useState("");
-    const [signUpAddress, setSignUpAddress] = useState("");
     const [signUpPostNum, setSignUpPostNum] = useState("");
+    const [signUpAddress, setSignUpAddress] = useState("");
+    const [signUpAgree1, setSignUpAgree1] = useState(false);
+    const [signUpAgree2, setSignUpAgree2] = useState(false);
 
     //오류메시지 상태저장
-    const [signUpIdErrorMassage, setSignUpIdErrorMassage] = useState('')
-    const [signUpIdMassage, setSignUpIdMassage] = useState('')
-    const [signUpEmailMassage, setSignUpEmailMassage] = useState('')
-    const [signUpPwMassage, setSignUpPwMassage] = useState('')
-    const [signUpPwConfirmMessage, setSignUpPwConfirmMessage] = useState('')
-    const [signUpNameMassage, setSignUpNameMassage] = useState('')
-    const [signUpPhoneMassage, setSignUpPhoneMassage] = useState('')
+    const [signUpIdErrorMassage, setSignUpIdErrorMassage] = useState('');
+    const [signUpEmailMassage, setSignUpEmailMassage] = useState('');
+    const [signUpPwMassage, setSignUpPwMassage] = useState('');
+    const [signUpPwConfirmMessage, setSignUpPwConfirmMessage] = useState('');
+    const [signUpNameMassage, setSignUpNameMassage] = useState('');
+    const [signUpPhoneMassage, setSignUpPhoneMassage] = useState('');
+    const [signUpPostNumMessage, setSignUpPostNumMessage] = useState('');
+    const [signUpAddressMessage, setSignUpAddressMessage] = useState('');
 
     // 유효성 검사
     const [isSignUpId, setIsSignUpId] = useState(false);
@@ -39,6 +42,8 @@ export default function SignUp() {
     const [isSignUpPasswordConfirm, setIsSignUpPasswordConfirm] = useState(false);
     const [isSignUpName, setIsSignUpName] = useState(false);
     const [isSignUpsPhone, setIsSignUpPhone] = useState(false);
+    const [isSginUpPostNum, setIsSignUpPostNum] = useState(false);
+    const [isSignUpAddress, setIsSignUpAddress] = useState(false);
 
     // 동의 안내문
     const [agreeModal1, setAgreeModal1] = useState(false);
@@ -56,7 +61,6 @@ export default function SignUp() {
     function signUp() {
         if (signUpConformId && isSignUpPassword
             && isSignUpPasswordConfirm && isSignUpName && isSignUpsPhone) {
-                console.log("요청은들어와")
             axios.post('/api/user/join', { 
                 id: signUpId,
                 password : signUpPassword,
@@ -69,7 +73,6 @@ export default function SignUp() {
                     console.log(result);
                     console.log("singupDB!");
                     window.alert('회원가입이 되었습니다! 로그인 해주세요.');
-                    // history.replace('/login');
                 })
                 .catch((error) => {
                     window.alert('회원가입이 정상적으로 되지 않았습니다.');
@@ -174,13 +177,28 @@ export default function SignUp() {
             setIsSignUpName(true);
         }
     };
-    // 주소지
-    const onChangeSignUpAddress = (e) =>{
-        setSignUpAddress(e.target.value);
-    }
     //우편번호 
     const onChangePostNum = (e) =>{
         setSignUpPostNum(e.target.value);
+        const postNumberRegExp = /^\d{3}-\d{5}$/;
+        if(!postNumberRegExp.test(signUpPostNum)){
+            setSignUpPostNumMessage("잘못된 번호입니다.");
+            setIsSignUpPostNum(false);
+        } else {
+            setSignUpPostNumMessage("올바른 정보입니다!");
+            setIsSignUpPostNum(true);
+        }
+    }
+    // 주소지
+    const onChangeSignUpAddress = (e) =>{
+        setSignUpAddress(e.target.value);
+        if(signUpAddress.length < 10) {
+            setSignUpAddressMessage("다시 입력해주세요.");
+            setIsSignUpAddress(false);
+        } else {
+            setSignUpAddressMessage("올바른 정보입니다!");
+            setIsSignUpAddress(true);
+        }
     }
     //휴대폰 유효성검사 
     const onChangeSignUpPhone = (e) => {
@@ -205,7 +223,7 @@ export default function SignUp() {
     // }, []);
     //버튼 활성화
     const activeSinupbtn = isSignUpId && isSignUpEmail && isSignUpPassword
-        && isSignUpPasswordConfirm && isSignUpName && isSignUpsPhone
+        && isSignUpPasswordConfirm && isSignUpName && isSignUpsPhone && isSginUpPostNum && isSignUpAddress && signUpAgree1 && signUpAgree2
     // &&?&&?
 
     return (
@@ -221,47 +239,48 @@ export default function SignUp() {
         //             <form className={styles.InfoForm} action="server.html" name="memberJoin"> */}
             <div className={styles.idInputWrap}>
                 <InputBox type="text" label="아이디" name="id" className={styles.signUpId} minLength={5} maxLength={16} value={signUpId} placeholder="영문 대소문자와 숫자 5-19자 조합" onChange={onChangeSignUpId} />
-                <p className={styles.signUpErrorMassage}>{signUpIdErrorMassage}</p>
-                <p className={styles.signUpErrorMassage}>{signUpIdMassage}</p>
-                <SingleButton className={[styles.signUpIdDuplicateConform, styles.signUpBtn]} onClick={signUpIdDuplicateConform} disabled={!isSignUpId}>아이디 중복확인</SingleButton>
+                <ErrorMessage errorMessage={signUpIdErrorMassage} regResult={isSignUpId}/>
+                <SingleButton  onClick={signUpIdDuplicateConform} contents={"아이디 중복확인"}/>
             </div>
             <div className={styles.emailInputWrap}>
                 <EmailInput label="이메일"/>
-                <p className={styles.signUpErrorMassage}>{signUpEmailMassage}</p>
-                <SingleButton className={[styles.emailCertification, styles.signUpBtn]} disabled={!isSignUpEmail}>이메일 인증하기</SingleButton>
+                {/* <ErrorMessage className={styles.signUpErrorMassage}/> */}
+                {/* <SingleButton className={[styles.emailCertification, styles.signUpBtn]} disabled={!isSignUpEmail}>이메일 인증하기</SingleButton> */}
             </div>
             <div className={styles.pwInputWrap}>
                 <InputBox className={styles.pwInput}  label="비밀번호" type="password" name="psw" value={signUpPassword}
                     // minLength={8} maxLength={16} 
                     placeholder=" 8 ~ 16자 영문, 숫자, 특수문자를 최소 한가지씩 조합" onChange={onChangeSignUpPassword} />
-                <p className={styles.signUpErrorMassage}>{signUpPwMassage}</p>
+                <ErrorMessage className={styles.signUpErrorMassage} errorMessage={signUpPwMassage} regResult={isSignUpPassword}/>
             </div>
             <div className={styles.pwConfirmInputWrap}>
                 <InputBox className={styles.pwConfirmInput} label="비밀번호확인" type="password" name="psw" minLength={8} maxLength={16} value={signUpPasswordConfirm} onChange={onChangeSignUpPasswordConfirm} />
-                <p className={styles.signUpErrorMassage}>{signUpPwConfirmMessage}</p>
+                <ErrorMessage className={styles.signUpErrorMassage} errorMessage={signUpPwConfirmMessage} regResult={isSignUpPasswordConfirm}/>
             </div>
             <div className={styles.nameInputWrap}>
                 <InputBox className={styles.signUpName} label="이름" type="text" name="Name" value={signUpName} onChange={onChangeSignUpName}
                 // onChange={sinUpChangeName} 
                 />
-                <p className={styles.signUpErrorMassage}>{signUpNameMassage}</p>
+                <ErrorMessage className={styles.signUpErrorMassage} errorMessage={signUpNameMassage} regResult={isSignUpName}/>
             </div>
             <div className={styles.tellInputWrap}>
                 <InputBox className={styles.signUpPhone} label="핸드폰 번호" type="text" name="signUpPhone" value={signUpPhone} placeholder="'-'없이 입력해주세요" onChange={onChangeSignUpPhone} />
-                <ErrorMessage className={styles.signUpErrorMassage}>{signUpPhoneMassage}</ErrorMessage>
+                <ErrorMessage className={styles.signUpErrorMassage} errorMessage={signUpPhoneMassage} regResult={isSignUpsPhone}/>
             </div>
             <div className={styles.tellInputWrap}>
                 <InputBox className={styles.signUpPhone} label="우편번호" type="text" value={signUpPostNum} onChange={onChangePostNum} />
+                <ErrorMessage errorMessage={signUpPostNumMessage} regResult={isSginUpPostNum}/>
                 <InputBox className={styles.signUpPhone} label="상세주소" type="text" value={signUpAddress} onChange={onChangeSignUpAddress} />
+                <ErrorMessage errorMessage={signUpAddressMessage} regResult={isSignUpAddress}/>
             </div>
             <div className={styles.emailGetRadio}>
                 <div>
                     <div>
-                        <input type="checkbox" name="EmailGet" id="emailGet" defaultValue="Get"  style={{display:"none"}}/>
+                        <input type="checkbox" id="emailGet"  onChange={e=>setSignUpAgree1(e.target.value)} style={{display:"none"}}/>
                         <label htmlFor="emailGet"><span className={styles.radioImg}>라디오버튼</span></label>
                         <label htmlFor="emailGet">서비스 이용약관 동의</label>
                     </div>
-                    <span onClick={()=>setAgreeModal1(!agreeModal1)} style={{cursor:"pointer"}} href="#">자세히 보기</span>
+                    <span onClick={()=>setAgreeModal1(true)} style={{display:"inline-block", margin:"5px 0",cursor:"pointer"}} href="#">자세히 보기</span>
                     <div className={styles.usingServisePermition}>
                         {agreeModal1&&<AgreeModal className={styles.usingServicePermitionContent}>
                             제1조(목적) 이 약관은 OO 회사(전자상거래 사업자)가 운영하는 OO 사이버 몰(이하 “몰”이라 한다)에서 제공하는 인터넷 관련 서비스(이하
@@ -399,11 +418,11 @@ export default function SignUp() {
                 </div>
                 <div >
                     <div>
-                        <input type="checkbox" name="EmailGet" id="emailNoGet" defaultValue="NoGet" style={{display:"none"}}/>
+                        <input type="checkbox" id="emailNoGet" onChange={e=>setSignUpAgree2(e.target.value)} style={{display:"none"}}/>
                         <label htmlFor="emailNoGet"><span className={styles.radioImg}>라디오버튼</span></label>
                         <label htmlFor="emailNoGet">개인정보 처리 및 약관 동의</label>
                     </div>
-                    <span onClick={()=> setAgreeModal2(true)} style={{cursor:"pointer"}} href="#">자세히 보기</span>
+                    <span onClick={()=> setAgreeModal2(true)} style={{ display:"inline-block", margin:"5px 0", cursor:"pointer"}} href="#">자세히 보기</span>
                     <div className={styles.personalInfoPermition}>
                         {agreeModal2&&<AgreeModal className={styles.personalInfoPermitionContent}>
                             제1조(목적) 이 약관은 OO 회사(전자상거래 사업자)가 운영하는 OO 사이버 몰(이하 “몰”이라 한다)에서 제공하는 인터넷 관련 서비스(이하
@@ -542,11 +561,7 @@ export default function SignUp() {
                 </div>
             </div>
             <div className={styles.ButtonWrap}>
-                <SingleButton className={[styles.signUpSubmitBtn, styles.signUpBtn]} type="submit" onClick={signUp}
-                    // disabled={!activeSinupbtn}
-                >
-                    회원가입 하기
-                </SingleButton>
+                <SingleButton onClick={signUp} contents={"회원가입 하기"}/>
             </div>
 
         </SinglePageContainer>

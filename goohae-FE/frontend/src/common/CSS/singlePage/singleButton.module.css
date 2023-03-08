@@ -9,11 +9,10 @@
     border: 0;
     color: white;
     font-size: 1.4rem;
-    cursor: pointer;
     background:#9497AB;
-    
 }
 
-.singlePageButton :hover {
+.singlePageButton:hover {
     background-color: #505DD0;
+    cursor: pointer;
 }
