@@ -18,11 +18,10 @@ export default function AdminProduct() {
     const navigate = useNavigate();
 
     //data = db에서 가져와서 reducer에 저장한 데이터를 data라는 이름으로 저장
-    const data = useSelector((state) => state.adminProduct);
-
+    const data = useSelector((state) => state.adminProduct.product);
+    const searchWord = useSelector((state) => state.adminProduct.searchProd);
     //초기 데이터를 get해옴 productSlice의 setProd 리듀서로 get요청에대한 response.data를 저장함
     useEffect(() => {
-
         axios.get('/api/product/get')
             .then((response) => {
                 disPatch(setProd(response.data));
@@ -30,9 +29,7 @@ export default function AdminProduct() {
             .catch((err) => {
                 console.log(err)
             })
-
     }, [])
-
 
     //table의 row를 클릭했을때 개별적으로 선택한 데이터를 product의 id로 구별하여 저장
     const [select, setSelect] = useState(null);
@@ -48,7 +45,7 @@ export default function AdminProduct() {
     }
 
     //모달창에 올라간 상품에 대한 삭제요청 select state안에 개별데이터가 들어있음 
-    const reqProdDel = (prodId) => {
+    const reqProdDel = () => {
         axios.post('/api/admin/valid/del-pro', {
             product_code: select.product_code,
             product_name: select.product_name
@@ -62,7 +59,8 @@ export default function AdminProduct() {
             })
     }
 
-    console.log(data);
+    
+
 
     const pOptions = [
         '상품이름',

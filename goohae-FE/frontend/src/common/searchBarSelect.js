@@ -1,9 +1,16 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+
 export default function SelectSearch({ selectOption }) {
     const [option, setOption] = useState(selectOption);
+    const categoryselect = useDispatch();
+
+    const categoryChange = (e) => {
+        categoryselect(e.target.value);
+    };
 
     return (
-        <select>
+        <select onChange={categoryChange}>
             <option value='all' key="전체">전체</option>
             {option.map((item, idx) => {
                 return (
