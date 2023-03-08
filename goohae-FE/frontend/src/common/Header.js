@@ -1,15 +1,31 @@
 import "./CSS/Header.css";
+import axios from "axios";
 import loginIcon from "../stores/images/icon/login_icon.png";
 import joinIcon from "../stores/images/icon/join.png";
 import cartIcon from "../stores/images/icon/cart.png";
 import faqIcon from "../stores/images/icon/FAQicon.png";
+import myPageIcon from "../stores/images/icon/myPageIcon.png"
+import logoutIcon from "../stores/images/icon/logoutIcon.png"
 import { Link } from "react-router-dom";
+import { useState } from 'react';
 
 export default function Header() {
     const login = loginIcon,
         join = joinIcon,
         cart = cartIcon,
+        mypage = myPageIcon,
+        logout = logoutIcon,
         faq = faqIcon;
+
+
+    const logoutFunc = () =>{
+        axios.defaults.headers.common["Authorization"] = undefined;
+        setTokenExist(!!axios.defaults.headers.common["Authorization"]);
+    } 
+
+    const [tokenExist, setTokenExist] = useState(!!axios.defaults.headers.common["Authorization"]);
+
+
     return (
         <>
             <header style={{backgroundColor:"white"}} >
@@ -21,22 +37,36 @@ export default function Header() {
 
                     <div className="nav">
                         <ul className="forUserContainer">
+                            {!!tokenExist?
+                            <>
+                            <li className="loginInner" onClick={logoutFunc} >
+                                <div>
+                                    <img src={logout} alt="logout" />
+                                    <span>LOGOUT</span>
+                                </div>
+                            </li>
+                            <li className="joinInner">
+                                <Link to="/signUp">
+                                    <img src={mypage} alt="myPageIcon" />
+                                    <span>MYPAGE</span>
+                                </Link>
+                            </li>
+                            </>:<>
                             <li className="loginInner">
                                 <Link to="/login">
                                     <img src={login} alt="login" />
                                     <span>LOGIN</span>
                                 </Link>
                             </li>
-
                             <li className="joinInner">
                                 <Link to="/signUp">
                                     <img src={join} alt="join" />
                                     <span>JOIN</span>
                                 </Link>
                             </li>
-
+                            </>}
                             <li className="cartInner">
-                                <a href="/">
+                                <a href="/shopppingCart">
                                     <img src={cart} alt="cart" />
                                     <span>CART</span>
                                 </a>

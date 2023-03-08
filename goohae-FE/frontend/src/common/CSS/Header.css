@@ -46,7 +46,7 @@ header>.upperHeader {
 }
 
 /* forUserContainer */
-.nav>.forUserContainer {
+.upperHeader>.nav>.forUserContainer {
     display: flex;
     flex-grow: 1;
     gap: 18px;
@@ -54,29 +54,33 @@ header>.upperHeader {
     height: 21px;
 }
 
-.nav>.forUserContainer>li {
+.upperHeader>.nav>.forUserContainer>li{
     width: 100%;
     height: 100%;
 }
 
-.nav>.forUserContainer>li>a {
+.upperHeader>.nav>.forUserContainer>li>a,
+.upperHeader>.nav>.forUserContainer>li>div {
     display: flex;
     width: 100%;
     height: 100%;
     font-size: 1.3rem;
 }
 
-.nav>.forUserContainer>li>a>img {
+.upperHeader>.nav>.forUserContainer>li>a>img,
+.upperHeader>.nav>.forUserContainer>li>div>img {
     width: 30%;
     height: 100%;
 }
 
-.nav>.forUserContainer>li>a>span {
+.upperHeader>.nav>.forUserContainer>li>a>span,
+.upperHeader>.nav>.forUserContainer>li>div>span {
     width: 70%;
     height: 100%;
     line-height: 21px;
     letter-spacing: 2px;
     padding-left: 2px;
+    font-size: 12px;
 }
 
 /* searchContainer */
