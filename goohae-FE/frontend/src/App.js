@@ -29,8 +29,7 @@ import ShoppingCart from './pages/presentational/myPage/shoppingCart/shoppingCar
 import SubPage from './pages/presentational/subPage/SubPage';
 
 // 결제페이지
-import MemberPayMent from './pages/presentational/memberPayment/MemberPayMent';
-import Header from './common/Header';
+import MemberPayMent from './pages/presentational/memberPayment/memberPayMent';
 
 //고객 페이지
 import Customer from './pages/presentational/customer/customer';
