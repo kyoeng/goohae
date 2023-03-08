@@ -2,6 +2,7 @@ import { useState, useRef, useMemo } from "react"
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
+import styled from '../../css/admin/addProduct.module.css';
 
 export default function AddProduct(params) {
     const navigate = useNavigate();
@@ -43,7 +44,7 @@ export default function AddProduct(params) {
     console.log(prodInfo.current);
 
     return (
-        <div>
+        <div className={styled.addProdContainer}>
             <label><span>상품이미지</span>
                 <input type="file" onChange={fileUpload} multiple />
                 <img src="" alt="" />

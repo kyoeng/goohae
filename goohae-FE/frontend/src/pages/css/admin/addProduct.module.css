@@ -1,0 +1,11 @@
+.addProdContainer {
+    width: 700px;
+    height: 450px;
+
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+}

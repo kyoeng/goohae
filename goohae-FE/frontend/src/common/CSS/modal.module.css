@@ -1,9 +1,13 @@
 .modalContainer {
-    width: 600px;
-    height: 400px;
+    width: 2000px;
+    height: 800px;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: -9999em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .modalWindow {
@@ -17,9 +21,12 @@
 
 .modalWindow>div {
     color: white;
+    font-size: 1.6rem;
 }
 
 .modalImg {
     width: 300px;
     height: 150px;
+
+    margin-top: 15px;
 }

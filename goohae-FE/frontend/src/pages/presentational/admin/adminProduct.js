@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { setProd } from '../../../stores/store/slice/adminSlice';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
 
 import adminPstyled from '../../css/admin/adminProd.module.css';
@@ -41,6 +41,23 @@ export default function AdminProduct() {
         setModalFlag(pre => !pre)
     }
 
+    const modalOff = () => {
+        setModalFlag(false);
+    }
+
+    const reqProdDel = (prodId) => {
+        axios.post('/api/admin/valid/del-pro', {
+            product_code: select.productCode,
+            product_name: select.productName
+        })
+            .then((response) => {
+                console.log(response.data);
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }
+
     console.log(select);
     const pOptions = [
         '상품이름',
@@ -76,7 +93,10 @@ export default function AdminProduct() {
             </Table>
             <Paging pagingLength={ProdData.length} />
 
-            {modalFlag ? <Modal infoData={select} /> : null}
+            {modalFlag ? <Modal
+                modalOff={modalOff}
+                infoData={select}
+                reqProdDel={reqProdDel} /> : null}
             <button onClick={() => { navigate('/addprod') }}>상품추가하기</button>
         </div >
     );
