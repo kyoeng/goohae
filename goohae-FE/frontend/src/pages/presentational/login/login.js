@@ -24,24 +24,23 @@ export default function Login() {
     const navigate = useNavigate();
 
     function login() {
-        console.log(loginId);
-        console.log(loginPw);
         if (loginId != '' && loginPw != '') {
             axios.post('/api/user/login', {
                 id: loginId,
                 password: loginPw,
             })
                 .then((response) => {
-                    const { aceessToken } = response.data;
-                    if (!!aceessToken) {
-
+                    const accessToken = response.data;
+                    if (accessToken == "error") {
+                        console.log(accessToken)
                         setErrorMassage('로그인실패');
                         setLoginId();
-                        setLoginPw();
+                        setLoginPw();                        
                     } else {
+                        console.log(accessToken)
                         axios.defaults.headers.common[
                             "Authorization"
-                        ] = `Bearer ${aceessToken}`;
+                        ] = `Bearer ${accessToken}`;
                         return navigate('/')
                     }
                 })

@@ -237,11 +237,11 @@ export default function SignUp() {
                 <ErrorMessage errorMessage={signUpIdErrorMassage} regResult={isSignUpId}/>
                 <SingleButton  onClick={signUpIdDuplicateConform} contents={"아이디 중복확인"}/>
             </div>
-            <div className={styles.emailInputWrap}>
-                <EmailInput label="이메일"/>
+            {/* <div className={styles.emailInputWrap}> */}
+                {/* <EmailInput label="이메일"/> */}
                 {/* <ErrorMessage className={styles.signUpErrorMassage}/> */}
                 {/* <SingleButton className={[styles.emailCertification, styles.signUpBtn]} disabled={!isSignUpEmail}>이메일 인증하기</SingleButton> */}
-            </div>
+            {/* </div> */}
             <div className={styles.pwInputWrap}>
                 <InputBox className={styles.pwInput}  label="비밀번호" type="password" name="psw" value={signUpPassword}
                     // minLength={8} maxLength={16} 
