@@ -2,8 +2,6 @@ import React from 'react';
 import styles from "../CSS/singlePage/errorMessage.module.css";
 
 export default function ErrorMessage({errorMessage, regResult}) {
-    console.log(errorMessage)
-    console.log(regResult)
     if (!!errorMessage){
         return (
             // <div className={styles.errorMessageBox}>

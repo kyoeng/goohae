@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-// import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import styles from '../../css/signup/signUp.module.css';
 import logo from "../../../stores/images/icon/logo.png";
@@ -49,14 +49,8 @@ export default function SignUp() {
     const [agreeModal1, setAgreeModal1] = useState(false);
     const [agreeModal2, setAgreeModal2] = useState(false);
 
-    const signUpObject = {
-        id: signUpId,
-        email: signUpEmail,
-        password: signUpPassword,
-        name: signUpName,
-        phone: signUpPhone
+    const navigate = useNavigate();
 
-    }
     //axios
     function signUp() {
         if (signUpConformId && isSignUpPassword
@@ -73,6 +67,7 @@ export default function SignUp() {
                     console.log(result);
                     console.log("singupDB!");
                     window.alert('회원가입이 되었습니다! 로그인 해주세요.');
+                    return navigate('/login')
                 })
                 .catch((error) => {
                     window.alert('회원가입이 정상적으로 되지 않았습니다.');
