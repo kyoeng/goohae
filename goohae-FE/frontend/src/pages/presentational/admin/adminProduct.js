@@ -98,8 +98,6 @@ export default function AdminProduct() {
                 infoData={select}
                 reqProdDel={reqProdDel} /> : null}
             <button onClick={() => { navigate('/addprod') }}>상품추가하기</button>
-            {modalFlag ? <Modal infoData={select} /> : null}
-            <button onClick={() => { navigate('addprod') }}>상품추가하기</button>
         </div >
     );
 }
