@@ -22,6 +22,7 @@ export default function SubPage() {
                 <Product_container_4ea title={"Best Product"}>
                     <Product_Box data={data}/>
                 </Product_container_4ea>
+                
                 <Product_container_8ea title={"Product"}>
                     <Product_Box data={data2}/>
                 </Product_container_8ea>
