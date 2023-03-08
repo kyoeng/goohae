@@ -77,7 +77,7 @@ export default function AdminProduct() {
             <Paging pagingLength={ProdData.length} />
 
             {modalFlag ? <Modal infoData={select} /> : null}
-            <button onClick={() => { navigate('/addprod') }}>상품추가하기</button>
+            <button onClick={() => { navigate('addprod') }}>상품추가하기</button>
         </div >
     );
 }

@@ -2,7 +2,7 @@
 
 [
     {
-        "img": "./images/main/bed.png",
+        "img": "/images/main/bed.png",
         "title": "빈티지 윌넛 일체형 침대",
         "option" : "brown, kingSize",
         "price": 200000,

@@ -29,7 +29,7 @@ import ShoppingCart from './pages/presentational/myPage/shoppingCart/shoppingCar
 import SubPage from './pages/presentational/subPage/SubPage';
 
 // 결제페이지
-import MemberPayMent from './pages/presentational/memberPayment/MemberPayMent';
+import MemberPayMent from './pages/presentational/memberPayment/memberPayMent';
 import Header from './common/Header';
 
 //고객 페이지
@@ -113,8 +113,8 @@ function App() {
           <Route path='adminmain/*' element={<AdminMain />} >
             <Route path='user' element={<AdminUser />} />
             <Route path='product' element={<AdminProduct />} />
+            <Route path='product/addprod' element={<AddProduct />} />
           </Route>
-          <Route path='/addprod' element={<AddProduct />} />
 
           <Route path='/adminlogin' element={<AdminLogin />} />
 

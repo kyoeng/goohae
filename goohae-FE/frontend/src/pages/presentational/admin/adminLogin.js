@@ -6,6 +6,8 @@ import axios from 'axios';
 import '../../css/admin/adminLogin.css';
 
 
+
+
 export default function AdminLogin() {
     const [adminId, setAdminId] = useState()
     const [adminPw, setAdminPw] = useState();
@@ -17,7 +19,7 @@ export default function AdminLogin() {
 
     function adminLogin() {
         if (adminId !== '' && adminPw !== '') {
-            axios.post('/test', {
+            axios.post('/api/admin/login', {
                 id: adminId,
                 password: adminPw,
             })

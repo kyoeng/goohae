@@ -1,4 +1,8 @@
 spring:
+  servlet:
+    multipart:
+      maxFileSize: 10MB
+      maxRequestSize: 10MB
   datasource:
     username: root
     password: mysql
@@ -12,3 +16,5 @@ mybatis:
   configuration:
     map-underscore-to-camel-case: true
   type-aliases-package: com.kdt.goohae.domain
+
+

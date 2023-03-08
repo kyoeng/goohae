@@ -61,6 +61,7 @@ public class ProductController {
 
                 img_vo.setProductName(vo.getProductName());
                 img_vo.setProductOption(vo.getProductOption());
+                img_vo.setCategoryCode(vo.getCategoryCode());
 
                 int fileNum = 0;
 
