@@ -8,6 +8,11 @@ spring:
     password: mysql
     url: jdbc:mysql://localhost:3306/goohae?&serverTimezone=UTC&autoReconnect=true&allowMultiQueries=true&characterEncoding=UTF-8
     driver: com.mysql.cj.jdbc.Driver
+  http:
+    encoding:
+      enabled: true
+      force: true
+      charset: UTF-8
 
 
 
