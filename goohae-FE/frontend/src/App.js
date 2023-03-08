@@ -29,7 +29,7 @@ import ShoppingCart from './pages/presentational/myPage/shoppingCart/shoppingCar
 import SubPage from './pages/presentational/subPage/SubPage';
 
 // 결제페이지
-import MemberPayMent from './pages/presentational/memberPayment/memberPayMent';
+import MemberPayMent from './pages/presentational/memberPayment/MemberPayMent';
 import Header from './common/Header';
 
 //고객 페이지
@@ -54,7 +54,7 @@ function App() {
 
           {/* 마이페이지 */}
           <Route path='/myPage' element={<MyPage />} />
-          <Route path='/wishList' element={<WishList />} />
+          <Route path='/wishLisxxt' element={<WishList />} />
           <Route path='/myAddress' element={<MyAddress />} />
           <Route path='/addAddress' element={<AddAddress />} />
           <Route path='/memberInfo' element={<MemberInfo />} />

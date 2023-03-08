@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import styled from "styled-components"
 // import { Navigate } from "react-router-dom";
 import axios from 'axios';
 import styles from '../../css/signup/signUp.module.css';
@@ -8,228 +9,7 @@ import SingleButton from './../../../common/singlePage/singleButton';
 import SinglePageContainer from './../../../common/singlePage/singlePageContainer';
 import SinglePageHeader from "../../../common/singlePage/singlePageHeader";
 import EmailInput from './../../../common/singlePage/emailInput';
-
-
-// const [usingServicePermitionContent, personalInfoPermitionContent] = infoForm.querySelectorAll('.emailGetRadio a'),
-//     [usingServicepermitionBtn, personalInfoPermitionBtn] = infoForm.querySelectorAll('.emailGetRadio>div>div>button');
-// console.log(usingServicepermitionBtn)
-// console.log(personalInfoPermitionBtn)
-
-// usingServicePermitionContent.addEventListener('click', function (e) {
-//     e.preventDefault();
-//     e.target.nextElementSibling.style.display = 'flex'
-//     e.target.nextElementSibling.classList.add('empasized')
-// })
-
-// personalInfoPermitionContent.addEventListener('click', function (e) {
-//     e.preventDefault();
-//     e.target.nextElementSibling.style.display = 'flex'
-//     e.target.nextElementSibling.classList.add('empasized')
-// })
-
-// usingServicepermitionBtn.addEventListener('click', function (e) {
-//     e.preventDefault();
-//     e.target.parentNode.style.display = 'none'
-// })
-
-// personalInfoPermitionBtn.addEventListener('click', function (e) {
-//     e.preventDefault();
-//     e.target.parentNode.style.display = 'none'
-// })
-
-
-// emailCertificationBtn.classList.add('btnDisable');
-// signUpSubmitBtn.classList.add('btnDisable');
-
-// emailSelectTag.addEventListener('change', function () {
-//     emailDomainInput.value = emailSelectTag.value;
-// })
-
-// checkBox[0].addEventListener('change', function (e) {
-//     if (isId(idInput.value) &&
-//         isEmailDomain(emailDomainInput.value) &&
-//         isId(emailIdInput.value) &&
-//         isPassword(pwInput.value) &&
-//         isPassword(pwConfirmInput.value) &&
-//         isName(nameInput.value) &&
-//         isPhoneNumber(midPhoneNum.value) &&
-//         isPhoneNumber(lastPhoneNum.value) &&
-//         checkBox[0].checked == true &&
-//         checkBox[1].checked == true) {
-//         signUpSubmitBtn.classList.remove('btnDisable')
-//     } else {
-//         signUpSubmitBtn.classList.add('btnDisable')
-//     }
-// })
-// checkBox[1].addEventListener('change', function (e) {
-//     if (isId(idInput.value) &&
-//         isEmailDomain(emailDomainInput.value) &&
-//         isId(emailIdInput.value) &&
-//         isPassword(pwInput.value) &&
-//         isPassword(pwConfirmInput.value) &&
-//         isName(nameInput.value) &&
-//         isPhoneNumber(midPhoneNum.value) &&
-//         isPhoneNumber(lastPhoneNum.value) &&
-//         checkBox[0].checked == true &&
-//         checkBox[1].checked == true) {
-//         signUpSubmitBtn.classList.remove('btnDisable')
-//     } else {
-//         signUpSubmitBtn.classList.add('btnDisable')
-//     }
-// })
-
-// infoForm.addEventListener('keyup', function (e) {
-//     confirm(e.target)
-//     if (isId(idInput.value) &&
-//         isEmailDomain(emailDomainInput.value) &&
-//         isId(emailIdInput.value) &&
-//         isPassword(pwInput.value) &&
-//         isPassword(pwConfirmInput.value) &&
-//         isName(nameInput.value) &&
-//         isPhoneNumber(midPhoneNum.value) &&
-//         isPhoneNumber(lastPhoneNum.value) &&
-//         checkBox[0].checked == true &&
-//         checkBox[1].checked == true) {
-//         signUpSubmitBtn.classList.remove('btnDisable')
-//     } else {
-//         signUpSubmitBtn.classList.add('btnDisable')
-//     }
-// })
-
-// function isEmailDomain(asValue) {
-//     const regExp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;;
-//     return regExp.test(asValue);
-// }
-
-// function isId(asValue) { //영문 대문자, 소문자, 숫자, 문자 사이 공백 및 특수문자 -_/,. 
-//     const regExp = /^[a-z]+[a-z0-9]{5,19}$/g;
-//     if (asValue == "") return false;
-//     return regExp.test(asValue);
-// }
-
-// function isPassword(asValue) { //8 ~ 16자 영문, 숫자, 특수문자를 최소 한가지씩 조합
-//     const regExp = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$/;
-//     return regExp.test(asValue); // 형식에 맞는 경우 true 리턴
-// }
-
-// function isPhoneNumber(asValue) {
-//     const regExp = /^\d{4}$/;
-//     return regExp.test(asValue);
-// }
-
-// function isCorrect(asValue) { //한글 영문
-//     const regExp = /^[a-zA-Zㄱ-힣][a-zA-Zㄱ-힣 ]*$/;
-//     return regExp.test(asValue);
-// }
-
-// function isName(asValue) {
-//     const regExp = /^[가-힣]{2,4}$/;
-//     return regExp.test(asValue);
-// }
-
-// emailSelectTag.addEventListener('change', function (e) {
-//     let target = e.target.previousElementSibling;;
-
-//     let flag,
-//         infoGuide;
-
-//     infoGuide = e.target.parentNode.nextElementSibling;
-//     flag = isEmailDomain(target.value);
-//     inputEffect(target, flag, infoGuide);
-
-//     if (isEmailDomain(emailDomainInput.value) && isId(emailIdInput.value)) {
-//         emailCertificationBtn.classList.remove('btnDisable')
-//     } else {
-//         emailCertificationBtn.classList.add('btnDisable')
-//     }
-// })
-
-// function confirm(target) {
-
-//     let flag,
-//         infoGuide;
-
-//     switch (target.className{styles. {}//         case 'idInput':
-//             infoGuide = target.nextElementSibling;
-//             flag = isId(target.value);
-//             inputEffect(target, flag, infoGuide)
-//             break;
-
-//         case 'emailIdInput':
-//             infoGuide = target.parentNode.nextElementSibling;
-//             flag = isId(target.value)
-//             inputEffect(target, flag, infoGuide);
-//             if (isEmailDomain(emailDomainInput.value) && isId(emailIdInput.value)) {
-//                 emailCertificationBtn.classList.remove('btnDisable')
-//             } else {
-//                 emailCertificationBtn.classList.add('btnDisable')
-//             }
-//             break;
-//         case 'emailDomainInput':
-//             infoGuide = target.parentNode.nextElementSibling;
-//             flag = isEmailDomain(target.value);
-//             inputEffect(target, flag, infoGuide);
-//             if (isEmailDomain(emailDomainInput.value) && isId(emailIdInput.value)) {
-//                 emailCertificationBtn.classList.remove('btnDisable')
-//             } else {
-//                 emailCertificationBtn.classList.add('btnDisable')
-//             }
-//             break;
-//         case 'idInput':
-//             infoGuide = target.nextElementSibling;
-//             flag = isId(target.value)
-//             inputEffect(target, flag, infoGuide);
-//             break;
-//         case 'pwInput':
-//             infoGuide = target.nextElementSibling;
-//             flag = isPassword(target.value)
-//             inputEffect(target, flag, infoGuide);
-//             if (!(pwConfirmInput.value == '')) { inputEffect(pwConfirmInput, flag && pwInput.value == pwConfirmInput.value, pwConfirmInput.nextElementSibling); }
-//             break;
-//         case 'pwConfirmInput':
-//             infoGuide = target.nextElementSibling;
-//             flag = (pwInput.value == pwConfirmInput.value && isPassword(pwConfirmInput.value));
-//             inputEffect(target, flag, infoGuide);
-//             break;
-//         case 'midPhoneNum':
-//             // infoGuide = target.parentNode.nextElementSibling;
-//             flag = isPhoneNumber(midPhoneNum.value);
-//             if (flag) target.style.border = '1px solid var(--PurpleBlue)';
-//             else target.style.border = '1px solid var(--CoralRed)';
-//             break;
-//         case 'lastPhoneNum':
-//             infoGuide = target.parentNode.nextElementSibling;
-//             flag = isPhoneNumber(midPhoneNum.value) && isPhoneNumber(lastPhoneNum.value)
-//             inputEffect(target, flag, infoGuide);
-//             break;
-//         case 'nameInput':
-//             infoGuide = target.nextElementSibling;
-//             flag = isName(target.value);
-//             inputEffect(target, flag, infoGuide);
-//             break;
-
-//         default: break;
-//     }
-// }
-
-// function inputEffect(target, flag, infoGuide) {
-//     if (flag) {
-//         target.style.border = '1px solid var(--PurpleBlue)'
-//         if (!target.className.include{styles.('}mail') || (isEmailDomain(emailDomainInput.value) && isId(emailIdInput.value))) {
-//             infoGuide.style.visibility = 'visible';
-//             infoGuide.style.color = 'blue';
-//             infoGuide.innerHTML = '맞게 입력하셨습니다.'
-//         }
-//     } else {
-//         target.style.border = '1px solid var(--CoralRed)'
-//         if (!target.className.include{styles.('}mail') || emailIdInput.value && emailDomainInput.value && (!isEmailDomain(emailDomainInput.value) || !isId(emailIdInput.value))) {
-//             infoGuide.style.visibility = 'visible';
-//             infoGuide.style.color = 'red';
-//             infoGuide.innerHTML = '다시 입력해주세요.'
-//         }
-//     }
-
-// }
+import ErrorMessage from '../../../common/singlePage/errorMessage';
 
 export default function SignUp() {
 
@@ -239,7 +19,9 @@ export default function SignUp() {
     const [signUpPassword, setSignUpPassword] = useState('')
     const [signUpPasswordConfirm, setSignUpPasswordConfirm] = useState()
     const [signUpName, setSignUpName] = useState("")
-    const [signUpPhone, setSignUpPhone] = React.useState("");
+    const [signUpPhone, setSignUpPhone] = useState("");
+    const [signUpAddress, setSignUpAddress] = useState("");
+    const [signUpPostNum, setSignUpPostNum] = useState("");
 
     //오류메시지 상태저장
     const [signUpIdErrorMassage, setSignUpIdErrorMassage] = useState('')
@@ -258,6 +40,10 @@ export default function SignUp() {
     const [isSignUpName, setIsSignUpName] = useState(false);
     const [isSignUpsPhone, setIsSignUpPhone] = useState(false);
 
+    // 동의 안내문
+    const [agreeModal1, setAgreeModal1] = useState(false);
+    const [agreeModal2, setAgreeModal2] = useState(false);
+
     const signUpObject = {
         id: signUpId,
         email: signUpEmail,
@@ -268,9 +54,17 @@ export default function SignUp() {
     }
     //axios
     function signUp() {
-        if (signUpConformId && isSignUpEmail && isSignUpPassword
+        if (signUpConformId && isSignUpPassword
             && isSignUpPasswordConfirm && isSignUpName && isSignUpsPhone) {
-            axios.post('/test', { signUpObject })
+                console.log("요청은들어와")
+            axios.post('/api/user/join', { 
+                id: signUpId,
+                password : signUpPassword,
+                name :signUpName,
+                postNumber: signUpPostNum,
+                address :  signUpAddress,
+                phoneNumber : signUpPhone
+            })
                 .then((result) => {
                     console.log(result);
                     console.log("singupDB!");
@@ -287,16 +81,7 @@ export default function SignUp() {
 
     //아이디 유효성 검사 
     const onChangeSignUpId = (e) => {
-        // setSignUpId(e.target.value.replace( /[^a-z,^0-9]+/g, ""));
-        // console.log('value'+e.target.value);
-        // console.log( 'signUpId'+signUpId);
-        // if (setSignUpId.length > 0) {
-        //     setSignUpIdErrorMassage("아이디 중복확인을 해주세요");
-        //     setIsSignUpId(true);
-        // } else {
-        //     setSignUpIdErrorMassage("아이디는 5~19자 영어 소문자, 숫자를 사용하세요.");
-        //     setIsSignUpId(false);
-        // }
+
         const currentId = e.target.value;
         setSignUpId(currentId);
         const idRegExp = /^[a-z0-9]{5,19}$/;
@@ -314,26 +99,22 @@ export default function SignUp() {
     const signUpIdDuplicateConform = () => {
         if (isSignUpId) {
             axios
-                .get(`/user/id?id=${setSignUpId}`,
+                .post(`/api/user/id-check`,
                     { id: signUpId })
                 .then((response) => {
-                    if (response === false) {
+                    if (response.status === 200) {
                         setSignUpIdErrorMassage("사용 가능한 아이디입니다.");
                         setSignUpConformId(true);
+                        console.log(response.status)
                     } else {
                         setSignUpIdErrorMassage("이미 사용중인 아이디입니다.");
                         setSignUpConformId(false);
                         console.log(response.status)
                     }
-                    console.log('중복체크');
                 })
                 .catch((error) => {
-
                     console.log("에러 발생 : ", error);
-
                 });
-
-            console.log("바로 실행 로그");
         }
     }
 
@@ -393,6 +174,14 @@ export default function SignUp() {
             setIsSignUpName(true);
         }
     };
+    // 주소지
+    const onChangeSignUpAddress = (e) =>{
+        setSignUpAddress(e.target.value);
+    }
+    //우편번호 
+    const onChangePostNum = (e) =>{
+        setSignUpPostNum(e.target.value);
+    }
     //휴대폰 유효성검사 
     const onChangeSignUpPhone = (e) => {
         const currentPhone = e.target.value
@@ -403,8 +192,6 @@ export default function SignUp() {
             setSignUpPhoneMassage("올바른 형식이 아닙니다!");
             setIsSignUpPhone(false);
         } else {
-
-
             setSignUpPhoneMassage("사용 가능한 번호입니다:-)");
             setIsSignUpPhone(true);
         }
@@ -423,7 +210,8 @@ export default function SignUp() {
 
     return (
         <SinglePageContainer className={styles.signUpContainer}>
-            <SinglePageHeader />
+            <SinglePageHeader isLogin={false} />
+            {(agreeModal1||agreeModal2)&&<ModalBackground/>}
             {/* // <div className={styles.signUpContainer}>
         //     <section id={styles.memberInfoWrap}>
         //         <div className={styles.logoImage}>
@@ -435,7 +223,7 @@ export default function SignUp() {
                 <InputBox type="text" label="아이디" name="id" className={styles.signUpId} minLength={5} maxLength={16} value={signUpId} placeholder="영문 대소문자와 숫자 5-19자 조합" onChange={onChangeSignUpId} />
                 <p className={styles.signUpErrorMassage}>{signUpIdErrorMassage}</p>
                 <p className={styles.signUpErrorMassage}>{signUpIdMassage}</p>
-                <SingleButton className={[styles.signUpIdDuplicateConform, styles.signUpBtn]} onChange={signUpIdDuplicateConform} disabled={!isSignUpId}>아이디 중복확인</SingleButton>
+                <SingleButton className={[styles.signUpIdDuplicateConform, styles.signUpBtn]} onClick={signUpIdDuplicateConform} disabled={!isSignUpId}>아이디 중복확인</SingleButton>
             </div>
             <div className={styles.emailInputWrap}>
                 <EmailInput label="이메일"/>
@@ -459,21 +247,23 @@ export default function SignUp() {
                 <p className={styles.signUpErrorMassage}>{signUpNameMassage}</p>
             </div>
             <div className={styles.tellInputWrap}>
-                <p>휴대전화는 정현이가 만든든 컴포넌트 넣어주세요</p>
-                <InputBox className={styles.signUpPhone} type="text" name="signUpPhone" value={signUpPhone} placeholder="'-'없이 입력해주세요" onChange={onChangeSignUpPhone} />
-                <p className={styles.signUpErrorMassage}>{signUpPhoneMassage}</p>
+                <InputBox className={styles.signUpPhone} label="핸드폰 번호" type="text" name="signUpPhone" value={signUpPhone} placeholder="'-'없이 입력해주세요" onChange={onChangeSignUpPhone} />
+                <ErrorMessage className={styles.signUpErrorMassage}>{signUpPhoneMassage}</ErrorMessage>
+            </div>
+            <div className={styles.tellInputWrap}>
+                <InputBox className={styles.signUpPhone} label="우편번호" type="text" value={signUpPostNum} onChange={onChangePostNum} />
+                <InputBox className={styles.signUpPhone} label="상세주소" type="text" value={signUpAddress} onChange={onChangeSignUpAddress} />
             </div>
             <div className={styles.emailGetRadio}>
                 <div>
                     <div>
-                        <input type="checkbox" name="EmailGet" id="emailGet" defaultValue="Get" />
+                        <input type="checkbox" name="EmailGet" id="emailGet" defaultValue="Get"  style={{display:"none"}}/>
                         <label htmlFor="emailGet"><span className={styles.radioImg}>라디오버튼</span></label>
                         <label htmlFor="emailGet">서비스 이용약관 동의</label>
                     </div>
-                    <a href="#">자세히 보기</a>
+                    <span onClick={()=>setAgreeModal1(!agreeModal1)} style={{cursor:"pointer"}} href="#">자세히 보기</span>
                     <div className={styles.usingServisePermition}>
-                        <p>서비스 이용약관 동의</p>
-                        <div className={styles.usingServicePermitionContent}>
+                        {agreeModal1&&<AgreeModal className={styles.usingServicePermitionContent}>
                             제1조(목적) 이 약관은 OO 회사(전자상거래 사업자)가 운영하는 OO 사이버 몰(이하 “몰”이라 한다)에서 제공하는 인터넷 관련 서비스(이하
                             “서비스”라 한다)를 이용함에 있어 사이버 몰과 이용자의 권리․의무 및 책임사항을 규정함을 목적으로 합니다. ※「PC통신, 무선 등을 이용하는
                             전자상거래에 대해서도 그 성질에 반하지 않는 한 이 약관을 준용합니다.」 제2조(정의) ① “몰”이란 OO 회사가 재화 또는 용역(이하 “재화 등”이라
@@ -603,20 +393,19 @@ export default function SignUp() {
                             소송은 제소 당시의 이용자의 주소에 의하고, 주소가 없는 경우에는 거소를 관할하는 지방법원의 전속관할로 합니다. 다만, 제소 당시 이용자의 주소 또는
                             거소가 분명하지 않거나 외국 거주자의 경우에는 민사소송법상의 관할법원에 제기합니다. ② “몰”과 이용자 간에 제기된 전자상거래 소송에는 한국법을
                             적용합니다.
-                        </div>
-                        <button>닫기</button>
+                            <p onClick={()=> setAgreeModal1(!agreeModal1)} style={{cursor:"pointer",fontSize:"15px", padding:"10px", border:"1px solid black", marginTop:"20px",textAlign:"center" }}>닫기</p>
+                        </AgreeModal>}
                     </div>
                 </div>
-                <div>
+                <div >
                     <div>
-                        <input type="checkbox" name="EmailGet" id="emailNoGet" defaultValue="NoGet" />
+                        <input type="checkbox" name="EmailGet" id="emailNoGet" defaultValue="NoGet" style={{display:"none"}}/>
                         <label htmlFor="emailNoGet"><span className={styles.radioImg}>라디오버튼</span></label>
                         <label htmlFor="emailNoGet">개인정보 처리 및 약관 동의</label>
                     </div>
-                    <a href="#">자세히 보기</a>
+                    <span onClick={()=> setAgreeModal2(true)} style={{cursor:"pointer"}} href="#">자세히 보기</span>
                     <div className={styles.personalInfoPermition}>
-                        <p>개인정보 처리 및 약관 동의</p>
-                        <div className={styles.personalInfoPermitionContent}>
+                        {agreeModal2&&<AgreeModal className={styles.personalInfoPermitionContent}>
                             제1조(목적) 이 약관은 OO 회사(전자상거래 사업자)가 운영하는 OO 사이버 몰(이하 “몰”이라 한다)에서 제공하는 인터넷 관련 서비스(이하
                             “서비스”라 한다)를 이용함에 있어 사이버 몰과 이용자의 권리․의무 및 책임사항을 규정함을 목적으로 합니다. ※「PC통신, 무선 등을 이용하는
                             전자상거래에 대해서도 그 성질에 반하지 않는 한 이 약관을 준용합니다.」 제2조(정의) ① “몰”이란 OO 회사가 재화 또는 용역(이하 “재화 등”이라
@@ -746,21 +535,21 @@ export default function SignUp() {
                             소송은 제소 당시의 이용자의 주소에 의하고, 주소가 없는 경우에는 거소를 관할하는 지방법원의 전속관할로 합니다. 다만, 제소 당시 이용자의 주소 또는
                             거소가 분명하지 않거나 외국 거주자의 경우에는 민사소송법상의 관할법원에 제기합니다. ② “몰”과 이용자 간에 제기된 전자상거래 소송에는 한국법을
                             적용합니다.
-                        </div>
-                        <button>닫기</button>
+                        <p onClick={()=> setAgreeModal2(!agreeModal2)} style={{cursor:"pointer", fontSize:"15px", padding:"10px", border:"1px solid black", marginTop:"20px",textAlign:"center" }}>닫기</p>
+                        </AgreeModal>}
                     </div>
                     {/* <p className={styles.signUpErrorMassage}>{signUpMeCheckMessage}</p> */}
                 </div>
             </div>
             <div className={styles.ButtonWrap}>
-                <SingleButton className={[styles.signUpSubmitBtn, styles.signUpBtn]} type="submit" onChange={signUp}
-                    disabled={!activeSinupbtn}
+                <SingleButton className={[styles.signUpSubmitBtn, styles.signUpBtn]} type="submit" onClick={signUp}
+                    // disabled={!activeSinupbtn}
                 >
                     회원가입 하기
                 </SingleButton>
             </div>
 
-        </SinglePageContainer >
+        </SinglePageContainer>
         //             </form>
         //         </article>
         //     </section>
@@ -768,3 +557,27 @@ export default function SignUp() {
     );
 }
 
+const AgreeModal = styled.div`
+    z-index: 3;
+    position: fixed;
+    top: 100px;
+    left: 30vw;
+    display: inline-block;
+    width: 40vw;
+    height: 500px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: white;
+    padding: 10px;
+    padding-top: 40px;
+`
+const ModalBackground = styled.div`
+    top: 0;
+    left: 0;
+    z-index: 2;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.7;
+`
