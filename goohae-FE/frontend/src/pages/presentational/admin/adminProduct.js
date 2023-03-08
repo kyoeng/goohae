@@ -11,33 +11,35 @@ import SearchBar from '../../../components/presentational/admin/searchBar';
 import Paging from '../../../common/paging';
 import Table from '../../../common/tableComponent/table';
 
-import ProdData from '../../../dummyData/data.json';
 import Modal from '../../../common/modal/modal';
 
 export default function AdminProduct() {
-    const dummy = ProdData;
     const disPatch = useDispatch();
     const navigate = useNavigate();
 
+    //data = db에서 가져와서 reducer에 저장한 데이터를 data라는 이름으로 저장
+    const data = useSelector((state) => state.adminProduct);
+
+    //초기 데이터를 get해옴 productSlice의 setProd 리듀서로 get요청에대한 response.data를 저장함
     useEffect(() => {
+
         axios.get('/api/product/get')
             .then((response) => {
-                console.log(response.data)
+                disPatch(setProd(response.data));
             })
             .catch((err) => {
                 console.log(err)
             })
 
-        disPatch(setProd([]))
-        disPatch(setProd(dummy));
     }, [])
 
-    const data = useSelector((state) => state.adminProduct);
+
+    //table의 row를 클릭했을때 개별적으로 선택한 데이터를 product의 id로 구별하여 저장
     const [select, setSelect] = useState(null);
     const [modalFlag, setModalFlag] = useState(false);
 
     const selectedProduct = (key) => {
-        setSelect(data.find(product => product.prod_id == key));
+        setSelect(data.find(product => product.product_code == key));
         setModalFlag(pre => !pre)
     }
 
@@ -45,20 +47,23 @@ export default function AdminProduct() {
         setModalFlag(false);
     }
 
+    //모달창에 올라간 상품에 대한 삭제요청 select state안에 개별데이터가 들어있음 
     const reqProdDel = (prodId) => {
         axios.post('/api/admin/valid/del-pro', {
-            product_code: select.productCode,
-            product_name: select.productName
+            product_code: select.product_code,
+            product_name: select.product_name
         })
             .then((response) => {
                 console.log(response.data);
+                navigate('/adminmain/product')
             })
             .catch((err) => {
                 console.log(err)
             })
     }
 
-    console.log(select);
+    console.log(data);
+
     const pOptions = [
         '상품이름',
         '카테고리',
@@ -81,17 +86,17 @@ export default function AdminProduct() {
                 <tbody>
                     {data.map((product) => {
                         return (
-                            <tr key={product.prod_id} onClick={() => { selectedProduct(product.prod_id) }}>
-                                <td>{product.title}</td>
-                                <td>{product.category}</td>
+                            <tr key={product.product_code} onClick={() => { selectedProduct(product.prod_id) }}>
+                                <td>{product.product_name}</td>
+                                <td>{product.category_code}</td>
+                                <td>{product.price * product.discount}</td>
                                 <td>{product.price}</td>
-                                <td>{product.orig_price}</td>
                             </tr>
                         );
                     })}
                 </tbody>
             </Table>
-            <Paging pagingLength={ProdData.length} />
+            <Paging pagingLength={data.length} />
 
             {modalFlag ? <Modal
                 modalOff={modalOff}

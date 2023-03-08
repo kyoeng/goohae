@@ -32,7 +32,7 @@ export default function AddProduct(params) {
         })
             .then((response) => {
                 console.log(response.data);
-                return navigate('/adminMain');
+                return navigate('/adminMain/product');
             })
             .catch((err) => {
                 console.log(err);
@@ -42,7 +42,7 @@ export default function AddProduct(params) {
 
     const cancel = () => {
         if (window.confirm('상품등록을 취소하시겠습니까?')) {
-            return navigate(-1);
+            return navigate('/adminmain/product');
         }
     }
 

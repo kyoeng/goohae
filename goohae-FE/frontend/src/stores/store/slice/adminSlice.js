@@ -13,9 +13,10 @@ const userSlice = createSlice({
 const productSlice = createSlice({
     name: "adminProduct",
     initialState: [],
+
     reducers: {
         setProd: (state, action) => {
-            state.push(...action.payload);
+            state.product = action.payload;
         },
     }
 })

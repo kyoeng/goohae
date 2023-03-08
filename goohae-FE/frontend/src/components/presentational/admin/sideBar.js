@@ -6,7 +6,7 @@ export default function SideBar() {
     return (
         <div id={sideBarStyled.sideBarContainer}>
             <div className={sideBarStyled.sideBarLogoWrap}>
-                <img src="" alt="로고" />
+                <img src="/images/icon/logo.png" alt="로고" />
             </div>
 
             <div className={sideBarStyled.adminCategoryContainer}>
